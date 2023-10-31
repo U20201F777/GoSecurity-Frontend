@@ -1,3 +1,4 @@
+import { Comisaria } from './../model/comisaria';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Comisaria } from '../model/comisaria';
@@ -27,5 +28,8 @@ export class ComisariaService {
   }
   Delete(id: number) {
     return this.http.delete(`${this.url}/${id}`);
+  }
+  Update(comisaria: Comisaria) {
+    return this.http.put(this.url, comisaria);
   }
 }
