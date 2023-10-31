@@ -1,7 +1,6 @@
 import { Comisaria } from './../model/comisaria';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Comisaria } from '../model/comisaria';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
