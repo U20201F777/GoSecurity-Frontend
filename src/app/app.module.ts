@@ -18,10 +18,30 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { CiudadanoComponent } from './components/ciudadano/ciudadano.component';
+import { PoliciaComponent } from './components/policia/policia.component';
+import { AyudaComponent } from './components/ayuda/ayuda.component';
+import { TipoCasoComponent } from './components/tipo-caso/tipo-caso.component';
+import { AyudaListarComponent } from './components/ayuda/ayuda-listar/ayuda-listar.component';
+import { AyudaInsertarComponent } from './components/ayuda/ayuda-insertar/ayuda-insertar.component';
+import { PoliciaListarComponent } from './components/policia/policia-listar/policia-listar.component';
+import { PoliciaInsertarComponent } from './components/policia/policia-insertar/policia-insertar.component';
+import { CiudadanoListarComponent } from './components/ciudadano/ciudadano-listar/ciudadano-listar.component';
+import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-insertar/ciudadano-insertar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CiudadanoComponent,
+    PoliciaComponent,
+    AyudaComponent,
+    TipoCasoComponent,
+    AyudaListarComponent,
+    AyudaInsertarComponent,
+    PoliciaListarComponent,
+    PoliciaInsertarComponent,
+    CiudadanoListarComponent,
+    CiudadanoInsertarComponent
   ],
   imports: [
     BrowserModule,

@@ -6,5 +6,5 @@ export class Policia{
   fotoRostroPolicia: string="";
   fotoIdentPolicia: string="";
   rangoPolicia: string="";
-  usuario: Usuario= new Usuario();
+  //usuario: Usuario= new Usuario();
 }

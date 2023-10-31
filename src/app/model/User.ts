@@ -5,5 +5,5 @@ export class Usuario {
   username: string = "";
   password: string = "";
   enabled: boolean = true;
-  role: Roles=new Roles();
+  //role: Roles=new Roles();
 }
