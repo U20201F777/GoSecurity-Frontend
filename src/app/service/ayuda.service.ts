@@ -10,7 +10,7 @@ const base_url = environment.base
   providedIn: 'root'
 })
 export class AyudaService {
-  private url = `${base_url}/solicitarAyuda`;
+  private url = `${base_url}/Ayuda`;
   private ListaCambio = new Subject<SolicitarAyuda[]>();
   constructor(private http: HttpClient) { }
   List() {
