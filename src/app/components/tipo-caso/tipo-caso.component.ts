@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tipo-caso',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tipo-caso.component.css']
 })
 export class TipoCasoComponent {
-
+  constructor(public route: ActivatedRoute) {}
 }

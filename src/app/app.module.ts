@@ -28,6 +28,7 @@ import { PoliciaListarComponent } from './components/policia/policia-listar/poli
 import { PoliciaInsertarComponent } from './components/policia/policia-insertar/policia-insertar.component';
 import { CiudadanoListarComponent } from './components/ciudadano/ciudadano-listar/ciudadano-listar.component';
 import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-insertar/ciudadano-insertar.component';
+import { TipoCasoListarComponent } from './components/tipo-caso/tipo-caso-listar/tipo-caso-listar.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-ins
     PoliciaListarComponent,
     PoliciaInsertarComponent,
     CiudadanoListarComponent,
-    CiudadanoInsertarComponent
+    CiudadanoInsertarComponent,
+    TipoCasoListarComponent
   ],
   imports: [
     BrowserModule,
