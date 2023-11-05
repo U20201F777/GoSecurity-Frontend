@@ -28,16 +28,11 @@ import { PoliciaListarComponent } from './components/policia/policia-listar/poli
 import { PoliciaInsertarComponent } from './components/policia/policia-insertar/policia-insertar.component';
 import { CiudadanoListarComponent } from './components/ciudadano/ciudadano-listar/ciudadano-listar.component';
 import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-insertar/ciudadano-insertar.component';
-import { ComisariaComponent } from './comisaria/comisaria.component';
-import { ComisariaListarComponent } from './comisaria/comisaria-listar/comisaria-listar.component';
 import { ListarComisariaComponent } from './components/comisaria/listar-comisaria/listar-comisaria.component';
 import { InsertarComisariaComponent } from './components/comisaria/insertar-comisaria/insertar-comisaria.component';
 import { DenunciasComponent } from './components/denuncias/denuncias.component';
 import { ListarDenunciasComponent } from './components/denuncias/listar-denuncias/listar-denuncias.component';
 import { InsertarDenunciasComponent } from './components/denuncias/insertar-denuncias/insertar-denuncias.component';
-import { UbicacionCComponent } from './components/ubicacion-c/ubicacion-c.component';
-import { ListarUbicacionCComponent } from './components/ubicacionC/listar-ubicacion-c/listar-ubicacion-c.component';
-import { UbicacionComisariaComponent } from './components/ubicacion-comisaria/ubicacion-comisaria.component';
 import { UbicacioncComponent } from './components/ubicacionc/ubicacionc.component';
 import { ListarUbicacioncComponent } from './components/ubicacionc/listar-ubicacionc/listar-ubicacionc.component';
 import { InsertarUbicacioncComponent } from './components/ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
@@ -66,16 +61,11 @@ import { InsertarTipificacionComponent } from './components/tipificacion/inserta
     PoliciaInsertarComponent,
     CiudadanoListarComponent,
     CiudadanoInsertarComponent,
-    ComisariaComponent,
-    ComisariaListarComponent,
     ListarComisariaComponent,
     InsertarComisariaComponent,
     DenunciasComponent,
     ListarDenunciasComponent,
     InsertarDenunciasComponent,
-    UbicacionCComponent,
-    ListarUbicacionCComponent,
-    UbicacionComisariaComponent,
     UbicacioncComponent,
     ListarUbicacioncComponent,
     InsertarUbicacioncComponent,
