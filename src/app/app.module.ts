@@ -29,21 +29,23 @@ import { PoliciaInsertarComponent } from './components/policia/policia-insertar/
 import { CiudadanoListarComponent } from './components/ciudadano/ciudadano-listar/ciudadano-listar.component';
 import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-insertar/ciudadano-insertar.component';
 import { TipoCasoListarComponent } from './components/tipo-caso/tipo-caso-listar/tipo-caso-listar.component';
+import { TipoCasoInsertarComponent } from './components/tipo-caso/tipo-caso-insertar/tipo-caso-insertar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CiudadanoComponent,
-    PoliciaComponent,
     AyudaComponent,
-    TipoCasoComponent,
     AyudaListarComponent,
     AyudaInsertarComponent,
+    PoliciaComponent,
     PoliciaListarComponent,
     PoliciaInsertarComponent,
+    CiudadanoComponent,
     CiudadanoListarComponent,
     CiudadanoInsertarComponent,
-    TipoCasoListarComponent
+    TipoCasoComponent,
+    TipoCasoListarComponent,
+    TipoCasoInsertarComponent
   ],
   imports: [
     BrowserModule,
