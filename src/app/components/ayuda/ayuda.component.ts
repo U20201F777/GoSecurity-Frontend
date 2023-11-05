@@ -8,5 +8,4 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AyudaComponent {
   constructor(public route: ActivatedRoute) {}
-  ngOnInit(): void {}
 }
