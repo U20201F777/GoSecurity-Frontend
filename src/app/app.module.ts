@@ -47,6 +47,7 @@ import { InsertarLugarhechoComponent } from './components/lugarhecho/insertar-lu
 import { TipificacionComponent } from './components/tipificacion/tipificacion.component';
 import { ListarTipificacionComponent } from './components/tipificacion/listar-tipificacion/listar-tipificacion.component';
 import { InsertarTipificacionComponent } from './components/tipificacion/insertar-tipificacion/insertar-tipificacion.component';
+import { ComisariaComponent } from './components/comisaria/comisaria.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { InsertarTipificacionComponent } from './components/tipificacion/inserta
     PoliciaInsertarComponent,
     CiudadanoListarComponent,
     CiudadanoInsertarComponent,
+    ComisariaComponent,
     ListarComisariaComponent,
     InsertarComisariaComponent,
     DenunciasComponent,
