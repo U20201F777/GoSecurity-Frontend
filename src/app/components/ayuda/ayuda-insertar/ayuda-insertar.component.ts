@@ -25,7 +25,7 @@ export class AyudaInsertarComponent implements OnInit{
   ) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      idAyuda: ['', Validators.required],
+      idAyuda: [''],
       fechaAyuda: ['', Validators.required],
       idTipoCaso: ['', Validators.required],
     });
@@ -35,9 +35,9 @@ export class AyudaInsertarComponent implements OnInit{
   }
   aceptar() {
     if (this.form.valid) {
-      this.ayuda.idAyuda = this.form.value.nameTask;
-      this.ayuda.fechaAyuda = this.form.value.startDateTaks;
-      this.ayuda.idTipoCaso = this.form.value.endDateTask;
+      this.ayuda.idAyuda = this.form.value.idAyuda;
+      this.ayuda.fechaAyuda = this.form.value.fechaAyuda;
+      this.ayuda.idTipoCaso = this.form.value.idTipoCaso;
       this.aS.Insert(this.ayuda).subscribe(data=>{
         this.aS.List().subscribe(data=>{
           this.aS.SetList(data);

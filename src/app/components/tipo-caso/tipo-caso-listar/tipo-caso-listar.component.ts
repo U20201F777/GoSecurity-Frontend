@@ -29,4 +29,14 @@ export class TipoCasoListarComponent implements OnInit{
       this.dataSource.paginator = this.paginator;
     });
   }
+  eliminar(id: number) {
+    this.tS.delete(id).subscribe((data) => {
+      this.tS.list().subscribe((data) => {
+        this.tS.setList(data);
+      });
+    });
+  }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
+  }
 }
