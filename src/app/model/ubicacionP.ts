@@ -9,4 +9,5 @@ idUbicacionP: number = 0;
 
   FechaDate = new Date(Date.now());
 
+  idEstadoUbicacion: EstadoUbicacion = new EstadoUbicacion();
 }

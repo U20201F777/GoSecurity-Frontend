@@ -32,4 +32,7 @@ export class UbicacionCService {
   Update(ubicacionC: UbicacionC) {
     return this.http.put(this.url, ubicacionC);
   }
+  ListId(id: number) {
+    return this.http.get<UbicacionC>(`${this.url}/${id}`);
+  }
 }

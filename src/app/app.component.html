@@ -3,6 +3,10 @@
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
   <button mat-button [matMenuTriggerFor]="menuTipoCaso">Tipo Caso</button>
   <button mat-button [matMenuTriggerFor]="menuLoguin">Perfiles</button>
+  <button mat-button [matMenuTriggerFor]="menuDenuncia">Denuncia</button>
+  <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
+  <button mat-button [matMenuTriggerFor]="menuUbicacionC">Ubicacion Comisaria</button>
+
 </mat-toolbar>
 
 <mat-menu #menuAyuda="matMenu">
@@ -20,6 +24,21 @@
 <mat-menu #menuLoguin="matMenu">
   <button mat-menu-item routerLink="/ciudadano/nuevo">Ciudadano</button>
   <button mat-menu-item routerLink="/policia/nuevo">Policia</button>
+</mat-menu>
+
+<mat-menu #menuDenuncia="matMenu">
+  <button mat-menu-item routerLink="/Denuncia">Listar</button>
+  <button mat-menu-item routerLink="/Denuncia/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuComisaria="matMenu">
+  <button mat-menu-item routerLink="/Comisaria">Listar</button>
+  <button mat-menu-item routerLink="/Comisaria/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuUbicacionC="matMenu">
+  <button mat-menu-item routerLink="/UbicacionC">Listar</button>
+  <button mat-menu-item routerLink="/UbicacionC/insertar">Registrar</button>
 </mat-menu>
 
 <router-outlet></router-outlet>

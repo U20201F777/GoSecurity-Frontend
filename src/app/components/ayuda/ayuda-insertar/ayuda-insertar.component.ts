@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SolicitarAyuda } from 'src/app/model/Ayuda';
 import { TipoCaso } from 'src/app/model/TipoCaso';
 import { AyudaService } from 'src/app/service/ayuda.service';
@@ -21,7 +21,8 @@ export class AyudaInsertarComponent implements OnInit{
     private tS: TipoCasoService,
     private aS: AyudaService,
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute
   ) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group({
