@@ -7,5 +7,5 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./denuncias.component.css']
 })
 export class DenunciasComponent {
-  constructor(private route: ActivatedRoute){}
+  constructor(public route: ActivatedRoute){}
 }
