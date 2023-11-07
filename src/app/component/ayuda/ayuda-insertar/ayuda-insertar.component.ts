@@ -43,7 +43,7 @@ export class AyudaInsertarComponent implements OnInit{
           this.aS.SetList(data);
         })
       })
-      this.router.navigate(['Ayuda'])
+      this.router.navigate(['/components/Ayuda'])
     } else {
       this.mensaje='Ingrese todos los campos!!'
     }

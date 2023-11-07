@@ -29,14 +29,16 @@ const routes: Routes = [
     path: 'ciudadano',
     component: CiudadanoComponent,
     children: [
-      {path: 'nuevo', component: CiudadanoInsertarComponent}
+      {path: 'nuevo', component: CiudadanoInsertarComponent},
+      {path: 'ediciones/:id', component: CiudadanoInsertarComponent}
     ],
   },
   {
     path: 'policia',
     component: PoliciaComponent,
     children: [
-      {path: 'nuevo', component: PoliciaInsertarComponent}
+      {path: 'nuevo', component: PoliciaInsertarComponent},
+      {path: 'ediciones/:id', component: PoliciaInsertarComponent}
     ],
   },
 ];

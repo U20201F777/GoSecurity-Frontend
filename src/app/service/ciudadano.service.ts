@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Ciudadano } from '../model/Ciudadano';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
 const base_url = environment.base
 
@@ -11,21 +11,72 @@ const base_url = environment.base
 })
 export class CiudadanoService {
   private url = `${base_url}/ciudadano`;
-  private ListaCambio = new Subject<Ciudadano[]>();
+  private listaCambio = new Subject<Ciudadano[]>();
   constructor(private http: HttpClient) { }
-  List() {
-    return this.http.get<Ciudadano[]>(this.url);
+  list() {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Ciudadano[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
-  Insert(ciudadano: Ciudadano) {
-    return this.http.post(this.url, ciudadano);
+  insert(c: Ciudadano) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, c, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
-  SetList(ListaNueva: Ciudadano[]) {
-    this.ListaCambio.next(ListaNueva);
+  setList(listaNueva: Ciudadano[]) {
+    this.listaCambio.next(listaNueva);
   }
-  GetList() {
-    return this.ListaCambio.asObservable();
+  getList() {
+    return this.listaCambio.asObservable();
   }
-  Delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+  listId(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Ciudadano>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
+  update(c: Ciudadano) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, c, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+  delete(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+  //falta
+  buscar(fecha: string): Observable<Ciudadano[]> {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post<Ciudadano[]>(
+      `${this.url}/buscar`,
+      { fecha: fecha },
+      {
+        headers: new HttpHeaders()
+          .set('Authorization', `Bearer ${token}`)
+          .set('Content-Type', 'application/json'),
+      }
+    );
   }
 }

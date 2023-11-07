@@ -8,4 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PoliciaComponent {
   constructor(public route: ActivatedRoute) {}
+  ngOnInit(): void {
+  }
 }

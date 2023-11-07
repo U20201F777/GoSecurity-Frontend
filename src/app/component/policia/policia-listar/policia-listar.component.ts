@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Policia } from 'src/app/model/Policia';
@@ -9,7 +9,7 @@ import { PoliciaService } from 'src/app/service/policia.service';
   templateUrl: './policia-listar.component.html',
   styleUrls: ['./policia-listar.component.css']
 })
-export class PoliciaListarComponent {
+export class PoliciaListarComponent implements OnInit{
   dataSource: MatTableDataSource<Policia> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
@@ -17,27 +17,26 @@ export class PoliciaListarComponent {
     'FotoRostro',
     'FotoIdentificacion',
     'Rango',
-    'Usuario',
-    //'accion01',
+    'accion01',
     'accion02',
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private pS: PoliciaService) {}
   ngOnInit(): void {
-    this.pS.List().subscribe((data) => {
+    this.pS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.pS.GetList().subscribe((data) => {
+    this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
   }
   eliminar(id: number) {
-    this.pS.Delete(id).subscribe((data) => {
-      this.pS.List().subscribe((data) => {
-        this.pS.SetList(data);
+    this.pS.delete(id).subscribe((data) => {
+      this.pS.list().subscribe((data) => {
+        this.pS.setList(data);
       });
     });
   }

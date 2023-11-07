@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Ciudadano } from 'src/app/model/Ciudadano';
@@ -9,32 +9,32 @@ import { CiudadanoService } from 'src/app/service/ciudadano.service';
   templateUrl: './ciudadano-listar.component.html',
   styleUrls: ['./ciudadano-listar.component.css']
 })
-export class CiudadanoListarComponent {
+export class CiudadanoListarComponent implements OnInit{
   dataSource: MatTableDataSource<Ciudadano> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
     'DNI',
     'idUsuario',
-    //'accion01',
+    'accion01',
     'accion02',
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private cS: CiudadanoService) {}
   ngOnInit(): void {
-    this.cS.List().subscribe((data) => {
+    this.cS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.cS.GetList().subscribe((data) => {
+    this.cS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
   }
   eliminar(id: number) {
-    this.cS.Delete(id).subscribe((data) => {
-      this.cS.List().subscribe((data) => {
-        this.cS.SetList(data);
+    this.cS.delete(id).subscribe((data) => {
+      this.cS.list().subscribe((data) => {
+        this.cS.setList(data);
       });
     });
   }

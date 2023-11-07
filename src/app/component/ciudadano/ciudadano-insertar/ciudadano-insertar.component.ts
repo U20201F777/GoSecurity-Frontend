@@ -36,9 +36,9 @@ export class CiudadanoInsertarComponent {
       this.ciudadano.idCiudadano = this.form.value.idAyuda;
       this.ciudadano.numeroCiudadano = this.form.value.fechaAyuda;
       //this.user.idUsuario = this.form.value.idUsuario;
-      this.cS.Insert(this.ciudadano).subscribe(data=>{
-        this.cS.List().subscribe(data=>{
-          this.cS.SetList(data);
+      this.cS.insert(this.ciudadano).subscribe(data=>{
+        this.cS.list().subscribe(data=>{
+          this.cS.setList(data);
         })
       })
       this.router.navigate(['ciudadano'])
