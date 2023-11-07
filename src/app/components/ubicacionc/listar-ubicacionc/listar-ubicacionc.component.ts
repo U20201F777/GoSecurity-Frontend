@@ -13,7 +13,7 @@ export class ListarUbicacioncComponent implements OnInit {
   dataSource: MatTableDataSource<UbicacionC> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idUbicacionC',
-    'Departamento',
+    'Departamento',   
     'Ciudad',
     'Distrito',
     'Direccion',
