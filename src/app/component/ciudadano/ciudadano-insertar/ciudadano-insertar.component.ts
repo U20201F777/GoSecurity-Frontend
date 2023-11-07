@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { Ciudadano } from 'src/app/model/Ciudadano';
 //import { Usuario } from 'src/app/model/User';
 import { CiudadanoService } from 'src/app/service/ciudadano.service';
-import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-ciudadano-insertar',
@@ -19,7 +18,6 @@ export class CiudadanoInsertarComponent {
   //idUsuarioSeleccionado:number=0
   constructor(
     private cS: CiudadanoService,
-    private uS: UserService,
     private router: Router,
     private formBuilder: FormBuilder
   ) {}

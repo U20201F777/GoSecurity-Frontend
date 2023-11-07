@@ -18,34 +18,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import { CiudadanoComponent } from './components/ciudadano/ciudadano.component';
-import { PoliciaComponent } from './components/policia/policia.component';
-import { AyudaComponent } from './components/ayuda/ayuda.component';
-import { TipoCasoComponent } from './components/tipo-caso/tipo-caso.component';
-import { AyudaListarComponent } from './components/ayuda/ayuda-listar/ayuda-listar.component';
-import { AyudaInsertarComponent } from './components/ayuda/ayuda-insertar/ayuda-insertar.component';
-import { PoliciaListarComponent } from './components/policia/policia-listar/policia-listar.component';
-import { PoliciaInsertarComponent } from './components/policia/policia-insertar/policia-insertar.component';
-import { CiudadanoListarComponent } from './components/ciudadano/ciudadano-listar/ciudadano-listar.component';
-import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-insertar/ciudadano-insertar.component';
-import { TipoCasoListarComponent } from './components/tipo-caso/tipo-caso-listar/tipo-caso-listar.component';
-import { TipoCasoInsertarComponent } from './components/tipo-caso/tipo-caso-insertar/tipo-caso-insertar.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginComponent } from './component/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AyudaComponent,
-    AyudaListarComponent,
-    AyudaInsertarComponent,
-    PoliciaComponent,
-    PoliciaListarComponent,
-    PoliciaInsertarComponent,
-    CiudadanoComponent,
-    CiudadanoListarComponent,
-    CiudadanoInsertarComponent,
-    TipoCasoComponent,
-    TipoCasoListarComponent,
-    TipoCasoInsertarComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +44,8 @@ import { TipoCasoInsertarComponent } from './components/tipo-caso/tipo-caso-inse
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
