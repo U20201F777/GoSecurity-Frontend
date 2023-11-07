@@ -6,9 +6,7 @@
   <button mat-button [matMenuTriggerFor]="menuDenuncia">Denuncia</button>
   <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
   <button mat-button [matMenuTriggerFor]="menuUbicacionC">Ubicacion Comisaria</button>
-  <button mat-button [matMenuTriggerFor]="menuEstadoUbicacion">Estado Ubicacion</button>
   <button mat-button [matMenuTriggerFor]="menuLugarHecho">Lugar de Hecho</button>
-  <button mat-button [matMenuTriggerFor]="menuTipificacion">Tipificacion</button>
 
 </mat-toolbar>
 
@@ -44,17 +42,9 @@
   <button mat-menu-item routerLink="/UbicacionC/insertar">Registrar</button>
 </mat-menu>
 
-<mat-menu #menuEstadoUbicacion="matMenu">
-  <button mat-menu-item routerLink="/EstadoUbicacion">Listar</button>
-</mat-menu>
-
 <mat-menu #menuLugarHecho="matMenu">
   <button mat-menu-item routerLink="/LugarHecho">Listar</button>
   <button mat-menu-item routerLink="/LugarHecho/insertar">Registrar</button>
-</mat-menu>
-
-<mat-menu #menuTipificacion="matMenu">
-  <button mat-menu-item routerLink="/Tipificacion">Listar</button>
 </mat-menu>
 
 
