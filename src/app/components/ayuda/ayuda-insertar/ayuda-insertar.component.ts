@@ -37,7 +37,7 @@ export class AyudaInsertarComponent implements OnInit{
     if (this.form.valid) {
       this.ayuda.idAyuda = this.form.value.idAyuda;
       this.ayuda.fechaAyuda = this.form.value.fechaAyuda;
-      this.ayuda.idTipoCaso = this.form.value.idTipoCaso;
+      this.ayuda.idTipoCaso.idTipoCaso = this.form.value.idTipoCaso;
       this.aS.Insert(this.ayuda).subscribe(data=>{
         this.aS.List().subscribe(data=>{
           this.aS.SetList(data);

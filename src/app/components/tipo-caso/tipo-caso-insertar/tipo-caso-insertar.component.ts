@@ -13,7 +13,6 @@ export class TipoCasoInsertarComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   tipoCaso: TipoCaso = new TipoCaso();
   mensaje: string = '';
-  //id: number = 0;
   edicion: boolean = false;
   tc: { value: string; viewValue: string }[] = [
     { value: 'Leve', viewValue: 'Leve' },
@@ -32,35 +31,28 @@ export class TipoCasoInsertarComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe((data: Params) => {
-      //this.id = data['id'];
-      this.edicion = data['id'] != null;
-      //this.init();
-    });
     this.form = this.formBuilder.group({
-      //idTipoCaso: ['',],
       TipoCaso: ['', Validators.required],
       Estado: ['', Validators.required],
     });
   }
   aceptar(): void {
     if (this.form.valid) {
-      this.tipoCaso.idTipoCaso = this.form.value.idTipoCaso;
-      this.tipoCaso.TipoCaso = this.form.value.tc;
-      this.tipoCaso.Estado = this.form.value.estado;
-      if (this.edicion) {
+      this.tipoCaso.TipoCaso = this.form.value.TipoCaso;
+      this.tipoCaso.Estado = this.form.value.Estado;
+      /*if (this.edicion) {
         this.tS.update(this.tipoCaso).subscribe(() => {
           this.tS.list().subscribe((data) => {
             this.tS.setList(data);
           });
         });
-      } else {
+      } else {*/
         this.tS.insert(this.tipoCaso).subscribe((data) => {
           this.tS.list().subscribe((data) => {
             this.tS.setList(data);
           });
         });
-      }
+      //}
       this.router.navigate(['TipoCasos']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';

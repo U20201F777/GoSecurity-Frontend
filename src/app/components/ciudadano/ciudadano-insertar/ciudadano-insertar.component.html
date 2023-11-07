@@ -1,1 +1,47 @@
-<p>ciudadano-insertar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loguin Ciudadano</title>
+</head>
+<body>
+  <div class="container" style="text-align: center">
+    <h2>Ingrese como ciudadano</h2>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Id" formControlName="idCiudadano" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('idCiudadano')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>DNI Ciudadano</mat-label>
+      <input matInput placeholder="DNI" formControlName="numeroCiudadano" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('idCiudadano')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Id Usuario</mat-label>
+      <input matInput placeholder="Id Usuario" formControlName="usuario" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('usuario')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+      <button mat-raised-button color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/Ayuda">
+        Cancelar
+      </button>
+  </div>
+</body>
+</html>
