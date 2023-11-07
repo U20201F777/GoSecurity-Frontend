@@ -26,8 +26,7 @@ export class TipoCasoInsertarComponent implements OnInit{
   constructor(
     private tS: TipoCasoService,
     private router: Router,
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private formBuilder: FormBuilder
   ) {}
 
   ngOnInit(): void {
