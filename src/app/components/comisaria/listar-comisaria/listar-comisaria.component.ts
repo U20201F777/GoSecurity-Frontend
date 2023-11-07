@@ -30,7 +30,13 @@ export class ListarComisariaComponent implements OnInit{
       this.dataSource.paginator = this.paginator;
     });
    }
-
+   eliminar(id: number) {
+    this.cS.Delete(id).subscribe((data) => {
+      this.cS.List().subscribe((data) => {
+        this.cS.SetList(data);
+      });
+    });
+  }
    filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
   }
