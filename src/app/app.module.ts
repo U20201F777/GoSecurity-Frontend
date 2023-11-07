@@ -35,21 +35,13 @@ import { InsertarComisariaComponent } from './components/comisaria/insertar-comi
 import { ListarComisariaComponent } from './components/comisaria/listar-comisaria/listar-comisaria.component';
 import { DenunciasComponent } from './components/denuncias/denuncias.component';
 import { InsertarDenunciasComponent } from './components/denuncias/insertar-denuncias/insertar-denuncias.component';
-import { ListarDenunciasComponent } from './components/denuncias/listar-denuncias/listar-denuncias.component';
-import { EstadoubicacionComponent } from './components/estadoubicacion/estadoubicacion.component';
-import { InsertarEstadoubicacionComponent } from './components/estadoubicacion/insertar-estadoubicacion/insertar-estadoubicacion.component';
+import { ListarDenunciasComponent } from './components/denuncias/listar-denuncias/listar-denuncias.component';;
 import { LugarhechoComponent } from './components/lugarhecho/lugarhecho.component';
 import { InsertarLugarhechoComponent } from './components/lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
 import { ListarLugarhechoComponent } from './components/lugarhecho/listar-lugarhecho/listar-lugarhecho.component';
-import { TipificacionComponent } from './components/tipificacion/tipificacion.component';
-import { ListarTipificacionComponent } from './components/tipificacion/listar-tipificacion/listar-tipificacion.component';
-import { InsertarTipificacionComponent } from './components/tipificacion/insertar-tipificacion/insertar-tipificacion.component';
 import { UbicacioncComponent } from './components/ubicacionc/ubicacionc.component';
 import { ListarUbicacioncComponent } from './components/ubicacionc/listar-ubicacionc/listar-ubicacionc.component';
 import { InsertarUbicacioncComponent } from './components/ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
-import { UbicacionpComponent } from './components/ubicacionp/ubicacionp.component';
-import { ListarUbicacionpComponent } from './components/ubicacionp/listar-ubicacionp/listar-ubicacionp.component';
-import { InsertarUbicacionpComponent } from './components/ubicacionp/insertar-ubicacionp/insertar-ubicacionp.component';
 
 @NgModule({
   declarations: [
@@ -75,17 +67,9 @@ import { InsertarUbicacionpComponent } from './components/ubicacionp/insertar-ub
     LugarhechoComponent,
     ListarLugarhechoComponent,
     InsertarLugarhechoComponent,
-    TipificacionComponent,
-    ListarTipificacionComponent,
-    InsertarTipificacionComponent,
     UbicacioncComponent,
     ListarUbicacioncComponent,
     InsertarUbicacioncComponent,
-    UbicacionpComponent,
-    ListarUbicacionpComponent,
-    InsertarUbicacionpComponent,
-    EstadoubicacionComponent,
-    InsertarEstadoubicacionComponent,
   ],
   imports: [
     BrowserModule,
