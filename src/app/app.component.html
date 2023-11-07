@@ -17,7 +17,7 @@
 </mat-menu>
 
 <mat-menu #menuLoguin="matMenu">
-  <button mat-menu-item routerLink="components/ciudadano">Ciudadano</button>
+  <button mat-menu-item routerLink="components/ciudadano" *ngIf="role == 'ADMIN'">Ciudadano</button>
   <button mat-menu-item routerLink="components/policia">Policia</button>
 </mat-menu>
 

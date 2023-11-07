@@ -14,7 +14,8 @@ const routes: Routes = [
     path: 'Ayuda',
     component: AyudaComponent,
     children: [
-      {path: 'nuevo', component: AyudaInsertarComponent}
+      {path: 'nuevo', component: AyudaInsertarComponent},
+      {path: 'ediciones/:id', component: AyudaInsertarComponent}
     ],
   },
   {
