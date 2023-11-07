@@ -1,1 +1,67 @@
-<p>policia-insertar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loguin Policia</title>
+</head>
+<body>
+  <div class="container" style="text-align: center">
+    <h2>Ingrese como policia</h2>
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Id" formControlName="idPolicia" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('idPolicia')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Numero Placa</mat-label>
+      <input matInput placeholder="Numero de placa" formControlName="numeroPlacaPolicia" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('numeroPlacaPolicia')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Foto del Rostro</mat-label>
+      <input matInput placeholder="Foto Rostro" formControlName="fotoRostroPolicia" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('fotoRostroPolicia')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Foto Identificacion</mat-label>
+      <input matInput placeholder="Foto Identificacion" formControlName="fotoIdentPolicia" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('fotoRostroPolicia')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width">
+      <mat-label>Rango</mat-label>
+      <input matInput placeholder="rango" formControlName="rangoPolicia" />
+      <!--<mat-error
+        *ngIf="obtenerControlCampo('rangoPolicia')?.errors?.['required']"
+      >
+        El id de la ayuda es obligatoria.
+      </mat-error>-->
+    </mat-form-field>
+    <br />
+      <button mat-raised-button color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/Ayuda">
+        Cancelar
+      </button>
+  </div>
+</body>
+</html>
