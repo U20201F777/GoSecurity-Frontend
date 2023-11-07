@@ -47,7 +47,10 @@ const routes: Routes = [
   {
     path: 'Comisaria',
     component: ComisariaComponent,
-    children: [{ path: 'insertar', component: InsertarComisariaComponent }],
+    children: [
+      { path: 'insertar', component: InsertarComisariaComponent },
+      { path: 'ediciones/id ', component: InsertarComisariaComponent },
+    ],
   },
   {
     path: 'UbicacionC',

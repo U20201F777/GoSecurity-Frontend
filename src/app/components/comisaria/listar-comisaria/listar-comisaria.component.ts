@@ -16,7 +16,9 @@ export class ListarComisariaComponent implements OnInit{
     'Id',
     'NombreComisaria',
     'Telefono',
-    'Direccion'
+    'Direccion',
+    'accion01',
+    'accion02'
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private cS:ComisariaService){}
