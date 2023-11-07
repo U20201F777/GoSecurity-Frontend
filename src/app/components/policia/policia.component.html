@@ -1,1 +1,4 @@
-<app-policia-insertar></app-policia-insertar>
+<router-outlet></router-outlet>
+<div [hidden]="route.children.length !== 0">
+  <app-policia-insertar></app-policia-insertar>
+</div>
