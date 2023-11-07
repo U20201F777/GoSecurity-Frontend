@@ -2,6 +2,8 @@
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
   <button mat-button [matMenuTriggerFor]="menuTipoCaso">Tipo Caso</button>
+  <button mat-button [matMenuTriggerFor]="menuComisaria">Comisarias</button>
+  <button mat-button [matMenuTriggerFor]="menuTDenuncia">Denuncias</button>
 </mat-toolbar>
 
 <mat-menu #menuAyuda="matMenu">
@@ -11,6 +13,17 @@
 </mat-menu>
 
 <mat-menu #menuTipoCaso="matMenu">
+  <button mat-menu-item routerLink="/TipoCasos/nuevo">Registrar Tipo Casos</button>
+  <button mat-menu-item routerLink="/TipoCasos">Listar Tipo Casos</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuComisaria="matMenu">
+  <button mat-menu-item routerLink="/Comisaria/insertar">Registrar comisaria</button>
+  <button mat-menu-item routerLink="/Comisaria">Lista de comisarias</button>
+</mat-menu>
+
+<mat-menu #menuTDenuncia="matMenu">
   <button mat-menu-item routerLink="/TipoCasos/nuevo">Registrar Tipo Casos</button>
   <button mat-menu-item routerLink="/TipoCasos">Listar Tipo Casos</button>
   <!-- Agrega más elementos de menú si es necesario -->

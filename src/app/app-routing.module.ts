@@ -8,6 +8,8 @@ import { CiudadanoComponent } from './components/ciudadano/ciudadano.component';
 import { CiudadanoInsertarComponent } from './components/ciudadano/ciudadano-insertar/ciudadano-insertar.component';
 import { PoliciaComponent } from './components/policia/policia.component';
 import { PoliciaInsertarComponent } from './components/policia/policia-insertar/policia-insertar.component';
+import { ComisariaComponent } from './components/comisaria/comisaria.component';
+import { InsertarComisariaComponent } from './components/comisaria/insertar-comisaria/insertar-comisaria.component';
 
 const routes: Routes = [{
   path: 'Ayuda', component: AyudaComponent,
@@ -25,7 +27,13 @@ const routes: Routes = [{
   {path: 'policia', component: PoliciaComponent,
   children: [
     {path: 'nuevo', component: PoliciaInsertarComponent}
-  ]}
+  ]},
+ { path:'Comisaria', component:ComisariaComponent, children:[
+    {
+      path:'insertar', component:InsertarComisariaComponent
+    },
+  ]},
+
 ];
 
 @NgModule({
