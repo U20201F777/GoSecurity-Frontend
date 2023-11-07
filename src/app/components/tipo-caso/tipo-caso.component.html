@@ -1,1 +1,4 @@
-<p>tipo-caso works!</p>
+<router-outlet></router-outlet>
+<div [hidden]="route.children.length !== 0">
+  <app-tipo-caso-listar></app-tipo-caso-listar>
+</div>

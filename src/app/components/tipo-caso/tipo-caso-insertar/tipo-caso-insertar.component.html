@@ -1,1 +1,52 @@
-<p>tipo-caso-insertar works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insertar Tipo Caso</title>
+</head>
+<body>
+  <div class="container" style="text-align: center">
+    <h2>Insertar Tipo Caso</h2>
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>Id. Tipo Caso</mat-label>
+        <input matInput placeholder="Id" formControlName="idTipoCaso" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Tipo Caso</mat-label>
+        <mat-select formControlName="TipoCaso">
+          <mat-option *ngFor="let p of tc" [value]="p.value">
+            {{p.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="obtenerControlCampo('TipoCaso')?.errors?.['required']">
+          El Tipo de Caso es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="Estado">
+          <mat-option *ngFor="let p of estado" [value]="p.value">
+            {{p.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="obtenerControlCampo('Estado')?.errors?.['required']">
+          El estado es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <button mat-raised-button color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/TipoCasos">
+        Cancelar
+      </button>
+      <p>{{ mensaje }}</p>
+    </form>
+  </div>
+</body>
+</html>

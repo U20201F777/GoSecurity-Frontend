@@ -10,7 +10,7 @@ const base_url=environment.base
   providedIn: 'root'
 })
 export class TipoCasoService {
-  private url=`${base_url}/tipoCaso`
+  private url=`${base_url}/TipoCasos`
   private listaCambio=new Subject<TipoCaso[]>()
 
   constructor(private http:HttpClient) { }
