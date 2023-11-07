@@ -14,6 +14,12 @@ import { InsertarComisariaComponent } from './components/comisaria/insertar-comi
 import { InsertarUbicacioncComponent } from './components/ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
 import { InsertarDenunciasComponent } from './components/denuncias/insertar-denuncias/insertar-denuncias.component';
 import { UbicacioncComponent } from './components/ubicacionc/ubicacionc.component';
+import { EstadoubicacionComponent } from './components/estadoubicacion/estadoubicacion.component';
+import { InsertarEstadoubicacionComponent } from './components/estadoubicacion/insertar-estadoubicacion/insertar-estadoubicacion.component';
+import { LugarhechoComponent } from './components/lugarhecho/lugarhecho.component';
+import { InsertarLugarhechoComponent } from './components/lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
+import { TipificacionComponent } from './components/tipificacion/tipificacion.component';
+import { InsertarTipificacionComponent } from './components/tipificacion/insertar-tipificacion/insertar-tipificacion.component';
 
 const routes: Routes = [
   {
@@ -59,6 +65,23 @@ const routes: Routes = [
       { path: 'insertar', component: InsertarUbicacioncComponent },
       { path: 'ediciones/id', component: InsertarUbicacioncComponent },
     ],
+  },
+  {
+    path: 'EstadoUbicacion',
+    component: EstadoubicacionComponent,
+    children: [
+      { path: 'insertar', component: InsertarEstadoubicacionComponent },
+    ],
+  },
+  {
+    path: 'LugarHecho',
+    component: LugarhechoComponent,
+    children: [{ path: 'insertar', component: InsertarLugarhechoComponent }],
+  },
+  {
+    path: 'Tipificacion',
+    component: TipificacionComponent,
+    children: [{ path: 'insertar', component: InsertarTipificacionComponent }],
   },
 ];
 

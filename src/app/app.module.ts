@@ -72,8 +72,6 @@ import { InsertarUbicacionpComponent } from './components/ubicacionp/insertar-ub
     DenunciasComponent,
     InsertarDenunciasComponent,
     ListarDenunciasComponent,
-    EstadoubicacionComponent,
-    InsertarEstadoubicacionComponent,
     LugarhechoComponent,
     ListarLugarhechoComponent,
     InsertarLugarhechoComponent,
@@ -86,6 +84,8 @@ import { InsertarUbicacionpComponent } from './components/ubicacionp/insertar-ub
     UbicacionpComponent,
     ListarUbicacionpComponent,
     InsertarUbicacionpComponent,
+    EstadoubicacionComponent,
+    InsertarEstadoubicacionComponent,
   ],
   imports: [
     BrowserModule,
