@@ -16,7 +16,8 @@ const routes: Routes = [{
   ]},
   {path: 'TipoCasos', component: TipoCasoComponent,
   children: [
-    {path: 'nuevo', component: TipoCasoInsertarComponent}
+    {path: 'nuevo', component: TipoCasoInsertarComponent},
+    {path: 'ediciones/:id', component: TipoCasoInsertarComponent}
   ]},
   {path: 'ciudadano', component: CiudadanoComponent,
   children: [
