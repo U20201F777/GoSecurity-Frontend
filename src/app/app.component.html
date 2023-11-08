@@ -1,8 +1,8 @@
 <mat-toolbar color="primary" *ngIf="verificar()">
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
-  <button mat-button [matMenuTriggerFor]="menuTipoCaso">Tipo Caso</button>
-  <button mat-button [matMenuTriggerFor]="menuLoguin">Perfiles</button>
+  <button mat-button [matMenuTriggerFor]="menuCiudadano">Ciudadano</button>
+  <button mat-button [matMenuTriggerFor]="menuPolicia">Policia</button>
   <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 </mat-toolbar>
 
@@ -11,13 +11,13 @@
   <button mat-menu-item routerLink="components/Ayuda">Listar ayuda</button>
 </mat-menu>
 
-<mat-menu #menuTipoCaso="matMenu">
-  <button mat-menu-item routerLink="components/TipoCasos/nuevo">Registrar Tipo Casos</button>
-  <button mat-menu-item routerLink="components/TipoCasos">Listar Tipo Casos</button>
+<mat-menu #menuPolicia="matMenu">
+  <button mat-menu-item routerLink="components/ciudadano/nuevo" *ngIf="role == 'ADMIN'">Registrar ciudadano</button>
+  <button mat-menu-item routerLink="components/ciudadano">Listar Ciudadano</button>
 </mat-menu>
 
-<mat-menu #menuLoguin="matMenu">
-  <button mat-menu-item routerLink="components/ciudadano" *ngIf="role == 'ADMIN'">Ciudadano</button>
+<mat-menu #menuCiudadano="matMenu">
+  <button mat-menu-item routerLink="components/policia/nuevo" *ngIf="role == 'ADMIN'">Registrar Policia</button>
   <button mat-menu-item routerLink="components/policia">Policia</button>
 </mat-menu>
 
