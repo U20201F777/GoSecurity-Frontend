@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container" style="text-align: center">
+    <h2>Registro de Comisaria</h2>
+
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>idComisaria</mat-label>
+        <input matInput placeholder="Id" formControlName="idComisaria" />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre Comisaria</mat-label>
+        <input matInput placeholder="Nombre_c" formControlName="Nombre_c" />
+        <mat-error *ngIf="obtenerControlCampo('Nombre_c')?.errors?.['required']">
+          El nombre es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Telefono</mat-label>
+        <input matInput placeholder="Telefono" formControlName="Telefono" />
+        <mat-error *ngIf="obtenerControlCampo('Telefono')?.errors?.['required']">
+          El Telefono es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Direccion</mat-label>
+        <input matInput placeholder="Direccion" formControlName="Direccion" />
+        <mat-error *ngIf="obtenerControlCampo('Direccion')?.errors?.['required']">
+          El nombre es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <button mat-raised-button color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/Comisaria">
+        Cancelar
+      </button>
+      <p>{{ mensaje }}</p>
+    </form>
+  </div>
+</body>
+
+</html>
