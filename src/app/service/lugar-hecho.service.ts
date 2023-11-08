@@ -32,5 +32,7 @@ export class LugarHechoService {
   Update(lugarHecho: LugarHecho) {
     return this.http.put(this.url, lugarHecho);
   }
-
+  ListId(id: number) {
+    return this.http.get<LugarHecho>(`${this.url}/${id}`);
+  }
 }

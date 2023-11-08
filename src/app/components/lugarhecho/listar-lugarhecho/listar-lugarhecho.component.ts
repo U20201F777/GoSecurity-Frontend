@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { LugarHecho } from 'src/app/model/lugarHecho';
+import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 
 @Component({
   selector: 'app-listar-lugarhecho',
@@ -10,10 +11,36 @@ import { LugarHecho } from 'src/app/model/lugarHecho';
 })
 export class ListarLugarhechoComponent implements OnInit {
   dataSource: MatTableDataSource<LugarHecho> = new MatTableDataSource();
-  
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  constructor() { }
-  ngOnInit(): void {
+  displayedColumns: string[] = [
+    'idDenunciasLugarHecho',
+    'nameDenunciasLugarHecho',
+    'DistritoDenuncia',
+    'ProvinciaDenuncia',
+    'LugarDenuncia',
+    'accion01',
+    'accion02',
+  ];
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  constructor(private lS:LugarHechoService) { }
+  ngOnInit(): void {
+    this.lS.List().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+    this.lS.GetList().subscribe((data) => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.lS.Delete(id).subscribe((data) => {
+      this.lS.List().subscribe((data) => {
+        this.lS.SetList(data);
+      });
+    });
+  }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
   }
 }
