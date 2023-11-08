@@ -4,15 +4,15 @@ import { Policia } from '../model/Policia';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-const base_url = environment.base
+const base_url = environment.base;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PoliciaService {
   private url = `${base_url}/policia`;
   private listaCambio = new Subject<Policia[]>();
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   list() {
     let token = sessionStorage.getItem('token');
 

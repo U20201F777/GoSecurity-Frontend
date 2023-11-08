@@ -14,7 +14,6 @@ export class CiudadanoListarComponent implements OnInit{
   displayedColumns: string[] = [
     'codigo',
     'DNI',
-    'idUsuario',
     'accion01',
     'accion02',
   ];
