@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de sesión</title>
+  </head>
+  <body>
+    <section class="container" style="text-align: center">
+      <div>
+        <img src="assets/Logo_GS.png" alt="Logo de la empresa" />
+      </div>
+      <div class="login-input">
+        <br />
+        <h1>Inicie sesión</h1>
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuario</mat-label>
+          <input matInput placeholder="Username" [(ngModel)]="username" />
+        </mat-form-field>
+        <mat-icon>person</mat-icon>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            matInput
+            placeholder="Password"
+            [(ngModel)]="password"
+          />
+        </mat-form-field>
+        <mat-icon>lock</mat-icon>
+        <br />
+        <button mat-raised-button color="primary" (click)="login()">
+          Ingresar
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
