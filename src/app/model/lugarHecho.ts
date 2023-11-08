@@ -1,4 +1,4 @@
-export class LugarHecho {
+export class DenunciasLugarHecho {
   idDenunciasLugarHecho: number = 0;
   nameDenunciasLugarHecho: string = '';
   DistritoDenuncia: string = '';
