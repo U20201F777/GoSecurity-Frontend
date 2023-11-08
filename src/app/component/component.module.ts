@@ -21,6 +21,18 @@ import { PoliciaInsertarComponent } from './policia/policia-insertar/policia-ins
 import { CiudadanoComponent } from './ciudadano/ciudadano.component';
 import { CiudadanoListarComponent } from './ciudadano/ciudadano-listar/ciudadano-listar.component';
 import { CiudadanoInsertarComponent } from './ciudadano/ciudadano-insertar/ciudadano-insertar.component';
+import { ComisariaComponent } from './comisaria/comisaria.component';
+import { InsertarComisariaComponent } from './comisaria/insertar-comisaria/insertar-comisaria.component';
+import { ListarComisariaComponent } from './comisaria/listar-comisaria/listar-comisaria.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
+import { InsertarDenunciasComponent } from './denuncias/insertar-denuncias/insertar-denuncias.component';
+import { ListarDenunciasComponent } from './denuncias/listar-denuncias/listar-denuncias.component';
+import { LugarhechoComponent } from './lugarhecho/lugarhecho.component';
+import { ListarLugarhechoComponent } from './lugarhecho/listar-lugarhecho/listar-lugarhecho.component';
+import { InsertarLugarhechoComponent } from './lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
+import { UbicacioncComponent } from './ubicacionc/ubicacionc.component';
+import { ListarUbicacioncComponent } from './ubicacionc/listar-ubicacionc/listar-ubicacionc.component';
+import { InsertarUbicacioncComponent } from './ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +44,19 @@ import { CiudadanoInsertarComponent } from './ciudadano/ciudadano-insertar/ciuda
     PoliciaInsertarComponent,
     CiudadanoComponent,
     CiudadanoListarComponent,
-    CiudadanoInsertarComponent
+    CiudadanoInsertarComponent,
+    ComisariaComponent,
+    InsertarComisariaComponent,
+    ListarComisariaComponent,
+    DenunciasComponent,
+    InsertarDenunciasComponent,
+    ListarDenunciasComponent,
+    LugarhechoComponent,
+    ListarLugarhechoComponent,
+    InsertarLugarhechoComponent,
+    UbicacioncComponent,
+    ListarUbicacioncComponent,
+    InsertarUbicacioncComponent
   ],
   imports: [
     CommonModule,
