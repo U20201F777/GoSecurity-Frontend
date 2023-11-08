@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DenunciasComponent } from './components/denuncias/denuncias.component';
-import { ComisariaComponent } from './components/comisaria/comisaria.component';
-import { InsertarComisariaComponent } from './components/comisaria/insertar-comisaria/insertar-comisaria.component';
-import { InsertarUbicacioncComponent } from './components/ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
-import { InsertarDenunciasComponent } from './components/denuncias/insertar-denuncias/insertar-denuncias.component';
-import { UbicacioncComponent } from './components/ubicacionc/ubicacionc.component';
-import { LugarhechoComponent } from './components/lugarhecho/lugarhecho.component';
-import { InsertarLugarhechoComponent } from './components/lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
+import { DenunciasComponent } from './component/denuncias/denuncias.component';
+import { ComisariaComponent } from './component/comisaria/comisaria.component';
+import { InsertarComisariaComponent } from './component/comisaria/insertar-comisaria/insertar-comisaria.component';
+import { InsertarUbicacioncComponent } from './component/ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
+import { InsertarDenunciasComponent } from './component/denuncias/insertar-denuncias/insertar-denuncias.component';
+import { UbicacioncComponent } from './component/ubicacionc/ubicacionc.component';
+import { LugarhechoComponent } from './component/lugarhecho/lugarhecho.component';
+import { InsertarLugarhechoComponent } from './component/lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
 
 const routes: Routes = [
   {
