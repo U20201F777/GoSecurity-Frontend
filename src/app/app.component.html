@@ -1,10 +1,31 @@
 <mat-toolbar color="primary" *ngIf="verificar()">
   <mat-icon>menu</mat-icon>
+
+  <button mat-button [matMenuTriggerFor]="menuDenuncia">Denuncia</button>
+  <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
+  <button mat-button [matMenuTriggerFor]="menuUbicacionC">Ubicacion Comisaria</button>
+  <button mat-button [matMenuTriggerFor]="menuLugarHecho">Lugar de Hecho</button>
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
   <button mat-button [matMenuTriggerFor]="menuCiudadano">Ciudadano</button>
   <button mat-button [matMenuTriggerFor]="menuPolicia">Policia</button>
   <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 </mat-toolbar>
+
+<mat-menu #menuDenuncia="matMenu">
+  <button mat-menu-item routerLink="/Denuncia">Listar</button>
+  <button mat-menu-item routerLink="/Denuncia/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuComisaria="matMenu">
+  <button mat-menu-item routerLink="/Comisaria">Listar</button>
+  <button mat-menu-item routerLink="/Comisaria/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuUbicacionC="matMenu">
+  <button mat-menu-item routerLink="/UbicacionC">Listar</button>
+  <button mat-menu-item routerLink="/UbicacionC/insertar">Registrar</button>
+
+</mat-menu>
 
 <mat-menu #menuAyuda="matMenu">
   <button mat-menu-item routerLink="components/Ayuda/nuevo">Registrar ayuda</button>
@@ -30,6 +51,11 @@
     Rol:
     <span>{{ role }}</span>
   </button>
+
+<mat-menu #menuLugarHecho="matMenu">
+  <button mat-menu-item routerLink="/LugarHecho">Listar</button>
+  <button mat-menu-item routerLink="/LugarHecho/insertar">Registrar</button>
 </mat-menu>
+
 
 <router-outlet></router-outlet>

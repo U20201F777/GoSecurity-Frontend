@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="container" style="text-align: center">
+        <h2>Registro de Denuncia</h2>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>idDenuncias</mat-label>
+                <input matInput placeholder="Id" formControlName="idDenuncias" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Nombre de la Denuncia</mat-label>
+                <input matInput placeholder="nameDenuncias" formControlName="nameDenuncias" />
+                <mat-error *ngIf="obtenerControlCampo('nameDenuncias')?.errors?.['required']">
+                    El nombre es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field appearance="fill" class="example-full-width">
+                <input matInput placeholder="Ingrese fecha de hechos" [matDatepicker]="pickerStart"
+                    formControlName="FechaDenunciasHechos" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                <mat-datepicker #pickerStart></mat-datepicker>
+                <mat-error *ngIf="obtenerControlCampo('FechaDenunciasHechos')?.errors?.['required']">
+                    La fecha de ayuda es obligatoria.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field appearance="fill" class="example-full-width">
+                <input matInput placeholder="Ingrese fecha de registro" [matDatepicker]="pickerStart"
+                    formControlName="FechaDenunciasRegistro" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                <mat-datepicker #pickerStart></mat-datepicker>
+                <mat-error *ngIf="obtenerControlCampo('FechaDenunciasRegistro')?.errors?.['required']">
+                    La fecha de ayuda es obligatoria.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field appearance="fill" class="example-full-width">
+                <input matInput placeholder="Ingrese fecha de emision" [matDatepicker]="pickerStart"
+                    formControlName="FechaDenunciasEmision" />
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+                <mat-datepicker #pickerStart></mat-datepicker>
+                <mat-error *ngIf="obtenerControlCampo('FechaDenunciasEmision')?.errors?.['required']">
+                    La fecha de ayuda es obligatoria.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/Denuncia">
+                Cancelar
+            </button>
+
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+
+</html>

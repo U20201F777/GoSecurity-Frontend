@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container" style="text-align: center">
+    <h2>Registro de Lugar de Hecho</h2>
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>id</mat-label>
+            <input matInput placeholder="idDenunciasLugarHecho" formControlName="idDenunciasLugarHecho" />
+            <mat-error *ngIf="obtenerControlCampo('idDenunciasLugarHecho')?.errors?.['required']">
+                El id del lugar hecho es obligatoria.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre denuncia</mat-label>
+            <input matInput placeholder="nameDenunciasLugarHecho" formControlName="nameDenunciasLugarHecho" />
+            <mat-error *ngIf="obtenerControlCampo('nameDenunciasLugarHecho')?.errors?.['required']">
+                La Nombre de la denuncia es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Distrito</mat-label>
+            <input matInput placeholder="DistritoDenuncia" formControlName="DistritoDenuncia" />
+            <mat-error *ngIf="obtenerControlCampo('DistritoDenuncia')?.errors?.['required']">
+                La Distrito es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Provincia</mat-label>
+            <input matInput placeholder="ProvinciaDenuncia" formControlName="ProvinciaDenuncia" />
+            <mat-error *ngIf="obtenerControlCampo('ProvinciaDenuncia')?.errors?.['required']">
+                La Provincia es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Lugar de Denuncia</mat-label>
+            <input matInput placeholder="LugarDenuncia" formControlName="LugarDenuncia" />
+            <mat-error *ngIf="obtenerControlCampo('LugarDenuncia')?.errors?.['required']">
+                La Lugar Denuncia es obligatorio.
+            </mat-error>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/LugarHecho">
+            Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+    </form>
+</div>
+</body>
+</html>

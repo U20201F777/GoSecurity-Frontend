@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+<<<<<<< HEAD:src/app/service/ciudadano.service.ts
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Ciudadano } from '../model/Ciudadano';
 import { Subject, Observable } from 'rxjs';
+=======
+import { Denuncias } from '../model/denuncias';
+import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+>>>>>>> Angelo:src/app/service/denuncias.service.ts
 
 const base_url = environment.base
 
 @Injectable({
   providedIn: 'root'
 })
+<<<<<<< HEAD:src/app/service/ciudadano.service.ts
 export class CiudadanoService {
   private url = `${base_url}/ciudadano`;
   private listaCambio = new Subject<Ciudadano[]>();
@@ -33,6 +40,20 @@ export class CiudadanoService {
   }
   setList(listaNueva: Ciudadano[]) {
     this.listaCambio.next(listaNueva);
+=======
+export class DenunciasService {
+  private url = `${base_url}/denuncias`;
+  private ListaCambio = new Subject<Denuncias[]>();
+  constructor(private http: HttpClient) { }
+  List() {
+    return this.http.get<Denuncias[]>(this.url);
+  }
+  Insert(denuncias: Denuncias) {
+    return this.http.post(this.url, denuncias);
+  }
+  SetList(ListaNueva: Denuncias[]) {
+    this.ListaCambio.next(ListaNueva);
+>>>>>>> Angelo:src/app/service/denuncias.service.ts
   }
   getList() {
     return this.listaCambio.asObservable();
@@ -78,5 +99,8 @@ export class CiudadanoService {
           .set('Content-Type', 'application/json'),
       }
     );
+  }
+  Update(denuncias: Denuncias) {
+    return this.http.put(this.url, denuncias);
   }
 }
