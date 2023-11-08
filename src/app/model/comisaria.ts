@@ -1,3 +1,5 @@
+import { UbicacionC } from "./ubicacionC";
+
 export class Comisaria{
   idComisaria: number = 0;
 
@@ -7,4 +9,5 @@ export class Comisaria{
 
   Direccion: string = '';
 
+  idUbicacionC: UbicacionC= new UbicacionC();
 }
