@@ -17,6 +17,7 @@ export class ListarDenunciasComponent implements OnInit{
     'FechaDenunciasHechos',
     'FechaDenunciasRegistro',
     'FechaDenunciasEmision',
+    'LugarHecho',
     'accion01',
     'accion02'
   ];

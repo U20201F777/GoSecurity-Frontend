@@ -15,6 +15,9 @@ export class InsertarDenunciasComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
+  niveles: { value: string, viewValue: string }[] = 
+  [
+  ]
   constructor(private dS: DenunciasService,
     private router: Router,
     private formBuilder: FormBuilder,
@@ -29,6 +32,7 @@ export class InsertarDenunciasComponent implements OnInit {
       FechaDenunciasHechos: ['', Validators.required],
       FechaDenunciasRegistro: ['', Validators.required],
       FechaDenunciasEmision: ['', Validators.required],
+      LugarHecho: ['', Validators.required]
     });
   }
   aceptar(): void {
