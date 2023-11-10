@@ -17,6 +17,7 @@ export class ListarComisariaComponent implements OnInit{
     'NombreComisaria',
     'Telefono',
     'Direccion',
+    'UbicacionC',
     'accion01',
     'accion02'
   ];

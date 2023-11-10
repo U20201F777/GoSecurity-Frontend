@@ -41,11 +41,11 @@
             <br />
 
             <mat-form-field appearance="fill" class="example-full-width">
-                <input matInput placeholder="Ingrese fecha de registro" [matDatepicker]="pickerStart"
+                <input matInput placeholder="Ingrese fecha de registro" [matDatepicker]="pickerEnd"
                     formControlName="FechaDenunciasRegistro" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
-                <mat-datepicker #pickerStart></mat-datepicker>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+                <mat-datepicker #pickerEnd></mat-datepicker>
                 <mat-error *ngIf="obtenerControlCampo('FechaDenunciasRegistro')?.errors?.['required']">
                     La fecha de ayuda es obligatoria.
                 </mat-error>
@@ -53,11 +53,11 @@
             <br />
 
             <mat-form-field appearance="fill" class="example-full-width">
-                <input matInput placeholder="Ingrese fecha de emision" [matDatepicker]="pickerStart"
+                <input matInput placeholder="Ingrese fecha de emision" [matDatepicker]="pickerMid"
                     formControlName="FechaDenunciasEmision" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
-                <mat-datepicker #pickerStart></mat-datepicker>
+                <mat-datepicker-toggle matIconSuffix [for]="pickerMid"></mat-datepicker-toggle>
+                <mat-datepicker #pickerMid></mat-datepicker>
                 <mat-error *ngIf="obtenerControlCampo('FechaDenunciasEmision')?.errors?.['required']">
                     La fecha de ayuda es obligatoria.
                 </mat-error>
@@ -72,7 +72,7 @@
                     </mat-option>
                 </mat-select>
                 <mat-error *ngIf="obtenerControlCampo('LugarHecho')?.errors?.['required']">
-                    El id del tipo de caso es obligatorio.
+                    El campo es obligatorio.
                 </mat-error>
             </mat-form-field>
             <br />

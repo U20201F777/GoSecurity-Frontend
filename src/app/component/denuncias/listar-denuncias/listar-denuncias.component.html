@@ -56,13 +56,13 @@
 
             <ng-container matColumnDef="LugarHecho">
                 <th mat-header-cell *matHeaderCellDef>Lugar de Hecho</th>
-                <td mat-cell *matCellDef="let element">{{ element.idLugarHecho.DistritoDenuncia }}</td>
+                <td mat-cell *matCellDef="let element">{{ element.idDenunciasLugarHecho.DistritoDenuncia}}</td>
             </ng-container>
 
             <ng-container matColumnDef="accion01">
                 <th mat-header-cell *matHeaderCellDef>Acciones</th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="warn" [routerLink]="['ediciones', element.idAyuda]">
+                    <button mat-raised-button color="warn" [routerLink]="['ediciones', element.idDenuncias]">
                         Actualizar
                     </button>
                 </td>
@@ -70,7 +70,7 @@
             <ng-container matColumnDef="accion02">
                 <th mat-header-cell *matHeaderCellDef>Acciones</th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="accent" (click)="eliminar(element.idAyuda)">
+                    <button mat-raised-button color="accent" (click)="eliminar(element.idDenuncias)">
                         Eliminar
                     </button>
                 </td>

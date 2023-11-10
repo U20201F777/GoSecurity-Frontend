@@ -41,7 +41,20 @@
         <mat-label>Direccion</mat-label>
         <input matInput placeholder="Direccion" formControlName="Direccion" />
         <mat-error *ngIf="obtenerControlCampo('Direccion')?.errors?.['required']">
-          El nombre es obligatorio.
+          El campo es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label> Distrito </mat-label>
+        <mat-select [(value)]="idUbicacionCSeleccionado" formControlName="UbicacionC">
+          <mat-option *ngFor="let p of  listaUbicacionC" [value]="p.idUbicacionC">
+            {{ p.Distrito }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="obtenerControlCampo('UbicacionC')?.errors?.['required']">
+          escoga el espacio requerido es obligatorio.
         </mat-error>
       </mat-form-field>
       <br />

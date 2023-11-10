@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Comisaria } from 'src/app/model/comisaria';
+import { UbicacionC } from 'src/app/model/ubicacionC';
 import { ComisariaService } from 'src/app/service/comisaria.service';
 
 @Component({
@@ -21,6 +22,8 @@ export class InsertarComisariaComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
+  listaUbicacionC: UbicacionC[] = [];
+  idUbicacionCSeleccionado: number = 0
   constructor(
     private cS: ComisariaService,
     private router: Router,
@@ -36,6 +39,7 @@ export class InsertarComisariaComponent implements OnInit {
       Nombre_c: ['', Validators.required],
       Telefono: ['', Validators.required],
       Direccion: ['', Validators.required],
+      UbicacionC: ['', Validators.required],
     });
   }
   aceptar(): void {
@@ -44,7 +48,7 @@ export class InsertarComisariaComponent implements OnInit {
       this.comisaria.Nombre_c = this.form.value.Nombre_c;
       this.comisaria.Telefono = this.form.value.Telefono;
       this.comisaria.Direccion = this.form.value.Direccion;
-
+      this.comisaria.idUbicacionC.Distrito = this.form.value.UbicacionC;
       if (this.edicion) {
         this.cS.Update(this.comisaria).subscribe(() => {
           this.cS.List().subscribe((data) => {
