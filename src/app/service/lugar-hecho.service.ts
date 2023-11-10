@@ -1,8 +1,8 @@
+import { LugarHecho } from 'src/app/model/lugarHecho';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { LugarHecho } from '../model/lugarHecho';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url = environment.base
 
@@ -15,10 +15,31 @@ export class LugarHechoService {
   constructor(private http:HttpClient) { }
 
   List() {
-    return this.http.get<LugarHecho[]>(this.url);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<LugarHecho[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   Insert(lugarHecho: LugarHecho) {
-    return this.http.post(this.url, lugarHecho);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, lugarHecho, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+  ListId(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<LugarHecho>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   SetList(ListaNueva: LugarHecho[]) {
     this.ListaCambio.next(ListaNueva);
@@ -26,13 +47,22 @@ export class LugarHechoService {
   GetList() {
     return this.ListaCambio.asObservable();
   }
-  Delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
-  }
   Update(lugarHecho: LugarHecho) {
-    return this.http.put(this.url, lugarHecho);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, lugarHecho, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
-  ListId(id: number) {
-    return this.http.get<LugarHecho>(`${this.url}/${id}`);
+  Delete(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }

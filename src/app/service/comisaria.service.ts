@@ -2,7 +2,7 @@ import { Comisaria } from './../model/comisaria';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url = environment.base
 
@@ -14,10 +14,31 @@ export class ComisariaService {
   private ListaCambio = new Subject<Comisaria[]>();
   constructor(private http: HttpClient) { }
   List() {
-    return this.http.get<Comisaria[]>(this.url);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Comisaria[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   Insert(comisaria: Comisaria) {
-    return this.http.post(this.url, comisaria);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, comisaria, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  } 
+  ListId(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Comisaria>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   SetList(ListaNueva: Comisaria[]) {
     this.ListaCambio.next(ListaNueva);
@@ -25,10 +46,22 @@ export class ComisariaService {
   GetList() {
     return this.ListaCambio.asObservable();
   }
-  Delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
-  }
   Update(comisaria: Comisaria) {
-    return this.http.put(this.url, comisaria);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, comisaria, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+  Delete(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }
