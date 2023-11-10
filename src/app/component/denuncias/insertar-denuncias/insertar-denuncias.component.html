@@ -64,6 +64,19 @@
             </mat-form-field>
             <br />
 
+            <mat-form-field class="example-full-width">
+                <mat-label> Lugar de Hecho</mat-label>
+                <mat-select [(value)]="idLugarHechoSeleccionado" formControlName="LugarHecho">
+                    <mat-option *ngFor="let p of  listaLugarHecho" [value]="p.idDenunciasLugarHecho">
+                        {{ p.DistritoDenuncia }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="obtenerControlCampo('LugarHecho')?.errors?.['required']">
+                    El id del tipo de caso es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
             <button mat-raised-button color="primary">Aceptar</button>
             <button mat-raised-button color="warn" routerLink="/Denuncia">
                 Cancelar

@@ -1,3 +1,4 @@
+import { LugarHecho } from 'src/app/model/lugarHecho';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -15,9 +16,8 @@ export class InsertarDenunciasComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
-  niveles: { value: string, viewValue: string }[] = 
-  [
-  ]
+  listaLugarHecho: LugarHecho[] = [];
+  idLugarHechoSeleccionado: number = 0
   constructor(private dS: DenunciasService,
     private router: Router,
     private formBuilder: FormBuilder,
@@ -41,7 +41,8 @@ export class InsertarDenunciasComponent implements OnInit {
       this.denuncia.nameDenuncias = this.form.value.nameDenuncias;
       this.denuncia.FechaDenunciasHechos = this.form.value.FechaDenunciasHechos;
       this.denuncia.FechaDenunciasRegistro = this.form.value.FechaDenunciasRegistro;
-      this.denuncia.FechaDenunciasEmision = this.form.value.FechaDenunciasEmision;
+      this.denuncia.FechaDenunciasEmision = this.form.value.FechaDenunciasEmision; 
+      this.denuncia.idLugarHecho.idDenunciasLugarHecho = this.form.value.LugarHecho;
 
       if (this.edicion) {
         this.dS.Update(this.denuncia).subscribe(() => {
