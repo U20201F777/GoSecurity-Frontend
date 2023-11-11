@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comisaria',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./comisaria.component.css']
 })
 export class ComisariaComponent {
-
+  constructor(public route: ActivatedRoute) { };
 }

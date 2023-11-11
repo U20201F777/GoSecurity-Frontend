@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ubicacionc',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./ubicacionc.component.css']
 })
 export class UbicacioncComponent {
-
+  constructor(public route: ActivatedRoute) { };
 }
