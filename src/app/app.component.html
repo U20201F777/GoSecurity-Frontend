@@ -11,14 +11,14 @@
   <button mat-menu-item routerLink="components/Ayuda">Listar ayuda</button>
 </mat-menu>
 
-<mat-menu #menuPolicia="matMenu">
+<mat-menu #menuCiudadano="matMenu">
   <button mat-menu-item routerLink="components/ciudadano/nuevo" *ngIf="role == 'ADMIN'">Registrar ciudadano</button>
   <button mat-menu-item routerLink="components/ciudadano">Listar Ciudadano</button>
 </mat-menu>
 
-<mat-menu #menuCiudadano="matMenu">
+<mat-menu #menuPolicia="matMenu">
   <button mat-menu-item routerLink="components/policia/nuevo" *ngIf="role == 'ADMIN'">Registrar Policia</button>
-  <button mat-menu-item routerLink="components/policia">Policia</button>
+  <button mat-menu-item routerLink="components/policia">Listar Policia</button>
 </mat-menu>
 
 <mat-menu #menuSalir="matMenu">
