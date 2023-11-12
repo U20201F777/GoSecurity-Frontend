@@ -37,7 +37,7 @@ export class InsertarLugarhechoComponent implements OnInit {
     });
   }
 
-  aceptar(): void {
+  aceptar() {
     if (this.form.valid) {
       this.lugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
       this.lugarHecho.nameDenunciasLugarHecho = this.form.value.nameDenunciasLugarHecho;

@@ -79,7 +79,7 @@ export class InsertarDenunciasComponent implements OnInit {
       this.listaComisaria = data;
     });
   }
-  aceptar(): void {
+  aceptar(){
     if (this.form.valid) {
       this.denuncia.idDenuncias = this.form.value.idDenuncias;
       this.denuncia.nameDenuncias = this.form.value.nameDenuncias;

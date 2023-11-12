@@ -44,7 +44,7 @@ export class InsertarComisariaComponent implements OnInit {
     });
   }
 
-  aceptar(): void {
+  aceptar() {
     if (this.form.valid) {
       this.comisaria.idComisaria = this.form.value.idComisaria;
       this.comisaria.nombre_c = this.form.value.nombre_c;
