@@ -15,6 +15,9 @@ import { Comisaria } from 'src/app/model/comisaria';
 import { Ciudadano } from 'src/app/model/Ciudadano';
 import { DenunciasTipificacion } from 'src/app/model/tipificacion';
 import * as moment from 'moment';
+import { TipificacionService } from 'src/app/service/tipificacion.service';
+import { CiudadanoService } from 'src/app/service/ciudadano.service';
+import { ComisariaService } from 'src/app/service/comisaria.service';
 
 @Component({
   selector: 'app-insertar-denuncias',
@@ -39,6 +42,9 @@ export class InsertarDenunciasComponent implements OnInit {
   constructor(
     private dS: DenunciasService,
     private lhS: LugarHechoService,
+    private tS: TipificacionService,
+    private ciS:CiudadanoService,
+    private coS:ComisariaService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute
@@ -62,6 +68,15 @@ export class InsertarDenunciasComponent implements OnInit {
     });
     this.lhS.List().subscribe((data) => {
       this.listaLugarHecho = data;
+    });
+    this.tS.list().subscribe((data) => {
+      this.listaTipificacion = data;
+    });
+    this.ciS.list().subscribe((data) => {
+      this.listaCiudadano = data;
+    });
+    this.coS.List().subscribe((data) => {
+      this.listaComisaria = data;
     });
   }
   aceptar(): void {

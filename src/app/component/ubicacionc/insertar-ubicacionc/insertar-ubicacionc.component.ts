@@ -32,7 +32,7 @@ export class InsertarUbicacioncComponent implements OnInit {
       idUbicacionC: ['',],
       departamento: ['', Validators.required],
       ciudad: ['', Validators.required],
-      distrito: ['', [Validators.required]],
+      distrito: ['', Validators.required],
       direccion: ['', Validators.required],
     });
   }
