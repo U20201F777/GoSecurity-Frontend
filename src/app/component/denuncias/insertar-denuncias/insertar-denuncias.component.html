@@ -30,11 +30,11 @@
 
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de hechos" [matDatepicker]="pickerStart"
-                    formControlName="FechaDenunciasHechos" />
+                    formControlName="fechaDenunciasHechos" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
                 <mat-datepicker #pickerStart></mat-datepicker>
-                <mat-error *ngIf="obtenerControlCampo('FechaDenunciasHechos')?.errors?.['required']">
+                <mat-error *ngIf="obtenerControlCampo('fechaDenunciasHechos')?.errors?.['required']">
                     La fecha de ayuda es obligatoria.
                 </mat-error>
             </mat-form-field>
@@ -42,11 +42,11 @@
 
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de registro" [matDatepicker]="pickerEnd"
-                    formControlName="FechaDenunciasRegistro" />
+                    formControlName="fechaDenunciasRegistro" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
                 <mat-datepicker #pickerEnd></mat-datepicker>
-                <mat-error *ngIf="obtenerControlCampo('FechaDenunciasRegistro')?.errors?.['required']">
+                <mat-error *ngIf="obtenerControlCampo('fechaDenunciasRegistro')?.errors?.['required']">
                     La fecha de ayuda es obligatoria.
                 </mat-error>
             </mat-form-field>
@@ -54,11 +54,11 @@
 
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de emision" [matDatepicker]="pickerMid"
-                    formControlName="FechaDenunciasEmision" />
+                    formControlName="fechaDenunciasEmision" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerMid"></mat-datepicker-toggle>
                 <mat-datepicker #pickerMid></mat-datepicker>
-                <mat-error *ngIf="obtenerControlCampo('FechaDenunciasEmision')?.errors?.['required']">
+                <mat-error *ngIf="obtenerControlCampo('fechaDenunciasEmision')?.errors?.['required']">
                     La fecha de ayuda es obligatoria.
                 </mat-error>
             </mat-form-field>
@@ -66,12 +66,51 @@
 
             <mat-form-field class="example-full-width">
                 <mat-label> Lugar de Hecho</mat-label>
-                <mat-select [(value)]="idLugarHechoSeleccionado" formControlName="LugarHecho">
+                <mat-select [(value)]="idLugarHechoSeleccionado" formControlName="idDenunciasLugarHecho">
                     <mat-option *ngFor="let p of  listaLugarHecho" [value]="p.idDenunciasLugarHecho">
                         {{ p.idDenunciasLugarHecho }}
                     </mat-option>
                 </mat-select>
-                <mat-error *ngIf="obtenerControlCampo('LugarHecho')?.errors?.['required']">
+                <mat-error *ngIf="obtenerControlCampo('idDenunciasLugarHecho')?.errors?.['required']">
+                    El campo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label> Lugar de Hecho</mat-label>
+                <mat-select [(value)]="idTipificacionSeleccionado" formControlName="idDenunciasTipificacion">
+                    <mat-option *ngFor="let p of  listaTipificacion" [value]="p.idDenunciasTipificacion">
+                        {{ p.idDenunciasTipificacion }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="obtenerControlCampo('idDenunciasTipificacion')?.errors?.['required']">
+                    El campo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label> Lugar de Hecho</mat-label>
+                <mat-select [(value)]="idCiudadanoSeleccionado" formControlName="idCiudadano">
+                    <mat-option *ngFor="let p of  listaCiudadano" [value]="p.idCiudadano">
+                        {{ p.idCiudadano }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="obtenerControlCampo('idCiudadano')?.errors?.['required']">
+                    El campo es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label> Lugar de Hecho</mat-label>
+                <mat-select [(value)]=" idComisariaSeleccionado" formControlName="idComisaria">
+                    <mat-option *ngFor="let p of  listaComisaria" [value]="p.idComisaria">
+                        {{ p.idComisaria }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="obtenerControlCampo('idComisaria')?.errors?.['required']">
                     El campo es obligatorio.
                 </mat-error>
             </mat-form-field>

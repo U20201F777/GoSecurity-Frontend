@@ -14,10 +14,10 @@ export class ListarDenunciasComponent implements OnInit {
   displayedColumns: string[] = [
     'idDenuncias',
     'nameDenuncias',
-    'FechaDenunciasHechos',
-    'FechaDenunciasRegistro',
-    'FechaDenunciasEmision',
-    'LugarHecho',
+    'fechaDenunciasHechos',
+    'fechaDenunciasRegistro',
+    'fechaDenunciasEmision',
+    'lugarHecho',
     'accion01',
     'accion02'
   ];

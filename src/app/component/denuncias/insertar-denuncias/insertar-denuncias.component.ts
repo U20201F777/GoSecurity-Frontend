@@ -11,6 +11,9 @@ import { DenunciasLugarHecho} from 'src/app/model/lugarHecho';
 import { DenunciasService } from 'src/app/service/denuncias.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
+import { Comisaria } from 'src/app/model/comisaria';
+import { Ciudadano } from 'src/app/model/Ciudadano';
+import { DenunciasTipificacion } from 'src/app/model/tipificacion';
 
 @Component({
   selector: 'app-insertar-denuncias',
@@ -23,7 +26,13 @@ export class InsertarDenunciasComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
+  listaCiudadano: Ciudadano[] = [];
+  listaComisaria: Comisaria[] = [];
+  listaTipificacion: DenunciasTipificacion[] = [];
   listaLugarHecho: DenunciasLugarHecho[] = [];
+  idCiudadanoSeleccionado: number = 0;
+  idComisariaSeleccionado: number = 0;
+  idTipificacionSeleccionado: number = 0;
   idLugarHechoSeleccionado: number = 0;
   constructor(
     private dS: DenunciasService,
@@ -41,10 +50,13 @@ export class InsertarDenunciasComponent implements OnInit {
     this.form = this.formBuilder.group({
       idDenuncias: [''],
       nameDenuncias: ['', Validators.required],
-      FechaDenunciasHechos: ['', Validators.required],
-      FechaDenunciasRegistro: ['', Validators.required],
-      FechaDenunciasEmision: ['', Validators.required],
-      LugarHecho: ['', Validators.required],
+      fechaDenunciasHechos: ['', Validators.required],
+      fechaDenunciasRegistro: ['', Validators.required],
+      fechaDenunciasEmision: ['', Validators.required],
+      idDenunciasLugarHecho: ['', Validators.required],
+      idDenunciasTipificacion: ['', Validators.required],
+      idCiudadano: ['', Validators.required],
+      idComisaria: ['', Validators.required],
     });
     this.lhS.List().subscribe((data) => {
       this.listaLugarHecho = data;
@@ -57,7 +69,10 @@ export class InsertarDenunciasComponent implements OnInit {
       this.denuncia.fechaDenunciasHechos = this.form.value.fechaDenunciasHechos;
       this.denuncia.fechaDenunciasRegistro = this.form.value.fechaDenunciasRegistro;
       this.denuncia.fechaDenunciasEmision = this.form.value.fechaDenunciasEmision;
-      this.denuncia.idLugarHecho.idDenunciasLugarHecho = this.form.value.LugarHecho;
+      this.denuncia.idDenunciasLugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
+      this.denuncia.idDenunciasTipificacion.idDenunciasTipificacion = this.form.value.idDenunciasTipificacion;
+      this.denuncia.idCiudadano.idCiudadano = this.form.value.idCiudadano;
+      this.denuncia.idComisaria.idComisaria = this.form.value.idComisaria;
 
       if (this.edicion) {
         this.dS.Update(this.denuncia).subscribe(() => {
@@ -91,10 +106,13 @@ export class InsertarDenunciasComponent implements OnInit {
         this.form = new FormGroup({
           idDenuncias: new FormControl(data.idDenuncias),
           nameDenuncias: new FormControl(data.nameDenuncias),
-          FechaDenunciasHechos: new FormControl(data.fechaDenunciasHechos),
-          FechaDenunciasRegistro: new FormControl(data.fechaDenunciasRegistro),
-          FechaDenunciasEmision: new FormControl(data.fechaDenunciasEmision),
-          LugarHecho: new FormControl(data.idLugarHecho.idDenunciasLugarHecho),
+          fechaDenunciasHechos: new FormControl(data.fechaDenunciasHechos),
+          fechaDenunciasRegistro: new FormControl(data.fechaDenunciasRegistro),
+          fechaDenunciasEmision: new FormControl(data.fechaDenunciasEmision),
+          idDenunciasLugarHecho: new FormControl(data.idDenunciasLugarHecho.idDenunciasLugarHecho),
+          idDenunciasTipificacion: new FormControl(data.idDenunciasTipificacion.idDenunciasTipificacion),
+          idCiudadano: new FormControl(data.idCiudadano.idCiudadano),
+          idComisaria: new FormControl(data.idComisaria.idComisaria),
         });
       });
     }

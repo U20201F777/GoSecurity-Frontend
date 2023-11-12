@@ -9,8 +9,8 @@ export class Denuncias {
   fechaDenunciasHechos: Date = new Date(Date.now());
   fechaDenunciasRegistro: Date = new Date(Date.now());
   fechaDenunciasEmision: Date = new Date(Date.now());
-  idLugarHecho: DenunciasLugarHecho = new DenunciasLugarHecho();
-  idTipificacion: DenunciasTipificacion = new DenunciasTipificacion();
+  idDenunciasLugarHecho: DenunciasLugarHecho = new DenunciasLugarHecho();
+  idDenunciasTipificacion: DenunciasTipificacion = new DenunciasTipificacion();
   idCiudadano: Ciudadano = new Ciudadano();
   idComisaria: Comisaria = new Comisaria(); 
 }
