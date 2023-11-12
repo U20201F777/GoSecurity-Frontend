@@ -68,7 +68,7 @@
                 <mat-label> Lugar de Hecho</mat-label>
                 <mat-select [(value)]="idLugarHechoSeleccionado" formControlName="LugarHecho">
                     <mat-option *ngFor="let p of  listaLugarHecho" [value]="p.idDenunciasLugarHecho">
-                        {{ p.DistritoDenuncia }}
+                        {{ p.idDenunciasLugarHecho }}
                     </mat-option>
                 </mat-select>
                 <mat-error *ngIf="obtenerControlCampo('LugarHecho')?.errors?.['required']">
@@ -78,7 +78,7 @@
             <br />
 
             <button mat-raised-button color="primary">Aceptar</button>
-            <button mat-raised-button color="warn" routerLink="/Denuncia">
+            <button mat-raised-button color="warn" routerLink="/components/Denuncia">
                 Cancelar
             </button>
 

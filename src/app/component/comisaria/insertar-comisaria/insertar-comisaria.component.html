@@ -1,71 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container" style="text-align: center">
-        <h2>Registro de Comisaria</h2>
+      <h2>Registro de Comisaria</h2>
 
-        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>Id. Comisaria</mat-label>
+          <input matInput placeholder="Id" formControlName="idComisaria" />
+        </mat-form-field>
+        <br />
 
-            <mat-form-field class="example-full-width" *ngIf="edicion">
-                <mat-label>idComisaria</mat-label>
-                <input matInput placeholder="Id" formControlName="idComisaria" />
-            </mat-form-field>
-            <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre Comisaria</mat-label>
+          <input matInput placeholder="Nombre_c" formControlName="Nombre_c" />
+          <mat-error
+            *ngIf="obtenerControlCampo('Nombre_c')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
 
-            <mat-form-field class="example-full-width">
-                <mat-label>Nombre Comisaria</mat-label>
-                <input matInput placeholder="Nombre_c" formControlName="Nombre_c" />
-                <mat-error *ngIf="obtenerControlCampo('Nombre_c')?.errors?.['required']">
-                    El nombre es obligatorio.
-                </mat-error>
-            </mat-form-field>
-            <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Telefono</mat-label>
+          <input matInput placeholder="Telefono" formControlName="Telefono" />
+          <mat-error
+            *ngIf="obtenerControlCampo('Telefono')?.errors?.['required']"
+          >
+            El Telefono es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
 
-            <mat-form-field class="example-full-width">
-                <mat-label>Telefono</mat-label>
-                <input matInput placeholder="Telefono" formControlName="Telefono" />
-                <mat-error *ngIf="obtenerControlCampo('Telefono')?.errors?.['required']">
-                    El Telefono es obligatorio.
-                </mat-error>
-            </mat-form-field>
-            <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Direccion</mat-label>
+          <input matInput placeholder="Direccion" formControlName="Direccion" />
+          <mat-error
+            *ngIf="obtenerControlCampo('Direccion')?.errors?.['required']"
+          >
+            El campo es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
 
-            <mat-form-field class="example-full-width">
-                <mat-label>Direccion</mat-label>
-                <input matInput placeholder="Direccion" formControlName="Direccion" />
-                <mat-error *ngIf="obtenerControlCampo('Direccion')?.errors?.['required']">
-                    El campo es obligatorio.
-                </mat-error>
-            </mat-form-field>
-            <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Seleccione la Ubicacion de la comisaria</mat-label>
+          <mat-select
+            [(value)]="idUbicacionCSeleccionado"
+            formControlName="idUbicacionC"
+          >
+            <mat-option
+              *ngFor="let p of listaUbicacionC"
+              [value]="p.idUbicacionC"
+            >
+              {{ p.idUbicacionC }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('UbicacionC')?.errors?.['required']"
+          >
+            escoga el espacio requerido es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
 
-            <mat-form-field class="example-full-width">
-                <mat-label> Distrito </mat-label>
-                <mat-select [(value)]="idUbicacionCSeleccionado" formControlName="UbicacionC">
-                    <mat-option *ngFor="let p of  listaUbicacionC" [value]="p.idUbicacionC">
-                        {{ p.Distrito }}
-                    </mat-option>
-                </mat-select>
-                <mat-error *ngIf="obtenerControlCampo('UbicacionC')?.errors?.['required']">
-                    escoga el espacio requerido es obligatorio.
-                </mat-error>
-            </mat-form-field>
-            <br />
-
-            <button mat-raised-button color="primary">Aceptar</button>
-            <button mat-raised-button color="warn" routerLink="/Comisaria">
-                Cancelar
-            </button>
-            <p>{{ mensaje }}</p>
-        </form>
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button
+          mat-raised-button
+          color="warn"
+          routerLink="/components/Comisaria"
+        >
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
     </div>
-</body>
-
+  </body>
 </html>

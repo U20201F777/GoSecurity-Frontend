@@ -1,14 +1,21 @@
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Denuncias } from 'src/app/model/denuncias';
 import { LugarHecho } from 'src/app/model/lugarHecho';
 import { DenunciasService } from 'src/app/service/denuncias.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 
 @Component({
   selector: 'app-insertar-denuncias',
   templateUrl: './insertar-denuncias.component.html',
-  styleUrls: ['./insertar-denuncias.component.css']
+  styleUrls: ['./insertar-denuncias.component.css'],
 })
 export class InsertarDenunciasComponent implements OnInit {
   form: FormGroup = new FormGroup({});
@@ -17,14 +24,19 @@ export class InsertarDenunciasComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false;
   listaLugarHecho: LugarHecho[] = [];
-  idLugarHechoSeleccionado: number = 0
-  constructor(private dS: DenunciasService,
+  idLugarHechoSeleccionado: number = 0;
+  constructor(
+    private dS: DenunciasService,
+    private lhS: LugarHechoService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
     });
     this.form = this.formBuilder.group({
       idDenuncias: [''],
@@ -32,7 +44,10 @@ export class InsertarDenunciasComponent implements OnInit {
       FechaDenunciasHechos: ['', Validators.required],
       FechaDenunciasRegistro: ['', Validators.required],
       FechaDenunciasEmision: ['', Validators.required],
-      LugarHecho: ['', Validators.required]
+      LugarHecho: ['', Validators.required],
+    });
+    this.lhS.List().subscribe((data) => {
+      this.listaLugarHecho = data;
     });
   }
   aceptar(): void {
@@ -57,7 +72,7 @@ export class InsertarDenunciasComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['Denuncia']);
+      this.router.navigate(['/components/Denuncia']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
@@ -70,4 +85,18 @@ export class InsertarDenunciasComponent implements OnInit {
     }
     return control;
   }
- }
+  init() {
+    if (this.edicion) {
+      this.dS.ListId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idDenuncias: new FormControl(data.idDenuncias),
+          nameDenuncias: new FormControl(data.nameDenuncias),
+          FechaDenunciasHechos: new FormControl(data.FechaDenunciasHechos),
+          FechaDenunciasRegistro: new FormControl(data.FechaDenunciasRegistro),
+          FechaDenunciasEmision: new FormControl(data.FechaDenunciasEmision),
+          LugarHecho: new FormControl(data.idLugarHecho.idDenunciasLugarHecho),
+        });
+      });
+    }
+  }
+}

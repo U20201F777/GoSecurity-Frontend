@@ -55,7 +55,7 @@ export class InsertarLugarhechoComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['LugarHecho']);
+      this.router.navigate(['/components/LugarHecho']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

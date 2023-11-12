@@ -53,7 +53,7 @@ export class InsertarUbicacioncComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['UbicacionC']);
+      this.router.navigate(['/components/UbicacionC']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
