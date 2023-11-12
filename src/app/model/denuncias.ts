@@ -1,4 +1,4 @@
-import { LugarHecho } from "./lugarHecho";
+import { DenunciasLugarHecho } from "./lugarHecho";
 
 export class Denuncias {
   idDenuncias: number = 0;
@@ -6,5 +6,5 @@ export class Denuncias {
   FechaDenunciasHechos: Date = new Date(Date.now());
   FechaDenunciasRegistro: Date = new Date(Date.now());
   FechaDenunciasEmision: Date = new Date(Date.now());
-  idLugarHecho: LugarHecho = new LugarHecho();
+  idLugarHecho: DenunciasLugarHecho = new DenunciasLugarHecho();
 }

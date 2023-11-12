@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { LugarHecho } from 'src/app/model/lugarHecho';
+import { DenunciasLugarHecho } from 'src/app/model/lugarHecho';
 import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 export class InsertarLugarhechoComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
-  lugarHecho: LugarHecho = new LugarHecho();
+  lugarHecho: DenunciasLugarHecho = new DenunciasLugarHecho();
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
@@ -39,9 +39,9 @@ export class InsertarLugarhechoComponent implements OnInit {
     if (this.form.valid) {
       this.lugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
       this.lugarHecho.nameDenunciasLugarHecho = this.form.value.nameDenunciasLugarHecho;
-      this.lugarHecho.DistritoDenuncia = this.form.value.DistritoDenuncia;
-      this.lugarHecho.ProvinciaDenuncia = this.form.value.ProvinciaDenuncia;
-      this.lugarHecho.LugarDenuncia = this.form.value.LugarDenuncia;
+      this.lugarHecho.distritoDenuncia = this.form.value.DistritoDenuncia;
+      this.lugarHecho.provinciaDenuncia = this.form.value.ProvinciaDenuncia;
+      this.lugarHecho.lugarDenuncia = this.form.value.LugarDenuncia;
       if (this.edicion) {
         this.lS.Update(this.lugarHecho).subscribe(() => {
           this.lS.List().subscribe((data) => {
@@ -73,9 +73,9 @@ export class InsertarLugarhechoComponent implements OnInit {
         this.form = new FormGroup({
           idDenunciasLugarHecho: new FormControl(data.idDenunciasLugarHecho),
           nameDenunciasLugarHecho: new FormControl(data.nameDenunciasLugarHecho),
-          DistritoDenuncia: new FormControl(data.DistritoDenuncia),
-          ProvinciaDenuncia: new FormControl(data.ProvinciaDenuncia),
-          LugarDenuncia: new FormControl(data.LugarDenuncia),
+          DistritoDenuncia: new FormControl(data.distritoDenuncia),
+          ProvinciaDenuncia: new FormControl(data.provinciaDenuncia),
+          LugarDenuncia: new FormControl(data.lugarDenuncia),
         });
       });
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { LugarHecho } from 'src/app/model/lugarHecho';
+import { DenunciasLugarHecho } from 'src/app/model/lugarHecho';
 import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
   styleUrls: ['./listar-lugarhecho.component.css']
 })
 export class ListarLugarhechoComponent implements OnInit {
-  dataSource: MatTableDataSource<LugarHecho> = new MatTableDataSource();
+  dataSource: MatTableDataSource<DenunciasLugarHecho> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idDenunciasLugarHecho',
     'nameDenunciasLugarHecho',

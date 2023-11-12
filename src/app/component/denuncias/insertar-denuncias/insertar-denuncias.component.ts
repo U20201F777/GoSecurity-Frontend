@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Denuncias } from 'src/app/model/denuncias';
-import { LugarHecho } from 'src/app/model/lugarHecho';
+import { DenunciasLugarHecho} from 'src/app/model/lugarHecho';
 import { DenunciasService } from 'src/app/service/denuncias.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
@@ -23,7 +23,7 @@ export class InsertarDenunciasComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
-  listaLugarHecho: LugarHecho[] = [];
+  listaLugarHecho: DenunciasLugarHecho[] = [];
   idLugarHechoSeleccionado: number = 0;
   constructor(
     private dS: DenunciasService,
