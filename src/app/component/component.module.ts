@@ -33,6 +33,15 @@ import { InsertarLugarhechoComponent } from './lugarhecho/insertar-lugarhecho/in
 import { UbicacioncComponent } from './ubicacionc/ubicacionc.component';
 import { ListarUbicacioncComponent } from './ubicacionc/listar-ubicacionc/listar-ubicacionc.component';
 import { InsertarUbicacioncComponent } from './ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
+import { MarcaComponent } from './marca/marca.component';
+import { ModeloComponent } from './modelo/modelo.component';
+import { PertenenciaComponent } from './pertenencia/pertenencia.component';
+import { ListarPertenenciaComponent } from './pertenencia/listar-pertenencia/listar-pertenencia.component';
+import { InsertarPertenenciaComponent } from './pertenencia/insertar-pertenencia/insertar-pertenencia.component';
+import { ListarModeloComponent } from './modelo/listar-modelo/listar-modelo.component';
+import { InsertarModeloComponent } from './modelo/insertar-modelo/insertar-modelo.component';
+import { ListarMarcaComponent } from './marca/listar-marca/listar-marca.component';
+import { InsertarMarcaComponent } from './marca/insertar-marca/insertar-marca.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +65,16 @@ import { InsertarUbicacioncComponent } from './ubicacionc/insertar-ubicacionc/in
     InsertarLugarhechoComponent,
     UbicacioncComponent,
     ListarUbicacioncComponent,
-    InsertarUbicacioncComponent
+    InsertarUbicacioncComponent,
+    MarcaComponent,
+    ModeloComponent,
+    PertenenciaComponent,
+    ListarPertenenciaComponent,
+    InsertarPertenenciaComponent,
+    ListarModeloComponent,
+    InsertarModeloComponent,
+    ListarMarcaComponent,
+    InsertarMarcaComponent
   ],
   imports: [
     CommonModule,

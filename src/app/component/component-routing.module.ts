@@ -14,6 +14,12 @@ import { InsertarUbicacioncComponent } from './ubicacionc/insertar-ubicacionc/in
 import { UbicacioncComponent } from './ubicacionc/ubicacionc.component';
 import { LugarhechoComponent } from './lugarhecho/lugarhecho.component';
 import { InsertarLugarhechoComponent } from './lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
+import { MarcaComponent } from './marca/marca.component';
+import { InsertarMarcaComponent } from './marca/insertar-marca/insertar-marca.component';
+import { ModeloComponent } from './modelo/modelo.component';
+import { InsertarModeloComponent } from './modelo/insertar-modelo/insertar-modelo.component';
+import { PertenenciaComponent } from './pertenencia/pertenencia.component';
+import { InsertarPertenenciaComponent } from './pertenencia/insertar-pertenencia/insertar-pertenencia.component';
 
 const routes: Routes = [
   {
@@ -72,6 +78,29 @@ const routes: Routes = [
       { path: 'ediciones/id ', component: InsertarLugarhechoComponent },
     ],
   },
+  {
+    path: 'PertenenciaMarca',
+    component: MarcaComponent,
+    children: [
+    { path: 'insertar', component: InsertarMarcaComponent },
+    { path: 'ediciones/id ', component: InsertarMarcaComponent },],
+  },
+
+  {
+    path: 'PertenenciaModelo',
+    component: ModeloComponent,
+    children: [
+    { path: 'insertar', component: InsertarModeloComponent },
+    { path: 'ediciones/id ', component: InsertarModeloComponent },],
+  },
+  {
+    path: 'Pertenencia',
+    component: PertenenciaComponent,
+    children: [
+      { path: 'insertar', component: InsertarPertenenciaComponent },
+      { path: 'ediciones/id ', component: InsertarPertenenciaComponent },
+    ],
+  }
 ];
 
 @NgModule({
