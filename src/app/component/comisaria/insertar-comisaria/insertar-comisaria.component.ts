@@ -24,7 +24,7 @@ export class InsertarComisariaComponent implements OnInit {
     private ucS: UbicacionCService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) { }
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
