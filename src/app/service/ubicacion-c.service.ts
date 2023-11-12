@@ -14,7 +14,6 @@ export class UbicacionCService {
    private url = `${base_url}/UbicacionC`;
   private ListaCambio = new Subject<UbicacionC[]>();
   constructor(private http:HttpClient) { }
-
   List() {
     let token = sessionStorage.getItem('token');
 
