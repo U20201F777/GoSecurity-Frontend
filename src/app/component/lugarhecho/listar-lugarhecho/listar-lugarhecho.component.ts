@@ -14,9 +14,9 @@ export class ListarLugarhechoComponent implements OnInit {
   displayedColumns: string[] = [
     'idDenunciasLugarHecho',
     'nameDenunciasLugarHecho',
-    'DistritoDenuncia',
-    'ProvinciaDenuncia',
-    'LugarDenuncia',
+    'distritoDenuncia',
+    'provinciaDenuncia',
+    'lugarDenuncia',
     'accion01',
     'accion02',
   ];

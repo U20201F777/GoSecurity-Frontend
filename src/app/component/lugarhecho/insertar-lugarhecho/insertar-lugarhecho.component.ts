@@ -31,9 +31,9 @@ export class InsertarLugarhechoComponent implements OnInit {
     this.form = this.formBuilder.group({
       idDenunciasLugarHecho: [''],
       nameDenunciasLugarHecho: ['', Validators.required],
-      DistritoDenuncia: ['', Validators.required],
-      ProvinciaDenuncia: ['', Validators.required],
-      LugarDenuncia: ['', Validators.required],
+      distritoDenuncia: ['', Validators.required],
+      provinciaDenuncia: ['', Validators.required],
+      lugarDenuncia: ['', Validators.required],
     });
   }
 
@@ -75,9 +75,9 @@ export class InsertarLugarhechoComponent implements OnInit {
         this.form = new FormGroup({
           idDenunciasLugarHecho: new FormControl(data.idDenunciasLugarHecho),
           nameDenunciasLugarHecho: new FormControl(data.nameDenunciasLugarHecho),
-          DistritoDenuncia: new FormControl(data.distritoDenuncia),
-          ProvinciaDenuncia: new FormControl(data.provinciaDenuncia),
-          LugarDenuncia: new FormControl(data.lugarDenuncia),
+          distritoDenuncia: new FormControl(data.distritoDenuncia),
+          provinciaDenuncia: new FormControl(data.provinciaDenuncia),
+          lugarDenuncia: new FormControl(data.lugarDenuncia),
         });
       });
     }
