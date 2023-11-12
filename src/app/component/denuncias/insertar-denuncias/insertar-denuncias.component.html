@@ -78,7 +78,7 @@
             <br />
 
             <mat-form-field class="example-full-width">
-                <mat-label> Lugar de Hecho</mat-label>
+                <mat-label> Tipificacion </mat-label>
                 <mat-select [(value)]="idTipificacionSeleccionado" formControlName="idDenunciasTipificacion">
                     <mat-option *ngFor="let p of  listaTipificacion" [value]="p.idDenunciasTipificacion">
                         {{ p.idDenunciasTipificacion }}
@@ -91,7 +91,7 @@
             <br />
 
             <mat-form-field class="example-full-width">
-                <mat-label> Lugar de Hecho</mat-label>
+                <mat-label> Ciudadano </mat-label>
                 <mat-select [(value)]="idCiudadanoSeleccionado" formControlName="idCiudadano">
                     <mat-option *ngFor="let p of  listaCiudadano" [value]="p.idCiudadano">
                         {{ p.idCiudadano }}
@@ -104,7 +104,7 @@
             <br />
 
             <mat-form-field class="example-full-width">
-                <mat-label> Lugar de Hecho</mat-label>
+                <mat-label>Comisaria</mat-label>
                 <mat-select [(value)]=" idComisariaSeleccionado" formControlName="idComisaria">
                     <mat-option *ngFor="let p of  listaComisaria" [value]="p.idComisaria">
                         {{ p.idComisaria }}
