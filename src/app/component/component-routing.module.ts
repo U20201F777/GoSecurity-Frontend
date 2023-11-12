@@ -6,6 +6,14 @@ import { CiudadanoComponent } from './ciudadano/ciudadano.component';
 import { CiudadanoInsertarComponent } from './ciudadano/ciudadano-insertar/ciudadano-insertar.component';
 import { PoliciaComponent } from './policia/policia.component';
 import { PoliciaInsertarComponent } from './policia/policia-insertar/policia-insertar.component';
+import { DenunciasComponent } from './denuncias/denuncias.component';
+import { InsertarDenunciasComponent } from './denuncias/insertar-denuncias/insertar-denuncias.component';
+import { ComisariaComponent } from './comisaria/comisaria.component';
+import { InsertarComisariaComponent } from './comisaria/insertar-comisaria/insertar-comisaria.component';
+import { InsertarUbicacioncComponent } from './ubicacionc/insertar-ubicacionc/insertar-ubicacionc.component';
+import { UbicacioncComponent } from './ubicacionc/ubicacionc.component';
+import { LugarhechoComponent } from './lugarhecho/lugarhecho.component';
+import { InsertarLugarhechoComponent } from './lugarhecho/insertar-lugarhecho/insertar-lugarhecho.component';
 
 const routes: Routes = [
   {
@@ -30,6 +38,38 @@ const routes: Routes = [
     children: [
       {path: 'nuevo', component: PoliciaInsertarComponent},
       {path: 'ediciones/:id', component: PoliciaInsertarComponent}
+    ],
+  },
+  {
+    path: 'Denuncia',
+    component: DenunciasComponent,
+    children: [
+      { path: 'insertar', component: InsertarDenunciasComponent },
+      { path: 'ediciones/id ', component: InsertarDenunciasComponent },
+    ],
+  },
+  {
+    path: 'Comisaria',
+    component: ComisariaComponent,
+    children: [
+      { path: 'insertar', component: InsertarComisariaComponent },
+      { path: 'ediciones/id ', component: InsertarComisariaComponent },
+    ],
+  },
+  {
+    path: 'UbicacionC',
+    component: UbicacioncComponent,
+    children: [
+      { path: 'insertar', component: InsertarUbicacioncComponent },
+      { path: 'ediciones/id', component: InsertarUbicacioncComponent },
+    ],
+  },
+  {
+    path: 'LugarHecho',
+    component: LugarhechoComponent,
+    children: [
+      { path: 'insertar', component: InsertarLugarhechoComponent },
+      { path: 'ediciones/id ', component: InsertarLugarhechoComponent },
     ],
   },
 ];
