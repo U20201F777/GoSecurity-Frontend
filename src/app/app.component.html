@@ -1,9 +1,10 @@
-<mat-toolbar color="primary" *ngIf="verificar()">
+<mat-toolbar style="color: white; background-color: black;" *ngIf="verificar()">
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
   <button mat-button [matMenuTriggerFor]="menuCiudadano">Ciudadano</button>
   <button mat-button [matMenuTriggerFor]="menuPolicia">Policia</button>
-  <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menuSalir"><mat-icon>account_circle</mat-icon></button>
 </mat-toolbar>
 
 <mat-menu #menuAyuda="matMenu">

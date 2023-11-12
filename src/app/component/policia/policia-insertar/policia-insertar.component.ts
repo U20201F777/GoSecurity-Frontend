@@ -34,6 +34,7 @@ export class PoliciaInsertarComponent {
       fotoRostroPolicia: ['', Validators.required],
       fotoIdentPolicia: ['', Validators.required],
       rangoPolicia: ['', Validators.required],
+
     });
   }
   aceptar(): void {

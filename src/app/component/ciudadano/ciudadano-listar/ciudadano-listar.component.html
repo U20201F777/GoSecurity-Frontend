@@ -11,11 +11,11 @@
       <h2 style="text-align: center">Lista de ciudadanos</h2>
       <div style="text-align: right">
         <button
-          mat-raised-button
+          mat-mini-fab
           color="primary"
           routerLink="/components/ciudadano/nuevo"
         >
-          Nuevo
+          <mat-icon>plus_one</mat-icon>
         </button>
       </div>
       <mat-form-field>
@@ -42,7 +42,7 @@
               color="warn"
               [routerLink]="['ediciones', element.idCiudadano]"
             >
-              Actualizar
+              <mat-icon>edit</mat-icon>
             </button>
           </td></ng-container
         >
@@ -54,7 +54,7 @@
               color="accent"
               (click)="eliminar(element.idAyuda)"
             >
-              Eliminar
+              <mat-icon>delete</mat-icon>
             </button>
           </td></ng-container
         >

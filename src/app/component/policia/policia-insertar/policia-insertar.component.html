@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="container" style="text-align: center">
-      <h2>Ingrese como policia</h2>
+      <h2>Registrese como policia</h2>
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
         <mat-form-field class="example-full-width">
           <mat-label>Id. Policia</mat-label>
@@ -67,7 +67,7 @@
           <mat-error
             *ngIf="obtenerControlCampo('rangoPolicia')?.errors?.['required']"
           >
-            El id de la ayuda es obligatoria.
+            El rango es obligatorio.
           </mat-error>
         </mat-form-field>
         <br />

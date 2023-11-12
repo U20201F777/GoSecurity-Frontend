@@ -11,11 +11,11 @@
       <h2 style="text-align: center">Lista de ayuda</h2>
       <div style="text-align: right">
         <button
-          mat-raised-button
+          mat-mini-fab
           color="primary"
           routerLink="/components/Ayuda/nuevo"
         >
-          Nuevo
+          <mat-icon>plus_one</mat-icon>
         </button>
       </div>
       <mat-form-field>
@@ -46,7 +46,7 @@
               color="warn"
               [routerLink]="['ediciones', element.idAyuda]"
             >
-              Actualizar
+              <mat-icon>edit</mat-icon>
             </button>
           </td></ng-container
         >

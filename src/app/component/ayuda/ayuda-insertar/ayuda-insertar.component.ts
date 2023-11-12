@@ -86,7 +86,7 @@ export class AyudaInsertarComponent implements OnInit {
         this.form = new FormGroup({
           idAyuda: new FormControl(data.idAyuda),
           fechaAyuda: new FormControl(data.fechaAyuda),
-          idTipoCaso: new FormControl(data.idTipoCaso),
+          idTipoCaso: new FormControl(data.idTipoCaso.idTipoCaso),
         });
       });
     }
