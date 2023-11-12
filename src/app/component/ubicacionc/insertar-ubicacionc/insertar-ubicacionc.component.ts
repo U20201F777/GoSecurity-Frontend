@@ -21,7 +21,7 @@ export class InsertarUbicacioncComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute) { }
-    
+
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -36,7 +36,7 @@ export class InsertarUbicacioncComponent implements OnInit {
       direccion: ['', Validators.required],
     });
   }
-  aceptar(): void {
+  aceptar() {
     if (this.form.valid) {
       this.ubicacionC.idUbicacionC = this.form.value.idUbicacionC;
       this.ubicacionC.departamento = this.form.value.departamento;
