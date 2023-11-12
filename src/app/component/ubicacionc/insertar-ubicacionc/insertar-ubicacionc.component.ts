@@ -32,11 +32,11 @@ export class InsertarUbicacioncComponent implements OnInit {
       idUbicacionC: ['',],
       departamento: ['', Validators.required],
       ciudad: ['', Validators.required],
-      distrito: ['', [Validators.required]],
+      distrito: ['', Validators.required],
       direccion: ['', Validators.required],
     });
   }
-  aceptar(): void {
+  aceptar() {
     if (this.form.valid) {
       this.ubicacionC.idUbicacionC = this.form.value.idUbicacionC;
       this.ubicacionC.departamento = this.form.value.departamento;
