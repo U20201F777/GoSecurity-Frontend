@@ -14,6 +14,7 @@ import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 import { Comisaria } from 'src/app/model/comisaria';
 import { Ciudadano } from 'src/app/model/Ciudadano';
 import { DenunciasTipificacion } from 'src/app/model/tipificacion';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-insertar-denuncias',
@@ -26,6 +27,7 @@ export class InsertarDenunciasComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
+  maxFecha: Date = moment().add(-1, 'days').toDate();
   listaCiudadano: Ciudadano[] = [];
   listaComisaria: Comisaria[] = [];
   listaTipificacion: DenunciasTipificacion[] = [];

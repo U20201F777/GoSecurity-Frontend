@@ -30,7 +30,7 @@
 
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de hechos" [matDatepicker]="pickerStart"
-                    formControlName="fechaDenunciasHechos" />
+                    formControlName="fechaDenunciasHechos"  [max]="maxFecha"/>
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
                 <mat-datepicker #pickerStart></mat-datepicker>
@@ -42,7 +42,7 @@
 
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de registro" [matDatepicker]="pickerEnd"
-                    formControlName="fechaDenunciasRegistro" />
+                    formControlName="fechaDenunciasRegistro"  [max]="maxFecha" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
                 <mat-datepicker #pickerEnd></mat-datepicker>
@@ -54,7 +54,7 @@
 
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de emision" [matDatepicker]="pickerMid"
-                    formControlName="fechaDenunciasEmision" />
+                    formControlName="fechaDenunciasEmision"  [max]="maxFecha" />
                 <mat-hint>MM/DD/YYYY</mat-hint>
                 <mat-datepicker-toggle matIconSuffix [for]="pickerMid"></mat-datepicker-toggle>
                 <mat-datepicker #pickerMid></mat-datepicker>
