@@ -14,10 +14,10 @@ export class ListarComisariaComponent implements OnInit {
   dataSource: MatTableDataSource<Comisaria> = new MatTableDataSource();
   displayedColumns: string[] = [
     'Id',
-    'NombreComisaria',
-    'Telefono',
-    'Direccion',
-    'UbicacionC',
+    'nombreComisaria',
+    'telefono',
+    'direccion',
+    'idUbicacionC',
     'accion01',
     'accion02'
   ];

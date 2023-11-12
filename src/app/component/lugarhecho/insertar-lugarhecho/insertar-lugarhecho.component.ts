@@ -16,10 +16,12 @@ export class InsertarLugarhechoComponent implements OnInit {
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
+
   constructor(private lS: LugarHechoService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute) { }
+
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -39,9 +41,9 @@ export class InsertarLugarhechoComponent implements OnInit {
     if (this.form.valid) {
       this.lugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
       this.lugarHecho.nameDenunciasLugarHecho = this.form.value.nameDenunciasLugarHecho;
-      this.lugarHecho.distritoDenuncia = this.form.value.DistritoDenuncia;
-      this.lugarHecho.provinciaDenuncia = this.form.value.ProvinciaDenuncia;
-      this.lugarHecho.lugarDenuncia = this.form.value.LugarDenuncia;
+      this.lugarHecho.distritoDenuncia = this.form.value.distritoDenuncia;
+      this.lugarHecho.provinciaDenuncia = this.form.value.provinciaDenuncia;
+      this.lugarHecho.lugarDenuncia = this.form.value.lugarDenuncia;
       if (this.edicion) {
         this.lS.Update(this.lugarHecho).subscribe(() => {
           this.lS.List().subscribe((data) => {
