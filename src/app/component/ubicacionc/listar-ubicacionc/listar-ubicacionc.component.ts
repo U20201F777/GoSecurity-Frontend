@@ -12,7 +12,7 @@ import { UbicacionCService } from 'src/app/service/ubicacion-c.service';
 export class ListarUbicacioncComponent implements OnInit {
   dataSource: MatTableDataSource<UbicacionC> = new MatTableDataSource();
   displayedColumns: string[] = [
-    'idUbicacionC',
+    'codigo',
     'Departamento',
     'Ciudad',
     'Distrito',

@@ -23,7 +23,7 @@
 
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-            <ng-container matColumnDef="idUbicacionC">
+            <ng-container matColumnDef="codigo">
                 <th mat-header-cell *matHeaderCellDef>Id </th>
                 <td mat-cell *matCellDef="let element">{{ element.idUbicacionC }}</td>
             </ng-container>
@@ -51,7 +51,8 @@
             <ng-container matColumnDef="accion01">
                 <th mat-header-cell *matHeaderCellDef>Acciones</th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="warn" [routerLink]="['ediciones', element.idUbicacionC ]">
+                    <button mat-raised-button color="warn" 
+                    [routerLink]="['ediciones', element.idUbicacionC ]">
                     <mat-icon>edit</mat-icon>
                     </button>
                 </td>

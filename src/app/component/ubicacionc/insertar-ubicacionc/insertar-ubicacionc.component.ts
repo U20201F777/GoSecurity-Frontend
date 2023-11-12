@@ -1,6 +1,12 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { 
+  AbstractControl, 
+  FormBuilder, 
+  FormControl, 
+  FormGroup, 
+  Validators 
+} from '@angular/forms';
 import { UbicacionC } from 'src/app/model/ubicacionC';
 import { UbicacionCService } from 'src/app/service/ubicacion-c.service';
 
