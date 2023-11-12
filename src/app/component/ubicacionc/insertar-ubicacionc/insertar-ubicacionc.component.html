@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" style="text-align: center">
+        <h2>Registro de Ubicacion Comisaria</h2>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>Ayuda</mat-label>
+                <input matInput placeholder="idUbicacionC" formControlName=" idUbicacionC" />
+                <mat-error *ngIf="obtenerControlCampo('idUbicacionC')?.errors?.['required']">
+                    El id de la ayuda es obligatoria.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Departamento</mat-label>
+                <input matInput placeholder="Departamento" formControlName="Departamento" />
+                <mat-error *ngIf="obtenerControlCampo('Departamento')?.errors?.['required']">
+                    El Departamento es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Ciudad</mat-label>
+                <input matInput placeholder="Ciudad" formControlName="Ciudad" />
+                <mat-error *ngIf="obtenerControlCampo('Ciudad')?.errors?.['required']">
+                    La Ciudad es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Distrito</mat-label>
+                <input matInput placeholder="Distrito" formControlName="Distrito" />
+                <mat-error *ngIf="obtenerControlCampo('Distrito')?.errors?.['required']">
+                    El Distrito es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Direccion</mat-label>
+                <input matInput placeholder="Direccion" formControlName="Direccion" />
+                <mat-error *ngIf="obtenerControlCampo('Direccion')?.errors?.['required']">
+                    La Direccion es obligatorio.
+                </mat-error>
+            </mat-form-field>
+            <br />
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/UbicacionC">
+                Cancelar
+            </button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+
+</html>
