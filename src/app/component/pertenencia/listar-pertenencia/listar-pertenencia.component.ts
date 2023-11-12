@@ -22,7 +22,7 @@ export class ListarPertenenciaComponent {
     'idPertenenciasMarca',
     'idPertenenciasModelo',
     'accion01',
-    'accion01'
+    'accion02'
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private cS:PertenenciaService){}

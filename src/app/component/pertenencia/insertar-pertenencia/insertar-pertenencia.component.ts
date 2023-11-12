@@ -68,7 +68,7 @@ export class InsertarPertenenciaComponent {
           });
         });
       }
-      this.router.navigate(['Pertenencia']);
+      this.router.navigate(['/components/Pertenencia']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

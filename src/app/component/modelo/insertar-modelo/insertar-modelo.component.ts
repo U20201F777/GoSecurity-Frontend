@@ -47,7 +47,7 @@ aceptar(): void {
         });
       });
     }
-    this.router.navigate(['PertenenciaModelo']);
+    this.router.navigate(['/components/PertenenciaModelo']);
   } else {
     this.mensaje = 'Por favor complete todos los campos obligatorios.';
   }

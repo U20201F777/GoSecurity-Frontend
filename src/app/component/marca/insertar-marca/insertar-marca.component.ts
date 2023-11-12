@@ -49,7 +49,7 @@ export class InsertarMarcaComponent {
           });
         });
       }
-      this.router.navigate(['PertenenciaMarca']);
+      this.router.navigate(['/components/PertenenciaMarca']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
