@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DenunciasLugarHecho } from 'src/app/model/lugarHecho';
 import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
@@ -7,19 +13,20 @@ import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 @Component({
   selector: 'app-insertar-lugarhecho',
   templateUrl: './insertar-lugarhecho.component.html',
-  styleUrls: ['./insertar-lugarhecho.component.css']
+  styleUrls: ['./insertar-lugarhecho.component.css'],
 })
 export class InsertarLugarhechoComponent implements OnInit {
-
   form: FormGroup = new FormGroup({});
   lugarHecho: DenunciasLugarHecho = new DenunciasLugarHecho();
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
-  constructor(private lS: LugarHechoService,
+  constructor(
+    private lS: LugarHechoService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute
+  ) {}
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -80,5 +87,4 @@ export class InsertarLugarhechoComponent implements OnInit {
       });
     }
   }
-
 }
