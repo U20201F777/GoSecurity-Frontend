@@ -7,6 +7,9 @@
   <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
   <button mat-button [matMenuTriggerFor]="menuUbicacionC">Ubicacion Comisaria</button>
   <button mat-button [matMenuTriggerFor]="menuLugarHecho">Lugar de Hecho</button>
+  <button mat-button [matMenuTriggerFor]="menuPertenenciaMarca">Marca</button>
+  <button mat-button [matMenuTriggerFor]="menuPertenenciaModelo">Modelo</button>
+  <button mat-button [matMenuTriggerFor]="menuPertenencia">Pertenencia</button>
   <span class="example-spacer"></span>
   <button mat-button [matMenuTriggerFor]="menuSalir"><mat-icon>account_circle</mat-icon></button>
 </mat-toolbar>
@@ -44,6 +47,21 @@
 <mat-menu #menuLugarHecho="matMenu">
   <button mat-menu-item routerLink="components/LugarHecho">Listar</button>
   <button mat-menu-item routerLink="components/LugarHecho/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuPertenenciaMarca="matMenu">
+  <button mat-menu-item routerLink="components/PertenenciaMarca">Listar</button>
+  <button mat-menu-item routerLink="components/PertenenciaMarca/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuPertenenciaModelo="matMenu">
+  <button mat-menu-item routerLink="components/PertenenciaModelo">Listar</button>
+  <button mat-menu-item routerLink="components/PertenenciaModelo/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuPertenencia="matMenu">
+  <button mat-menu-item routerLink="components/Pertenencia">Listar</button>
+  <button mat-menu-item routerLink="components/Pertenencia/insertar">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuSalir="matMenu">
