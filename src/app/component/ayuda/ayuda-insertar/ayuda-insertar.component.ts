@@ -50,7 +50,7 @@ export class AyudaInsertarComponent implements OnInit {
       this.listaTipoCasos = data;
     });
   }
-  aceptar() {
+  aceptar(): void {
     if (this.form.valid) {
       this.ayuda.idAyuda = this.form.value.idAyuda;
       this.ayuda.fechaAyuda = this.form.value.fechaAyuda;

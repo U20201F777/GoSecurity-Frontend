@@ -38,7 +38,7 @@ export class CiudadanoInsertarComponent {
       numeroCiudadano: ['', Validators.required],
     });
   }
-  aceptar() {
+  aceptar(): void {
     if (this.form.valid) {
       this.ciudadano.idCiudadano = this.form.value.idCiudadano;
       this.ciudadano.numeroCiudadano = this.form.value.numeroCiudadano;
