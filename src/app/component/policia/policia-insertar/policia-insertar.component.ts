@@ -34,16 +34,15 @@ export class PoliciaInsertarComponent {
       fotoRostroPolicia: ['', Validators.required],
       fotoIdentPolicia: ['', Validators.required],
       rangoPolicia: ['', Validators.required],
-
     });
   }
   aceptar(): void {
     if (this.form.valid) {
-      this.policia.idPolicia = this.form.value.idPerson;
-      this.policia.numeroPlacaPolicia = this.form.value.namePerson;
-      this.policia.fotoRostroPolicia = this.form.value.emailPerson;
-      this.policia.fotoIdentPolicia = this.form.value.genderPerson;
-      this.policia.rangoPolicia = this.form.value.birthDatePerson;
+      this.policia.idPolicia = this.form.value.idPolicia;
+      this.policia.numeroPlacaPolicia = this.form.value.numeroPlacaPolicia;
+      this.policia.fotoRostroPolicia = this.form.value.fotoRostroPolicia;
+      this.policia.fotoIdentPolicia = this.form.value.fotoIdentPolicia;
+      this.policia.rangoPolicia = this.form.value.rangoPolicia;
       if (this.edicion) {
         this.pS.update(this.policia).subscribe(() => {
           this.pS.list().subscribe((data) => {
