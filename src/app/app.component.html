@@ -1,1 +1,24 @@
+<mat-toolbar color="primary">
+  <mat-icon>menu</mat-icon>
+  <button mat-button [matMenuTriggerFor]="menuPertenenciaMarca">Marca</button>
+  <button mat-button [matMenuTriggerFor]="menuPertenenciaModelo">Modelo</button>
+  <button mat-button [matMenuTriggerFor]="menuPertenencia">Pertenencia</button>
+
+</mat-toolbar>
+
+<mat-menu #menuPertenenciaMarca="matMenu">
+  <button mat-menu-item routerLink="/PertenenciaMarca">Listar</button>
+  <button mat-menu-item routerLink="/PertenenciaMarca/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuPertenenciaModelo="matMenu">
+  <button mat-menu-item routerLink="/PertenenciaModelo">Listar</button>
+  <button mat-menu-item routerLink="/PertenenciaModelo/insertar">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuPertenencia="matMenu">
+  <button mat-menu-item routerLink="/Pertenencia">Listar</button>
+  <button mat-menu-item routerLink="/Pertenencia/insertar">Registrar</button>
+</mat-menu>
+
 <router-outlet></router-outlet>

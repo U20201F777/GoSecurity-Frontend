@@ -21,7 +21,16 @@ import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MarcaComponent,
+    ModeloComponent,
+    ListarMarcaComponent,
+    InsertarMarcaComponent,
+    ListarModeloComponent,
+    InsertarModeloComponent,
+    PertenenciaComponent,
+    ListarPertenenciaComponent,
+    InsertarPertenenciaComponent,
   ],
   imports: [
     BrowserModule,
