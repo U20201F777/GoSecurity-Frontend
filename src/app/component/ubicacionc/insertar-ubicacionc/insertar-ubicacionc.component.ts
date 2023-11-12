@@ -27,10 +27,10 @@ export class InsertarUbicacioncComponent implements OnInit {
     });
     this.form = this.formBuilder.group({
       idUbicacionC: ['',],
-      Departamento: ['', Validators.required],
-      Ciudad: ['', Validators.required],
-      Distrito: ['', [Validators.required]],
-      Direccion: ['', Validators.required],
+      departamento: ['', Validators.required],
+      ciudad: ['', Validators.required],
+      distrito: ['', [Validators.required]],
+      direccion: ['', Validators.required],
     });
   }
   aceptar(): void {
@@ -70,10 +70,10 @@ export class InsertarUbicacioncComponent implements OnInit {
       this.uS.ListId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           idUbicacionC: new FormControl(data.idUbicacionC),
-          Departamento: new FormControl(data.Departamento),
-          Ciudad: new FormControl(data.Ciudad),
-          Distrito: new FormControl(data.Distrito),
-          Direccion: new FormControl(data.Direccion),
+          departamento: new FormControl(data.Departamento),
+          ciudad: new FormControl(data.Ciudad),
+          distrito: new FormControl(data.Distrito),
+          direccion: new FormControl(data.Direccion),
         });
       });
     }
