@@ -54,9 +54,9 @@ export class InsertarDenunciasComponent implements OnInit {
     if (this.form.valid) {
       this.denuncia.idDenuncias = this.form.value.idDenuncias;
       this.denuncia.nameDenuncias = this.form.value.nameDenuncias;
-      this.denuncia.FechaDenunciasHechos = this.form.value.FechaDenunciasHechos;
-      this.denuncia.FechaDenunciasRegistro = this.form.value.FechaDenunciasRegistro;
-      this.denuncia.FechaDenunciasEmision = this.form.value.FechaDenunciasEmision;
+      this.denuncia.fechaDenunciasHechos = this.form.value.fechaDenunciasHechos;
+      this.denuncia.fechaDenunciasRegistro = this.form.value.fechaDenunciasRegistro;
+      this.denuncia.fechaDenunciasEmision = this.form.value.fechaDenunciasEmision;
       this.denuncia.idLugarHecho.idDenunciasLugarHecho = this.form.value.LugarHecho;
 
       if (this.edicion) {
