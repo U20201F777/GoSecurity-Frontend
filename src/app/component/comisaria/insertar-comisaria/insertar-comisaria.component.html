@@ -11,6 +11,7 @@
       <h2>Registro de Comisaria</h2>
 
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
         <mat-form-field class="example-full-width" *ngIf="edicion">
           <mat-label>Id. Comisaria</mat-label>
           <input matInput placeholder="Id" formControlName="idComisaria" />
@@ -19,9 +20,9 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Nombre Comisaria</mat-label>
-          <input matInput placeholder="Nombre_c" formControlName="Nombre_c" />
+          <input matInput placeholder="nombre_c" formControlName="nombre_c" />
           <mat-error
-            *ngIf="obtenerControlCampo('Nombre_c')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('nombre_c')?.errors?.['required']"
           >
             El nombre es obligatorio.
           </mat-error>
@@ -30,9 +31,9 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Telefono</mat-label>
-          <input matInput placeholder="Telefono" formControlName="Telefono" />
+          <input matInput placeholder="telefono" formControlName="telefono" />
           <mat-error
-            *ngIf="obtenerControlCampo('Telefono')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('telefono')?.errors?.['required']"
           >
             El Telefono es obligatorio.
           </mat-error>
@@ -41,9 +42,9 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>Direccion</mat-label>
-          <input matInput placeholder="Direccion" formControlName="Direccion" />
+          <input matInput placeholder="direccion" formControlName="direccion" />
           <mat-error
-            *ngIf="obtenerControlCampo('Direccion')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('direccion')?.errors?.['required']"
           >
             El campo es obligatorio.
           </mat-error>
@@ -64,7 +65,7 @@
             </mat-option>
           </mat-select>
           <mat-error
-            *ngIf="obtenerControlCampo('UbicacionC')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('idUbicacionC')?.errors?.['required']"
           >
             escoga el espacio requerido es obligatorio.
           </mat-error>

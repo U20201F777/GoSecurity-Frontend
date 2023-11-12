@@ -44,11 +44,11 @@
           <mat-label>Distrito</mat-label>
           <input
             matInput
-            placeholder="DistritoDenuncia"
-            formControlName="DistritoDenuncia"
+            placeholder="distritoDenuncia"
+            formControlName="distritoDenuncia"
           />
           <mat-error
-            *ngIf="obtenerControlCampo('DistritoDenuncia')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('distritoDenuncia')?.errors?.['required']"
           >
             La Distrito es obligatorio.
           </mat-error>
@@ -56,14 +56,14 @@
         <br />
 
         <mat-form-field class="example-full-width">
-          <mat-label>Provincia</mat-label>
+          <mat-label>provincia</mat-label>
           <input
             matInput
-            placeholder="ProvinciaDenuncia"
-            formControlName="ProvinciaDenuncia"
+            placeholder="provinciaDenuncia"
+            formControlName="provinciaDenuncia"
           />
           <mat-error
-            *ngIf="obtenerControlCampo('ProvinciaDenuncia')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('provinciaDenuncia')?.errors?.['required']"
           >
             La Provincia es obligatorio.
           </mat-error>
@@ -74,11 +74,11 @@
           <mat-label>Lugar de Denuncia</mat-label>
           <input
             matInput
-            placeholder="LugarDenuncia"
-            formControlName="LugarDenuncia"
+            placeholder="lugarDenuncia"
+            formControlName="lugarDenuncia"
           />
           <mat-error
-            *ngIf="obtenerControlCampo('LugarDenuncia')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('lugarDenuncia')?.errors?.['required']"
           >
             La Lugar Denuncia es obligatorio.
           </mat-error>

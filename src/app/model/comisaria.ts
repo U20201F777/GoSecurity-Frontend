@@ -1,13 +1,13 @@
 import { UbicacionC } from "./ubicacionC";
 
-export class Comisaria{
+export class Comisaria {
   idComisaria: number = 0;
 
-  Nombre_c: string = '';
+  nombre_c: string = '';
 
-  Telefono: string = '';
+  telefono: string = '';
 
-  Direccion: string = '';
+  direccion: string = '';
 
-  idUbicacionC: UbicacionC= new UbicacionC();
+  idUbicacionC: UbicacionC = new UbicacionC();
 }

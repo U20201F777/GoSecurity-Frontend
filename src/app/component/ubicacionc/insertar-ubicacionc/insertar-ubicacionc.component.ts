@@ -10,15 +10,18 @@ import { UbicacionCService } from 'src/app/service/ubicacion-c.service';
   styleUrls: ['./insertar-ubicacionc.component.css']
 })
 export class InsertarUbicacioncComponent implements OnInit {
+
   form: FormGroup = new FormGroup({});
   ubicacionC: UbicacionC = new UbicacionC();
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
+
   constructor(private uS: UbicacionCService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute) { }
+    
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -36,10 +39,10 @@ export class InsertarUbicacioncComponent implements OnInit {
   aceptar(): void {
     if (this.form.valid) {
       this.ubicacionC.idUbicacionC = this.form.value.idUbicacionC;
-      this.ubicacionC.Departamento = this.form.value.Departamento;
-      this.ubicacionC.Ciudad = this.form.value.Ciudad;
-      this.ubicacionC.Distrito = this.form.value.Distrito;
-      this.ubicacionC.Direccion = this.form.value.Direcccion;
+      this.ubicacionC.departamento = this.form.value.departamento;
+      this.ubicacionC.ciudad = this.form.value.ciudad;
+      this.ubicacionC.distrito = this.form.value.distrito;
+      this.ubicacionC.direccion = this.form.value.direcccion;
       if (this.edicion) {
         this.uS.Update(this.ubicacionC).subscribe(() => {
           this.uS.List().subscribe((data) => {
@@ -70,10 +73,10 @@ export class InsertarUbicacioncComponent implements OnInit {
       this.uS.ListId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           idUbicacionC: new FormControl(data.idUbicacionC),
-          departamento: new FormControl(data.Departamento),
-          ciudad: new FormControl(data.Ciudad),
-          distrito: new FormControl(data.Distrito),
-          direccion: new FormControl(data.Direccion),
+          departamento: new FormControl(data.departamento),
+          ciudad: new FormControl(data.ciudad),
+          distrito: new FormControl(data.distrito),
+          direccion: new FormControl(data.direccion),
         });
       });
     }
