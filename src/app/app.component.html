@@ -5,7 +5,6 @@
   <button mat-button [matMenuTriggerFor]="menuPolicia">Policia</button>
   <button mat-button [matMenuTriggerFor]="menuDenuncia">Denuncia</button>
   <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
-  <button mat-button [matMenuTriggerFor]="menuUbicacionC">Ubicacion Comisaria</button>
   <button mat-button [matMenuTriggerFor]="menuLugarHecho">Lugar de Hecho</button>
   <button mat-button [matMenuTriggerFor]="menuPertenenciaMarca">Marca</button>
   <button mat-button [matMenuTriggerFor]="menuPertenenciaModelo">Modelo</button>
@@ -35,13 +34,10 @@
 </mat-menu>
 
 <mat-menu #menuComisaria="matMenu">
-  <button mat-menu-item routerLink="components/Comisaria">Listar</button>
-  <button mat-menu-item routerLink="components/Comisaria/insertar">Registrar</button>
-</mat-menu>
-
-<mat-menu #menuUbicacionC="matMenu">
-  <button mat-menu-item routerLink="components/UbicacionC">Listar</button>
-  <button mat-menu-item routerLink="components/UbicacionC/insertar">Registrar</button>
+  <button mat-menu-item routerLink="components/Comisaria">Listar Comisaria</button>
+  <button mat-menu-item routerLink="components/Comisaria/insertar">Registrar Comisaria</button>
+  <button mat-menu-item routerLink="components/UbicacionC">Listar Ubicacion C</button>
+  <button mat-menu-item routerLink="components/UbicacionC/insertar">Registrar Ubicacion C</button>
 </mat-menu>
 
 <mat-menu #menuLugarHecho="matMenu">
