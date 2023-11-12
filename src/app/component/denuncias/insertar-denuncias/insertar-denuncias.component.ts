@@ -91,9 +91,9 @@ export class InsertarDenunciasComponent implements OnInit {
         this.form = new FormGroup({
           idDenuncias: new FormControl(data.idDenuncias),
           nameDenuncias: new FormControl(data.nameDenuncias),
-          FechaDenunciasHechos: new FormControl(data.FechaDenunciasHechos),
-          FechaDenunciasRegistro: new FormControl(data.FechaDenunciasRegistro),
-          FechaDenunciasEmision: new FormControl(data.FechaDenunciasEmision),
+          FechaDenunciasHechos: new FormControl(data.fechaDenunciasHechos),
+          FechaDenunciasRegistro: new FormControl(data.fechaDenunciasRegistro),
+          FechaDenunciasEmision: new FormControl(data.fechaDenunciasEmision),
           LugarHecho: new FormControl(data.idLugarHecho.idDenunciasLugarHecho),
         });
       });
