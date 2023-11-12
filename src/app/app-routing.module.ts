@@ -12,13 +12,17 @@ const routes: Routes = [
   {
     path: 'PertenenciaMarca',
     component: MarcaComponent,
-    children: [{ path: 'insertar', component: InsertarMarcaComponent }],
+    children: [
+    { path: 'insertar', component: InsertarMarcaComponent },
+    { path: 'ediciones/id ', component: InsertarMarcaComponent },],
   },
 
   {
     path: 'PertenenciaModelo',
     component: ModeloComponent,
-    children: [{ path: 'insertar', component: InsertarModeloComponent }],
+    children: [
+    { path: 'insertar', component: InsertarModeloComponent },
+    { path: 'ediciones/id ', component: InsertarModeloComponent },],
   },
   {
     path: 'Pertenencia',

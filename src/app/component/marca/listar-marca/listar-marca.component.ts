@@ -16,6 +16,7 @@ export class ListarMarcaComponent {
     'namePertenenciasMarca'
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  
   constructor(private uS: MarcaService) {}
   ngOnInit(): void {
     this.uS.List().subscribe((data) => {

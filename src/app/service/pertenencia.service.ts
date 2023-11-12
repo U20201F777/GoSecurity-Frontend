@@ -12,12 +12,26 @@ const base_url = environment.base
 export class PertenenciaService {
   private url = `${base_url}/Pertenencia`;
   private ListaCambio = new Subject<pertenencia[]>();
+
   constructor(private http: HttpClient) { }
+
   List() {
-    return this.http.get<pertenencia[]>(this.url);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<pertenencia[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   Insert(Pertenencia: pertenencia) {
-    return this.http.post(this.url, Pertenencia);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, Pertenencia, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   SetList(ListaNueva: pertenencia[]) {
     this.ListaCambio.next(ListaNueva);
@@ -26,9 +40,30 @@ export class PertenenciaService {
     return this.ListaCambio.asObservable();
   }
   Delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   Update(Pertenencia: pertenencia) {
-    return this.http.put(this.url, Pertenencia);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, Pertenencia, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+  ListId(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<pertenencia>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }
