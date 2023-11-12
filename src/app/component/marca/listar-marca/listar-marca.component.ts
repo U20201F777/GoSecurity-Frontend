@@ -13,7 +13,9 @@ export class ListarMarcaComponent {
   dataSource: MatTableDataSource<marca> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idPertenenciasMarca',
-    'namePertenenciasMarca'
+    'namePertenenciasMarca',
+    'accion01',
+    'accion02'
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

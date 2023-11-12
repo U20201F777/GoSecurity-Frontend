@@ -13,7 +13,9 @@ export class ListarModeloComponent {
   dataSource: MatTableDataSource<modelo> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idPertenenciasModelo',
-    'namePertenenciasModelo'
+    'namePertenenciasModelo',
+    'accion01',
+    'accion02'
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private uS: ModeloService) {}
