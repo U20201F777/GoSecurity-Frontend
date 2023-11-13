@@ -34,7 +34,7 @@ export class InsertarComisariaComponent implements OnInit {
     });
     this.form = this.formBuilder.group({
       idComisaria: [''],
-      Nombre_c: ['', Validators.required],
+      nombre_c: ['', Validators.required],
       Telefono: ['', Validators.required],
       Direccion: ['', Validators.required],
       UbicacionC: ['', Validators.required],
@@ -82,9 +82,9 @@ export class InsertarComisariaComponent implements OnInit {
       this.cS.ListId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           idComisaria: new FormControl(data.idComisaria),
-          Nombre_c: new FormControl(data.nombre_c),
-          Telefono: new FormControl(data.telefono),
-          Direccion: new FormControl(data.direccion),
+          nombre_c: new FormControl(data.nombre_c),
+          telefono: new FormControl(data.telefono),
+          direccion: new FormControl(data.direccion),
           idUbicacionC: new FormControl(data.idUbicacionC.idUbicacionC),
         });
       });
