@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
   FormBuilder,
@@ -15,7 +15,7 @@ import { CiudadanoService } from 'src/app/service/ciudadano.service';
   templateUrl: './ciudadano-insertar.component.html',
   styleUrls: ['./ciudadano-insertar.component.css'],
 })
-export class CiudadanoInsertarComponent {
+export class CiudadanoInsertarComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   ciudadano: Ciudadano = new Ciudadano();
   mensaje: string = '';

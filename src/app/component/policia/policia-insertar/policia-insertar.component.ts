@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Policia } from 'src/app/model/Policia';
@@ -9,7 +9,7 @@ import { PoliciaService } from 'src/app/service/policia.service';
   templateUrl: './policia-insertar.component.html',
   styleUrls: ['./policia-insertar.component.css']
 })
-export class PoliciaInsertarComponent {
+export class PoliciaInsertarComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   policia: Policia = new Policia();
   mensaje: string = '';
