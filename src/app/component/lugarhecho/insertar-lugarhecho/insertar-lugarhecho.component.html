@@ -10,18 +10,10 @@
     <div class="container" style="text-align: center">
       <h2>Registro de Lugar de Hecho</h2>
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
         <mat-form-field class="example-full-width" *ngIf="edicion">
           <mat-label>Id. Denuncias</mat-label>
-          <input
-            matInput
-            placeholder="idDenunciasLugarHecho"
-            formControlName="idDenunciasLugarHecho"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('idDenunciasLugarHecho')?.errors?.['required']"
-          >
-            El id del lugar hecho es obligatoria.
-          </mat-error>
+          <input matInput placeholder="id. Lugar Hecho" formControlName="idDenunciasLugarHecho" />
         </mat-form-field>
         <br />
 

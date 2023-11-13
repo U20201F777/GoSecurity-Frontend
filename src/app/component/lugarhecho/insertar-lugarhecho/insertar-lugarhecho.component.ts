@@ -37,13 +37,15 @@ export class InsertarLugarhechoComponent implements OnInit {
     });
   }
 
-  aceptar() {
+  aceptar() : void {
     if (this.form.valid) {
+
       this.lugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
       this.lugarHecho.nameDenunciasLugarHecho = this.form.value.nameDenunciasLugarHecho;
       this.lugarHecho.distritoDenuncia = this.form.value.distritoDenuncia;
       this.lugarHecho.provinciaDenuncia = this.form.value.provinciaDenuncia;
       this.lugarHecho.lugarDenuncia = this.form.value.lugarDenuncia;
+
       if (this.edicion) {
         this.lS.Update(this.lugarHecho).subscribe(() => {
           this.lS.List().subscribe((data) => {
