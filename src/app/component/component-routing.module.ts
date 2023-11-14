@@ -51,7 +51,7 @@ const routes: Routes = [
     component: DenunciasComponent,
     children: [
       { path: 'insertar', component: InsertarDenunciasComponent },
-      { path: 'ediciones/:id ', component: InsertarDenunciasComponent },
+      { path: 'ediciones/:id ', component: InsertarDenunciasComponent }
     ],
   },
   {
@@ -59,7 +59,7 @@ const routes: Routes = [
     component: ComisariaComponent,
     children: [
       { path: 'insertar', component: InsertarComisariaComponent },
-      { path: 'ediciones/:id ', component: InsertarComisariaComponent },
+      { path: 'ediciones/:id ', component: InsertarComisariaComponent }
     ],
   },
   {
@@ -67,7 +67,7 @@ const routes: Routes = [
     component: UbicacioncComponent,
     children: [
       { path: 'insertar', component: InsertarUbicacioncComponent },
-      { path: 'ediciones/:id', component: InsertarUbicacioncComponent },
+      { path: 'ediciones/:id', component: InsertarUbicacioncComponent }
     ],
   },
   {
@@ -75,30 +75,32 @@ const routes: Routes = [
     component: LugarhechoComponent,
     children: [
       { path: 'insertar', component: InsertarLugarhechoComponent },
-      { path: 'ediciones/:id ', component: InsertarLugarhechoComponent },
+      { path: 'ediciones/:id ', component: InsertarLugarhechoComponent }
     ],
   },
   {
     path: 'PertenenciaMarca',
     component: MarcaComponent,
     children: [
-    { path: 'insertar', component: InsertarMarcaComponent },
-    { path: 'ediciones/:id ', component: InsertarMarcaComponent },],
+      { path: 'insertar', component: InsertarMarcaComponent },
+      { path: 'ediciones/:id ', component: InsertarMarcaComponent }
+    ],
   },
 
   {
     path: 'PertenenciaModelo',
     component: ModeloComponent,
     children: [
-    { path: 'insertar', component: InsertarModeloComponent },
-    { path: 'ediciones/:id ', component: InsertarModeloComponent },],
+      { path: 'insertar', component: InsertarModeloComponent },
+      { path: 'ediciones/:id ', component: InsertarModeloComponent }
+    ],
   },
   {
     path: 'Pertenencia',
     component: PertenenciaComponent,
     children: [
       { path: 'insertar', component: InsertarPertenenciaComponent },
-      { path: 'ediciones/:id ', component: InsertarPertenenciaComponent },
+      { path: 'ediciones/:id ', component: InsertarPertenenciaComponent }
     ],
   }
 ];

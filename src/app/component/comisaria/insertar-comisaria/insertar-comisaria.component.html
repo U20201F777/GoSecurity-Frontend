@@ -11,7 +11,6 @@
       <h2>Registro de Comisaria</h2>
 
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
-
         <mat-form-field class="example-full-width" *ngIf="edicion">
           <mat-label>Id. Comisaria</mat-label>
           <input matInput placeholder="Id" formControlName="idComisaria" />
