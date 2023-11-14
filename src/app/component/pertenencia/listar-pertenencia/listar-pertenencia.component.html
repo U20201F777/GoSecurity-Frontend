@@ -13,7 +13,7 @@
         <button
           mat-raised-button
           color="accent"
-          routerLink="/components/Pertenencia/insertar"
+          routerLink="/components/Pertenencia/nuevo"
         >
           Nuevo
         </button>
@@ -61,12 +61,12 @@
 
           <ng-container matColumnDef="idPertenenciasMarca">
             <th mat-header-cell *matHeaderCellDef>Marca</th>
-            <td mat-cell *matCellDef="let element">{{ element.pertenenciasMarca.namePertenenciasMarca}}</td>
+            <td mat-cell *matCellDef="let element">{{ element.idPertenenciasMarca.idPertenenciasMarca}}</td>
           </ng-container>
 
           <ng-container matColumnDef="idPertenenciasModelo">
             <th mat-header-cell *matHeaderCellDef>Modelo</th>
-            <td mat-cell *matCellDef="let element">{{ element.pertenenciasModelo.namePertenenciasModelo}}</td>
+            <td mat-cell *matCellDef="let element">{{ element.idPertenenciasModelo.idPertenenciasModelo}}</td>
           </ng-container>
 
           <ng-container matColumnDef="accion01">

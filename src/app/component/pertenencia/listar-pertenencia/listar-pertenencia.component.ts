@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component,OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { pertenencia } from 'src/app/model/pertenencia';
@@ -9,7 +9,7 @@ import { PertenenciaService } from 'src/app/service/pertenencia.service';
   templateUrl: './listar-pertenencia.component.html',
   styleUrls: ['./listar-pertenencia.component.css']
 })
-export class ListarPertenenciaComponent {
+export class ListarPertenenciaComponent implements OnInit{
   dataSource: MatTableDataSource<pertenencia> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idPertenencias',

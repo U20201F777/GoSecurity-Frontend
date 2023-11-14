@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { marca } from 'src/app/model/marca';
@@ -9,7 +9,7 @@ import { MarcaService } from 'src/app/service/marca.service';
   templateUrl: './insertar-marca.component.html',
   styleUrls: ['./insertar-marca.component.css'],
 })
-export class InsertarMarcaComponent {
+export class InsertarMarcaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   marca: marca = new marca();
   mensaje: string = '';

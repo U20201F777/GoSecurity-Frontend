@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { marca } from 'src/app/model/marca';
@@ -9,7 +9,7 @@ import { MarcaService } from 'src/app/service/marca.service';
   templateUrl: './listar-marca.component.html',
   styleUrls: ['./listar-marca.component.css']
 })
-export class ListarMarcaComponent {
+export class ListarMarcaComponent implements OnInit{
   dataSource: MatTableDataSource<marca> = new MatTableDataSource();
   displayedColumns: string[] = [
     'idPertenenciasMarca',

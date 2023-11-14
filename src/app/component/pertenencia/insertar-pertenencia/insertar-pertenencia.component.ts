@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { marca } from 'src/app/model/marca';
 import { modelo } from 'src/app/model/modelo';
 import { pertenencia } from 'src/app/model/pertenencia';
+import { MarcaService } from 'src/app/service/marca.service';
+import { ModeloService } from 'src/app/service/modelo.service';
 import { PertenenciaService } from 'src/app/service/pertenencia.service';
 
 @Component({
@@ -11,7 +13,7 @@ import { PertenenciaService } from 'src/app/service/pertenencia.service';
   templateUrl: './insertar-pertenencia.component.html',
   styleUrls: ['./insertar-pertenencia.component.css']
 })
-export class InsertarPertenenciaComponent {
+export class InsertarPertenenciaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   pertenencia: pertenencia = new pertenencia();
   mensaje: string = '';
@@ -23,6 +25,8 @@ export class InsertarPertenenciaComponent {
   idModeloSeleccionado: number = 0
   constructor(
     private pS: PertenenciaService,
+    private mS: MarcaService,
+    private mO: ModeloService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute
@@ -30,6 +34,8 @@ export class InsertarPertenenciaComponent {
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
+      this.edicion = data['id'] != null;
+      this.init();
     });
     this.form = this.formBuilder.group({
       idPertenencias: [''],
@@ -43,6 +49,12 @@ export class InsertarPertenenciaComponent {
       idPertenenciasModelo: ['', Validators.required],
 
     });
+    this.mS.List().subscribe((data) => {
+      this.listaMarca = data;
+    });
+    this.mS.List().subscribe((data) => {
+      this.listaModelo = data;
+    });
   }
   aceptar(): void {
     if (this.form.valid) {
@@ -53,8 +65,8 @@ export class InsertarPertenenciaComponent {
       this.pertenencia.ImagenPertenencias = this.form.value.ImagenPertenencias;
       this.pertenencia.CodigoPertenencias = this.form.value.CodigoPertenencias;
       this.pertenencia.SeriePertenencias = this.form.value.SeriePertenencias;
-      this.pertenencia.idPertenenciasMarca.namePertenenciasMarca = this.form.value.marca;
-      this.pertenencia.idPertenenciasModelo.namePertenenciasModelo = this.form.value.modelo;
+      this.pertenencia.idPertenenciasMarca.idPertenenciasMarca = this.form.value.idPertenenciasMarca;
+      this.pertenencia.idPertenenciasModelo.idPertenenciasModelo = this.form.value.idPertenenciasModelo;
       if (this.edicion) {
         this.pS.Update(this.pertenencia).subscribe(() => {
           this.pS.List().subscribe((data) => {
@@ -80,5 +92,22 @@ export class InsertarPertenenciaComponent {
       throw new Error(`Control no encontrado para el campo ${nombreCampo}`);
     }
     return control;
+  }
+  init() {
+    if (this.edicion) {
+      this.aS.listId(this.id).subscribe((data) => {
+        this.form = new FormGroup({
+          idPertenencias: new FormControl(data.idPertenencias),
+          namePertenencias: new FormControl(data.namePertenencias),
+          AnioPertenencias: new FormControl(data.AnioPertenencias),
+          EspecificacionesPertenencias: new FormControl(data.EspecificacionesPertenencias),
+          ImagenPertenencias: new FormControl(data.ImagenPertenencias),
+          CodigoPertenencias: new FormControl(data.CodigoPertenencias),
+          SeriePertenencias: new FormControl(data.SeriePertenencias),
+          idPertenenciasMarca: new FormControl(data.idPertenenciasMarca.idPertenenciasMarca),
+          idPertenenciasModelo: new FormControl(data.idPertenenciasModelo.idPertenenciasModelo),
+        });
+      });
+    }
   }
 }
