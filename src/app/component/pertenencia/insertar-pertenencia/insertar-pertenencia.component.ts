@@ -52,7 +52,7 @@ export class InsertarPertenenciaComponent implements OnInit{
     this.mS.List().subscribe((data) => {
       this.listaMarca = data;
     });
-    this.mS.List().subscribe((data) => {
+    this.mO.List().subscribe((data) => {
       this.listaModelo = data;
     });
   }
@@ -95,7 +95,7 @@ export class InsertarPertenenciaComponent implements OnInit{
   }
   init() {
     if (this.edicion) {
-      this.aS.listId(this.id).subscribe((data) => {
+      this.pS.ListId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           idPertenencias: new FormControl(data.idPertenencias),
           namePertenencias: new FormControl(data.namePertenencias),
