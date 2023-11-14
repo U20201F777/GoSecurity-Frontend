@@ -9,6 +9,7 @@
   <body>
     <div class="container" style="text-align: center">
       <h2>Registro de Lugar de Hecho</h2>
+
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
 
         <mat-form-field class="example-full-width" *ngIf="edicion">
@@ -76,12 +77,9 @@
           </mat-error>
         </mat-form-field>
         <br />
+
         <button mat-raised-button color="primary">Aceptar</button>
-        <button
-          mat-raised-button
-          color="warn"
-          routerLink="/components/LugarHecho"
-        >
+        <button mat-raised-button color="warn" routerLink="/components/LugarHecho">
           Cancelar
         </button>
         <p>{{ mensaje }}</p>
