@@ -66,7 +66,7 @@ export class InsertarComisariaComponent implements OnInit {
       }
       this.router.navigate(['/components/Comisaria']);
     } else {
-      this.mensaje = 'Por favor complete todos los campos obligatorios.';
+      this.mensaje = 'Ingrese todos los campos obligatorios.';
     }
   }
 
