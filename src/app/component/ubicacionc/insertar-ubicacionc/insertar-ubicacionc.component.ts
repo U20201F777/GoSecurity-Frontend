@@ -1,11 +1,11 @@
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { 
-  AbstractControl, 
-  FormBuilder, 
-  FormControl, 
-  FormGroup, 
-  Validators 
+import {
+  AbstractControl,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
 } from '@angular/forms';
 import { UbicacionC } from 'src/app/model/ubicacionC';
 import { UbicacionCService } from 'src/app/service/ubicacion-c.service';
@@ -36,7 +36,7 @@ export class InsertarUbicacioncComponent implements OnInit {
       this.init();
     });
     this.form = this.formBuilder.group({
-      idUbicacionC: ['',],
+      idUbicacionC: [''],
       departamento: ['', Validators.required],
       ciudad: ['', Validators.required],
       distrito: ['', Validators.required],
