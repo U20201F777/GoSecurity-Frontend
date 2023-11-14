@@ -1,8 +1,8 @@
 <mat-toolbar style="color: white; background-color: black;" *ngIf="verificar()">
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
-  <button mat-button [matMenuTriggerFor]="menuCiudadano">Ciudadano</button>
-  <button mat-button [matMenuTriggerFor]="menuPolicia">Policia</button>
+  <button mat-button [matMenuTriggerFor]="menuCiudadano" *ngIf="role == 'ADMIN'">Ciudadano</button>
+  <button mat-button [matMenuTriggerFor]="menuPolicia" *ngIf="role == 'ADMIN'">Policia</button>
   <button mat-button [matMenuTriggerFor]="menuDenuncia">Denuncia</button>
   <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
   <button mat-button [matMenuTriggerFor]="menuLugarHecho">Lugar de Hecho</button>
@@ -19,12 +19,12 @@
 </mat-menu>
 
 <mat-menu #menuCiudadano="matMenu">
-  <button mat-menu-item routerLink="components/ciudadano/nuevo" *ngIf="role == 'ADMIN'">Registrar ciudadano</button>
+  <button mat-menu-item routerLink="components/ciudadano/nuevo">Registrar ciudadano</button>
   <button mat-menu-item routerLink="components/ciudadano">Listar Ciudadano</button>
 </mat-menu>
 
 <mat-menu #menuPolicia="matMenu">
-  <button mat-menu-item routerLink="components/policia/nuevo" *ngIf="role == 'ADMIN'">Registrar Policia</button>
+  <button mat-menu-item routerLink="components/policia/nuevo">Registrar Policia</button>
   <button mat-menu-item routerLink="components/policia">Listar Policia</button>
 </mat-menu>
 
