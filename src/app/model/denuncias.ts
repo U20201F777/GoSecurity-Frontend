@@ -5,7 +5,7 @@ import { DenunciasTipificacion } from "./tipificacion";
 
 export class Denuncias {
   idDenuncias: number = 0;
-  nameDenuncias: string = '';
+  nameDenuncias: string = "";
   fechaDenunciasHechos: Date = new Date(Date.now());
   fechaDenunciasRegistro: Date = new Date(Date.now());
   fechaDenunciasEmision: Date = new Date(Date.now());
