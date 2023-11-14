@@ -17,9 +17,11 @@
                 <mat-icon>plus_one</mat-icon>
             </button>
         </div>
+
         <mat-form-field>
             <input matInput (keyup)="filter($event)" placeholder="buscar" />
         </mat-form-field>
+        
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <ng-container matColumnDef="idDenunciasLugarHecho">
