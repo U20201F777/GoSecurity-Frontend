@@ -111,17 +111,17 @@
           <mat-label> Marca </mat-label>
           <mat-select
             [(value)]="idMarcaCSeleccionado"
-            formControlName="PertenenciaMarca"
+            formControlName="idPertenenciasMarca"
           >
             <mat-option
               *ngFor="let p of listaMarca"
               [value]="p.idPertenenciasMarca"
             >
-              {{ p.namePertenenciasMarca }}
+              {{ p.idPertenenciasMarca }}
             </mat-option>
           </mat-select>
           <mat-error
-            *ngIf="obtenerControlCampo('PertenenciaMarca')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('idPertenenciasMarca')?.errors?.['required']"
           >
             escoga el espacio requerido es obligatorio.
           </mat-error>
@@ -132,17 +132,17 @@
           <mat-label> Modelo </mat-label>
           <mat-select
             [(value)]="idModeloSeleccionado"
-            formControlName="PertenenciaModelo"
+            formControlName="idPertenenciasModelo"
           >
             <mat-option
               *ngFor="let p of listaModelo"
               [value]="p.idPertenenciasModelo"
             >
-              {{ p.namePertenenciasModelo }}
+              {{ p.idPertenenciasModelo }}
             </mat-option>
           </mat-select>
           <mat-error
-            *ngIf="obtenerControlCampo('PertenenciaModelo')?.errors?.['required']"
+            *ngIf="obtenerControlCampo('idPertenenciasModelo')?.errors?.['required']"
           >
             escoga el espacio requerido es obligatorio.
           </mat-error>

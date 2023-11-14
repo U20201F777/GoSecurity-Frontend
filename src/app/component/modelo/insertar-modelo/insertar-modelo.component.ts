@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { modelo } from 'src/app/model/modelo';
@@ -9,7 +9,7 @@ import { ModeloService } from 'src/app/service/modelo.service';
   templateUrl: './insertar-modelo.component.html',
   styleUrls: ['./insertar-modelo.component.css']
 })
-export class InsertarModeloComponent {
+export class InsertarModeloComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   modelo: modelo = new modelo();
   mensaje: string = '';
