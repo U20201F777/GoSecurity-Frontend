@@ -9,11 +9,13 @@
     <div class="container" style="text-align: center">
       <h2>Registrese como ciudadano</h2>
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
         <mat-form-field class="example-full-width" *ngIf="edicion">
           <mat-label>Id. Ciudadano</mat-label>
           <input matInput placeholder="Id. Ciudadano" formControlName="idCiudadano" />
         </mat-form-field>
         <br />
+        
         <mat-form-field class="example-full-width">
           <mat-label>DNI Ciudadano</mat-label>
           <input matInput placeholder="DNI" formControlName="numeroCiudadano" />
