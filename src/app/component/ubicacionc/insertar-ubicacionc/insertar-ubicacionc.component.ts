@@ -23,7 +23,8 @@ export class InsertarUbicacioncComponent implements OnInit {
   id: number = 0;
   edicion: boolean = false;
 
-  constructor(private uS: UbicacionCService,
+  constructor(
+    private uS: UbicacionCService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute) { }
@@ -42,7 +43,7 @@ export class InsertarUbicacioncComponent implements OnInit {
       direccion: ['', Validators.required],
     });
   }
-  aceptar() {
+  aceptar(): void {
     if (this.form.valid) {
       this.ubicacionC.idUbicacionC = this.form.value.idUbicacionC;
       this.ubicacionC.departamento = this.form.value.departamento;
