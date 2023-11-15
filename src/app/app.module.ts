@@ -18,6 +18,16 @@ import { LoginComponent } from './component/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MarcaComponent,
+    ModeloComponent,
+    ListarMarcaComponent,
+    InsertarMarcaComponent,
+    ListarModeloComponent,
+    InsertarModeloComponent,
+    PertenenciaComponent,
+    ListarPertenenciaComponent,
+    InsertarPertenenciaComponent,
+=======
     LoginComponent,
   ],
   imports: [
