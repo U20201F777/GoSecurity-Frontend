@@ -5,5 +5,5 @@ export class Comisaria {
   nombre_c: string = "";
   telefono: string = "";
   direccion: string = "";
-  ubicacionC: UbicacionC = new UbicacionC();
+  idUbicacionC: UbicacionC = new UbicacionC();
 }

@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
-import { SolicitarAyuda } from 'src/app/model/Ayuda';
+import { Ayuda } from 'src/app/model/Ayuda';
 import { TipoCaso } from 'src/app/model/TipoCaso';
 import { AyudaService } from 'src/app/service/ayuda.service';
 import { TipoCasoService } from 'src/app/service/tipo-caso.service';
@@ -20,7 +20,7 @@ import { TipoCasoService } from 'src/app/service/tipo-caso.service';
 })
 export class AyudaInsertarComponent implements OnInit {
   form: FormGroup = new FormGroup({});
-  ayuda: SolicitarAyuda = new SolicitarAyuda();
+  ayuda: Ayuda = new Ayuda();
   mensaje: string = '';
   maxFecha: Date = moment().add(-1, 'days').toDate();
   fechaAyuda = new FormControl(new Date());

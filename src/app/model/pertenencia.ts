@@ -1,14 +1,22 @@
+import { Ayuda } from "./Ayuda";
+import { Ciudadano } from "./Ciudadano";
+import { PertenenciasColor } from "./color";
 import { marca } from "./marca";
 import { modelo } from "./modelo";
+import { PertenenciasTipo } from "./tipo";
+import { UbicacionP } from "./ubicacionP";
 
-export class pertenencia{
+export class Pertenencias{
   idPertenencias: number=0;
   namePertenencias: string="";
   AnioPertenencias: string="";
   EspecificacionesPertenencias: string="";
   ImagenPertenencias: string="";
-  CodigoPertenencias: string="";
-  SeriePertenencias: number=0;
+  idPertenenciasColor: PertenenciasColor=new PertenenciasColor();
+  idPertenenciasTipo: PertenenciasTipo=new PertenenciasTipo();
   idPertenenciasMarca: marca= new marca();
   idPertenenciasModelo: modelo= new modelo();
+  idCiudadano: Ciudadano= new Ciudadano();
+  idUbicacionP: UbicacionP=new UbicacionP();
+  idAyuda: Ayuda= new Ayuda();
 }

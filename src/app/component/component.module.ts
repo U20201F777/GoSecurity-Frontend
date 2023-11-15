@@ -42,6 +42,8 @@ import { ListarModeloComponent } from './modelo/listar-modelo/listar-modelo.comp
 import { InsertarModeloComponent } from './modelo/insertar-modelo/insertar-modelo.component';
 import { ListarMarcaComponent } from './marca/listar-marca/listar-marca.component';
 import { InsertarMarcaComponent } from './marca/insertar-marca/insertar-marca.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { Reporte01Component } from './reporte/reporte01/reporte01.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { InsertarMarcaComponent } from './marca/insertar-marca/insertar-marca.co
     ListarModeloComponent,
     InsertarModeloComponent,
     ListarMarcaComponent,
-    InsertarMarcaComponent
+    InsertarMarcaComponent,
+    ReporteComponent,
+    Reporte01Component
   ],
   imports: [
     CommonModule,

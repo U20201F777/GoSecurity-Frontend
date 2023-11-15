@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { SolicitarAyuda } from 'src/app/model/Ayuda';
+import { Ayuda } from 'src/app/model/Ayuda';
 import { AyudaService } from 'src/app/service/ayuda.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AyudaService } from 'src/app/service/ayuda.service';
   styleUrls: ['./ayuda-listar.component.css']
 })
 export class AyudaListarComponent implements OnInit{
-  dataSource: MatTableDataSource<SolicitarAyuda> = new MatTableDataSource();
+  dataSource: MatTableDataSource<Ayuda> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
     'fecha',
