@@ -3,7 +3,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators, FormControl } from
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { marca } from 'src/app/model/marca';
 import { modelo } from 'src/app/model/modelo';
-import { pertenencia } from 'src/app/model/pertenencia';
+import { Pertenencias } from 'src/app/model/pertenencia';
 import { MarcaService } from 'src/app/service/marca.service';
 import { ModeloService } from 'src/app/service/modelo.service';
 import { PertenenciaService } from 'src/app/service/pertenencia.service';
@@ -15,7 +15,7 @@ import { PertenenciaService } from 'src/app/service/pertenencia.service';
 })
 export class InsertarPertenenciaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
-  pertenencia: pertenencia = new pertenencia();
+  pertenencia: Pertenencias = new Pertenencias();
   mensaje: string = '';
   id: number = 0;
   edicion: boolean = false;
@@ -43,8 +43,6 @@ export class InsertarPertenenciaComponent implements OnInit{
       AnioPertenencias: ['', Validators.required],
       EspecificacionesPertenencias: ['', Validators.required],
       ImagenPertenencias: ['', Validators.required],
-      CodigoPertenencias: ['', Validators.required],
-      SeriePertenencias: ['', Validators.required],
       idPertenenciasMarca: ['', Validators.required],
       idPertenenciasModelo: ['', Validators.required],
 
@@ -63,8 +61,6 @@ export class InsertarPertenenciaComponent implements OnInit{
       this.pertenencia.AnioPertenencias = this.form.value.AnioPertenencias;
       this.pertenencia.EspecificacionesPertenencias = this.form.value.EspecificacionesPertenencias;
       this.pertenencia.ImagenPertenencias = this.form.value.ImagenPertenencias;
-      this.pertenencia.CodigoPertenencias = this.form.value.CodigoPertenencias;
-      this.pertenencia.SeriePertenencias = this.form.value.SeriePertenencias;
       this.pertenencia.idPertenenciasMarca.idPertenenciasMarca = this.form.value.idPertenenciasMarca;
       this.pertenencia.idPertenenciasModelo.idPertenenciasModelo = this.form.value.idPertenenciasModelo;
       if (this.edicion) {
@@ -102,8 +98,6 @@ export class InsertarPertenenciaComponent implements OnInit{
           AnioPertenencias: new FormControl(data.AnioPertenencias),
           EspecificacionesPertenencias: new FormControl(data.EspecificacionesPertenencias),
           ImagenPertenencias: new FormControl(data.ImagenPertenencias),
-          CodigoPertenencias: new FormControl(data.CodigoPertenencias),
-          SeriePertenencias: new FormControl(data.SeriePertenencias),
           idPertenenciasMarca: new FormControl(data.idPertenenciasMarca.idPertenenciasMarca),
           idPertenenciasModelo: new FormControl(data.idPertenenciasModelo.idPertenenciasModelo),
         });

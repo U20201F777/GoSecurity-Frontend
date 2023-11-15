@@ -50,7 +50,7 @@ export class InsertarComisariaComponent implements OnInit {
       this.comisaria.nombre_c = this.form.value.Nombre_c;
       this.comisaria.telefono = this.form.value.Telefono;
       this.comisaria.direccion = this.form.value.Direccion;
-      this.comisaria.ubicacionC.idUbicacionC = this.form.value.UbicacionC;
+      this.comisaria.idUbicacionC.idUbicacionC = this.form.value.UbicacionC;
       if (this.edicion) {
         this.cS.Update(this.comisaria).subscribe(() => {
           this.cS.List().subscribe((data) => {
@@ -85,7 +85,7 @@ export class InsertarComisariaComponent implements OnInit {
           Nombre_c: new FormControl(data.nombre_c),
           Telefono: new FormControl(data.telefono),
           Direccion: new FormControl(data.direccion),
-          UbicacionC: new FormControl(data.ubicacionC.idUbicacionC),
+          UbicacionC: new FormControl(data.idUbicacionC.idUbicacionC),
         });
       });
     }
