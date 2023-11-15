@@ -32,10 +32,24 @@ const routes: Routes = [
       { path: 'ediciones/id ', component: InsertarPertenenciaComponent },
     ],
   }
+import { LoginComponent } from './component/login/login.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'components',
+    loadChildren: () => import('./component/component.module').then((m) => m.ComponentModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
