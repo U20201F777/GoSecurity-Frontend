@@ -31,6 +31,10 @@ export class CiudadanoService {
         .set('Content-Type', 'application/json'),
     });
   }
+  new(c: Ciudadano) {
+
+    return this.http.post(this.url, c);
+  }
   setList(listaNueva: Ciudadano[]) {
     this.listaCambio.next(listaNueva);
   }

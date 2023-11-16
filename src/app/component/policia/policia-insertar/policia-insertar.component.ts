@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Policia } from 'src/app/model/Policia';
+import { ComisariaService } from 'src/app/service/comisaria.service';
 import { PoliciaService } from 'src/app/service/policia.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class PoliciaInsertarComponent implements OnInit{
   edicion: boolean = false;
   constructor(
     private pS: PoliciaService,
+    private cS: ComisariaService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute

@@ -17,6 +17,8 @@ export class PoliciaListarComponent implements OnInit{
     'FotoRostro',
     'FotoIdentificacion',
     'Rango',
+    'Comisaria',
+    'Notificacion',
     'accion01',
     'accion02',
   ];

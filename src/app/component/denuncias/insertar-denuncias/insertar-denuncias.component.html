@@ -79,19 +79,6 @@
             <br />
 
             <mat-form-field class="example-full-width">
-                <mat-label> Tipificacion </mat-label>
-                <mat-select [(value)]="idTipificacionSeleccionado" formControlName="idDenunciasTipificacion">
-                    <mat-option *ngFor="let p of  listaTipificacion" [value]="p.idDenunciasTipificacion">
-                        {{ p.idDenunciasTipificacion }}
-                    </mat-option>
-                </mat-select>
-                <mat-error *ngIf="obtenerControlCampo('idDenunciasTipificacion')?.errors?.['required']">
-                    El campo es obligatorio.
-                </mat-error>
-            </mat-form-field>
-            <br />
-
-            <mat-form-field class="example-full-width">
                 <mat-label> Ciudadano </mat-label>
                 <mat-select [(value)]="idCiudadanoSeleccionado" formControlName="idCiudadano">
                     <mat-option *ngFor="let p of  listaCiudadano" [value]="p.idCiudadano">
@@ -124,7 +111,7 @@
 
             <p>{{ mensaje }}</p>
         </form>
-        
+
     </div>
 
 </body>

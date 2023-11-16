@@ -48,6 +48,14 @@
           <th mat-header-cell *matHeaderCellDef>Rango</th>
           <td mat-cell *matCellDef="let element">{{ element.rangoPolicia }}</td>
         </ng-container>
+        <ng-container matColumnDef="Comisaria">
+          <th mat-header-cell *matHeaderCellDef>Comisaria</th>
+          <td mat-cell *matCellDef="let element">{{ element.idComisaria.nombre_c }}</td>
+        </ng-container>
+        <ng-container matColumnDef="Notificacion">
+          <th mat-header-cell *matHeaderCellDef>Notificacion</th>
+          <td mat-cell *matCellDef="let element">{{ element.idNotificacion.idNotificacion }}</td>
+        </ng-container>
         <ng-container matColumnDef="accion01">
           <th mat-header-cell *matHeaderCellDef>Acciones</th>
           <td mat-cell *matCellDef="let element">

@@ -13,9 +13,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LugarHechoService } from 'src/app/service/lugar-hecho.service';
 import { Comisaria } from 'src/app/model/comisaria';
 import { Ciudadano } from 'src/app/model/Ciudadano';
-import { DenunciasTipificacion } from 'src/app/model/tipificacion';
 import * as moment from 'moment';
-import { TipificacionService } from 'src/app/service/tipificacion.service';
 import { CiudadanoService } from 'src/app/service/ciudadano.service';
 import { ComisariaService } from 'src/app/service/comisaria.service';
 
@@ -33,16 +31,13 @@ export class InsertarDenunciasComponent implements OnInit {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   listaCiudadano: Ciudadano[] = [];
   listaComisaria: Comisaria[] = [];
-  listaTipificacion: DenunciasTipificacion[] = [];
   listaLugarHecho: DenunciasLugarHecho[] = [];
   idCiudadanoSeleccionado: number = 0;
   idComisariaSeleccionado: number = 0;
-  idTipificacionSeleccionado: number = 0;
   idLugarHechoSeleccionado: number = 0;
   constructor(
     private dS: DenunciasService,
     private lhS: LugarHechoService,
-    private tS: TipificacionService,
     private ciS:CiudadanoService,
     private coS:ComisariaService,
     private router: Router,
@@ -69,9 +64,6 @@ export class InsertarDenunciasComponent implements OnInit {
     this.lhS.List().subscribe((data) => {
       this.listaLugarHecho = data;
     });
-    this.tS.list().subscribe((data) => {
-      this.listaTipificacion = data;
-    });
     this.ciS.list().subscribe((data) => {
       this.listaCiudadano = data;
     });
@@ -87,7 +79,6 @@ export class InsertarDenunciasComponent implements OnInit {
       this.denuncia.fechaDenunciasRegistro = this.form.value.fechaDenunciasRegistro;
       this.denuncia.fechaDenunciasEmision = this.form.value.fechaDenunciasEmision;
       this.denuncia.idDenunciasLugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
-      this.denuncia.idDenunciasTipificacion.idDenunciasTipificacion = this.form.value.idDenunciasTipificacion;
       this.denuncia.idCiudadano.idCiudadano = this.form.value.idCiudadano;
       this.denuncia.idComisaria.idComisaria = this.form.value.idComisaria;
 
@@ -127,7 +118,6 @@ export class InsertarDenunciasComponent implements OnInit {
           fechaDenunciasRegistro: new FormControl(data.fechaDenunciasRegistro),
           fechaDenunciasEmision: new FormControl(data.fechaDenunciasEmision),
           idDenunciasLugarHecho: new FormControl(data.idDenunciasLugarHecho.idDenunciasLugarHecho),
-          idDenunciasTipificacion: new FormControl(data.idDenunciasTipificacion.idDenunciasTipificacion),
           idCiudadano: new FormControl(data.idCiudadano.idCiudadano),
           idComisaria: new FormControl(data.idComisaria.idComisaria),
         });

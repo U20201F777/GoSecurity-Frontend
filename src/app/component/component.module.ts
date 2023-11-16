@@ -44,6 +44,11 @@ import { ListarMarcaComponent } from './marca/listar-marca/listar-marca.componen
 import { InsertarMarcaComponent } from './marca/insertar-marca/insertar-marca.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { Reporte01Component } from './reporte/reporte01/reporte01.component';
+import { LoginCiudadanoComponent } from './login/login-ciudadano/login-ciudadano.component';
+import { LoginPoliciaComponent } from './login/login-policia/login-policia.component';
+import { RegistroComponent } from './registro/registro.component';
+import { RCiudadanoComponent } from './registro/r-ciudadano/r-ciudadano.component';
+import { RPoliciaComponent } from './registro/r-policia/r-policia.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +83,12 @@ import { Reporte01Component } from './reporte/reporte01/reporte01.component';
     ListarMarcaComponent,
     InsertarMarcaComponent,
     ReporteComponent,
-    Reporte01Component
+    Reporte01Component,
+    LoginCiudadanoComponent,
+    LoginPoliciaComponent,
+    RegistroComponent,
+    RCiudadanoComponent,
+    RPoliciaComponent
   ],
   imports: [
     CommonModule,

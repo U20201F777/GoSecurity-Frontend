@@ -16,10 +16,10 @@ section{
   background-color: white;
   border-radius: 15px;
   width: 500px;
-  height: 390px;
+  height: 430px;
   justify-content: center;
   align-items: center;
 }
-footer {
-	text-align: center;
+h2{
+  color: white;
 }

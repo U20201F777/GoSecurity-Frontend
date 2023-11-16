@@ -31,7 +31,9 @@ export class PoliciaService {
         .set('Content-Type', 'application/json'),
     });
   }
-
+  new(p: Policia) {
+    return this.http.post(this.url, p);
+  }
   setList(listaNueva: Policia[]) {
     this.listaCambio.next(listaNueva);
   }
@@ -66,8 +68,12 @@ export class PoliciaService {
         .set('Content-Type', 'application/json'),
     });
   }
+  listByuser(username:String){
+
+    return this.http.get<Policia>(`${this.url}/listByUser/${username}`)
+  }
   //aun no esta en el backend - creo
-  buscar(fecha: string): Observable<Policia[]> {
+  /*buscar(fecha: string): Observable<Policia[]> {
     let token = sessionStorage.getItem('token');
 
     return this.http.post<Policia[]>(
@@ -79,5 +85,5 @@ export class PoliciaService {
           .set('Content-Type', 'application/json'),
       }
     );
-  }
+  }*/
 }

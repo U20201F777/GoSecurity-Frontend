@@ -1,5 +1,5 @@
+import { Users } from "./Users";
 import { Comisaria } from "./comisaria";
-import { Notificacion } from "./notificacion";
 
 export class Policia{
   idPolicia: number=0;
@@ -7,6 +7,6 @@ export class Policia{
   fotoRostroPolicia: string="";
   fotoIdentPolicia: string="";
   rangoPolicia: string="";
-  idNotificacion: Notificacion=new Notificacion();
   idComisaria: Comisaria=new Comisaria();
+  users: Users=new Users();
 }

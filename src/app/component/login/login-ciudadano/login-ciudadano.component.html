@@ -13,7 +13,7 @@
       <div class="login-input">
         <br />
         <h2>Iniciar sesión</h2>
-        <h1>Administrador</h1>
+        <h1>Ciudadano</h1>
         <mat-form-field class="example-full-width">
           <mat-label>Usuario</mat-label>
           <input matInput placeholder="Username" [(ngModel)]="username" />
@@ -36,7 +36,10 @@
           Ingresar
         </button>
         <div class="mt-4 text-center">
-          ¿Ingresar como? <a href="loginCiudadano">Ciudadano</a> <label>_o_</label><a href="loginPolicia">Policia</a>
+          ¿Aun no tienes una cuenta? <a href="registroCiudadano">Registrarme</a>
+        </div>
+        <div class="mt-4 text-center">
+          ¿Ingresar como? <a href="loginPolicia">Policia</a> <label>_o_</label><a href="login">Administrador</a>
         </div>
       </div>
     </section>
