@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { NgChartsModule } from 'ng2-charts';
+
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { AyudaListarComponent } from './ayuda/ayuda-listar/ayuda-listar.component';
 import { AyudaInsertarComponent } from './ayuda/ayuda-insertar/ayuda-insertar.component';
@@ -103,7 +105,8 @@ import { RPoliciaComponent } from './registro/r-policia/r-policia.component';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    NgChartsModule
   ]
 })
 export class ComponentModule { }

@@ -73,6 +73,16 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
+            <mat-label>Comisaria</mat-label>
+            <input matInput placeholder="idComisaria" formControlName="idComisaria" />
+            <!--<mat-error
+              *ngIf="obtenerControlCampo('rangoPolicia')?.errors?.['required']"
+            >
+              El rango es obligatorio.
+            </mat-error>-->
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width">
             <mat-label>Usuario</mat-label>
             <input matInput placeholder="Usuario" formControlName="username" />
           </mat-form-field>

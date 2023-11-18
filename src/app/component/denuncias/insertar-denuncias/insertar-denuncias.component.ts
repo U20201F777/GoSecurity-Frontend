@@ -55,9 +55,7 @@ export class InsertarDenunciasComponent implements OnInit {
       nameDenuncias: ['', Validators.required],
       fechaDenunciasHechos: ['', Validators.required],
       fechaDenunciasRegistro: ['', Validators.required],
-      fechaDenunciasEmision: ['', Validators.required],
       idDenunciasLugarHecho: ['', Validators.required],
-      idDenunciasTipificacion: ['', Validators.required],
       idCiudadano: ['', Validators.required],
       idComisaria: ['', Validators.required],
     });
@@ -77,11 +75,9 @@ export class InsertarDenunciasComponent implements OnInit {
       this.denuncia.nameDenuncias = this.form.value.nameDenuncias;
       this.denuncia.fechaDenunciasHechos = this.form.value.fechaDenunciasHechos;
       this.denuncia.fechaDenunciasRegistro = this.form.value.fechaDenunciasRegistro;
-      this.denuncia.fechaDenunciasEmision = this.form.value.fechaDenunciasEmision;
       this.denuncia.idDenunciasLugarHecho.idDenunciasLugarHecho = this.form.value.idDenunciasLugarHecho;
       this.denuncia.idCiudadano.idCiudadano = this.form.value.idCiudadano;
       this.denuncia.idComisaria.idComisaria = this.form.value.idComisaria;
-
       if (this.edicion) {
         this.dS.Update(this.denuncia).subscribe(() => {
           this.dS.List().subscribe((data) => {
@@ -116,7 +112,6 @@ export class InsertarDenunciasComponent implements OnInit {
           nameDenuncias: new FormControl(data.nameDenuncias),
           fechaDenunciasHechos: new FormControl(data.fechaDenunciasHechos),
           fechaDenunciasRegistro: new FormControl(data.fechaDenunciasRegistro),
-          fechaDenunciasEmision: new FormControl(data.fechaDenunciasEmision),
           idDenunciasLugarHecho: new FormControl(data.idDenunciasLugarHecho.idDenunciasLugarHecho),
           idCiudadano: new FormControl(data.idCiudadano.idCiudadano),
           idComisaria: new FormControl(data.idComisaria.idComisaria),

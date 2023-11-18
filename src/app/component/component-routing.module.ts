@@ -20,6 +20,8 @@ import { ModeloComponent } from './modelo/modelo.component';
 import { InsertarModeloComponent } from './modelo/insertar-modelo/insertar-modelo.component';
 import { PertenenciaComponent } from './pertenencia/pertenencia.component';
 import { InsertarPertenenciaComponent } from './pertenencia/insertar-pertenencia/insertar-pertenencia.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { Reporte01Component } from './reporte/reporte01/reporte01.component';
 
 const routes: Routes = [
   {
@@ -101,6 +103,15 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarPertenenciaComponent },
       { path: 'ediciones/:id ', component: InsertarPertenenciaComponent }
+    ],
+  },
+  {
+    path: 'Reportes',
+    component: ReporteComponent,
+    children: [
+      { path: 'Reporte01', component: Reporte01Component },
+      { path: 'Reporte02', component: InsertarPertenenciaComponent },
+      { path: 'Reporte03', component: InsertarPertenenciaComponent }
     ],
   }
 ];

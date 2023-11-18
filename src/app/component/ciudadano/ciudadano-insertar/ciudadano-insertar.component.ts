@@ -48,12 +48,14 @@ export class CiudadanoInsertarComponent implements OnInit{
             this.cS.setList(data);
           });
         });
+        console.log("error")
       } else {
         this.cS.insert(this.ciudadano).subscribe((data) => {
           this.cS.list().subscribe((data) => {
             this.cS.setList(data);
           });
         });
+        console.log("error2222222")
       }
       this.router.navigate(['/components/ciudadano']);
     } else {

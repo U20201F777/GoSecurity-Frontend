@@ -71,6 +71,40 @@
           </mat-error>
         </mat-form-field>
         <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Seleccione id. Comisaria</mat-label>
+          <mat-select
+            [(value)]="idComisariaSeleccionada"
+            formControlName="idComisaria"
+          >
+            <mat-option *ngFor="let p of listaComisaria" [value]="p.idComisaria">
+              {{ p.idComisaria }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('idComisaria')?.errors?.['required']"
+          >
+            El id del tipo de caso es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Seleccione id. User</mat-label>
+          <mat-select
+            [(value)]="idUserSeleccionado"
+            formControlName="users"
+          >
+            <mat-option *ngFor="let p of listaUsuario" [value]="p.id">
+              {{ p.id }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('users')?.errors?.['required']"
+          >
+            El id del usuario es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
         <button mat-raised-button color="primary">Aceptar</button>
         <button mat-raised-button color="warn" routerLink="/components/policia">
           Cancelar

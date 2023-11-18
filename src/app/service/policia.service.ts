@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment';
 import { Policia } from '../model/Policia';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { NotixCiudadanoDTO } from '../model/NotixCiudadanoDTO';
 
 const base_url = environment.base;
 
@@ -71,6 +72,14 @@ export class PoliciaService {
   listByuser(username:String){
 
     return this.http.get<Policia>(`${this.url}/listByUser/${username}`)
+  }
+  getSolicitudes(): Observable<NotixCiudadanoDTO[]> {
+    let token = sessionStorage.getItem('token');
+    return this.http.get<NotixCiudadanoDTO[]>(`${this.url}/Solicitudes`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   //aun no esta en el backend - creo
   /*buscar(fecha: string): Observable<Policia[]> {

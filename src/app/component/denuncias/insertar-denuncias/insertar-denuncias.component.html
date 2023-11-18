@@ -53,18 +53,6 @@
             </mat-form-field>
             <br />
 
-            <mat-form-field appearance="fill" class="example-full-width">
-                <input matInput placeholder="Ingrese fecha de emision" [matDatepicker]="pickerMid"
-                    formControlName="fechaDenunciasEmision"  [max]="maxFecha" />
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="pickerMid"></mat-datepicker-toggle>
-                <mat-datepicker #pickerMid></mat-datepicker>
-                <mat-error *ngIf="obtenerControlCampo('fechaDenunciasEmision')?.errors?.['required']">
-                    La fecha de ayuda es obligatoria.
-                </mat-error>
-            </mat-form-field>
-            <br />
-
             <mat-form-field class="example-full-width">
                 <mat-label> Lugar de Hecho</mat-label>
                 <mat-select [(value)]="idLugarHechoSeleccionado" formControlName="idDenunciasLugarHecho">
