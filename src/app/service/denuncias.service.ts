@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Denuncias } from '../model/denuncias';
 
+
 const base_url = environment.base
 
 @Injectable({
@@ -65,5 +66,4 @@ export class DenunciasService {
         .set('Content-Type', 'application/json'),
     });
   }
-
 }

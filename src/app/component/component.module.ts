@@ -51,6 +51,7 @@ import { LoginPoliciaComponent } from './login/login-policia/login-policia.compo
 import { RegistroComponent } from './registro/registro.component';
 import { RCiudadanoComponent } from './registro/r-ciudadano/r-ciudadano.component';
 import { RPoliciaComponent } from './registro/r-policia/r-policia.component';
+import { Reporte02Component } from './reporte/reporte02/reporte02.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { RPoliciaComponent } from './registro/r-policia/r-policia.component';
     LoginPoliciaComponent,
     RegistroComponent,
     RCiudadanoComponent,
-    RPoliciaComponent
+    RPoliciaComponent,
+    Reporte02Component
   ],
   imports: [
     CommonModule,
