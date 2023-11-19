@@ -23,6 +23,7 @@ export class PoliciaInsertarComponent implements OnInit{
   idComisariaSeleccionada: number=0;
   listaUsuario: Users[]=[];
   idUserSeleccionado: number=0;
+
   constructor(
     private pS: PoliciaService,
     private cS: ComisariaService,
@@ -62,8 +63,7 @@ export class PoliciaInsertarComponent implements OnInit{
       this.policia.fotoIdentPolicia = this.form.value.fotoIdentPolicia;
       this.policia.rangoPolicia = this.form.value.rangoPolicia;
       this.policia.idComisaria.idComisaria=this.form.value.idComisaria;
-      this.policia.users=this.form.value.users;
-      console.log(this.policia.users+"error llamada")
+      this.policia.users.id=this.form.value.users;
       if (this.edicion) {
         this.pS.update(this.policia).subscribe(() => {
           this.pS.list().subscribe((data) => {
@@ -102,6 +102,7 @@ export class PoliciaInsertarComponent implements OnInit{
           fotoIdentPolicia:new FormControl(data.fotoIdentPolicia),
           rangoPolicia: new FormControl(data.rangoPolicia),
           idComisaria: new FormControl(data.idComisaria),
+          users: new FormControl(data.users.id),
         });
         console.log(data);
       });

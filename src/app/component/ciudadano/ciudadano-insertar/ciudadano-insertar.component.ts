@@ -8,7 +8,9 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Ciudadano } from 'src/app/model/Ciudadano';
+import { Users } from 'src/app/model/Users';
 import { CiudadanoService } from 'src/app/service/ciudadano.service';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-ciudadano-insertar',
@@ -21,8 +23,11 @@ export class CiudadanoInsertarComponent implements OnInit{
   mensaje: string = '';
   edicion: boolean = false;
   id: number = 0;
+  listaUsuario: Users[]=[];
+  idUserSeleccionado: number=0;
   constructor(
     private cS: CiudadanoService,
+    private uS: UserService,
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder
@@ -36,26 +41,29 @@ export class CiudadanoInsertarComponent implements OnInit{
     this.form = this.formBuilder.group({
       idCiudadano: [''],
       numeroCiudadano: ['', Validators.required],
+      users: [''],
     });
+    this.uS.listar().subscribe((data=>{
+      this.listaUsuario=data;
+    }));
   }
   aceptar(): void {
     if (this.form.valid) {
       this.ciudadano.idCiudadano = this.form.value.idCiudadano;
       this.ciudadano.numeroCiudadano = this.form.value.numeroCiudadano;
+      this.ciudadano.users.id=this.form.value.users;
       if (this.edicion) {
         this.cS.update(this.ciudadano).subscribe(() => {
           this.cS.list().subscribe((data) => {
             this.cS.setList(data);
           });
         });
-        console.log("error")
       } else {
         this.cS.insert(this.ciudadano).subscribe((data) => {
           this.cS.list().subscribe((data) => {
             this.cS.setList(data);
           });
         });
-        console.log("error2222222")
       }
       this.router.navigate(['/components/ciudadano']);
     } else {
@@ -75,6 +83,7 @@ export class CiudadanoInsertarComponent implements OnInit{
         this.form = new FormGroup({
           idCiudadano: new FormControl(data.idCiudadano),
           numeroCiudadano: new FormControl(data.numeroCiudadano),
+          users: new FormControl(data.users.id),
         });
       });
     }

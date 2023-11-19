@@ -72,6 +72,7 @@ export class RPoliciaComponent implements OnInit{
           let e = new Users();
           e.id = data.id;
           console.log(e.id);
+          console.log(e);
           this.policia.users = e;
 
           this.pS.new(this.policia).subscribe(() => {

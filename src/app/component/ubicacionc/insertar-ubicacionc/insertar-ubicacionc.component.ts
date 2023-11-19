@@ -86,6 +86,7 @@ export class InsertarUbicacioncComponent implements OnInit {
           direccion: new FormControl(data.direccion),
         });
       });
+      console.log("distrito")
     }
   }
 }

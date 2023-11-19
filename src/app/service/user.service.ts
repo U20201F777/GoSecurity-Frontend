@@ -18,7 +18,7 @@ export class UserService {
   listar() {
     let token = sessionStorage.getItem('token');
 
-    return this.http.get<Users[]>(this.url, {
+    return this.http.get<Users[]>(this.url+"/listar", {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
