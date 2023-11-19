@@ -58,9 +58,9 @@ export class InsertarPertenenciaComponent implements OnInit{
     if (this.form.valid) {
       this.pertenencia.idPertenencias = this.form.value.idPertenencias;
       this.pertenencia.namePertenencias = this.form.value.namePertenencias;
-      this.pertenencia.AnioPertenencias = this.form.value.AnioPertenencias;
-      this.pertenencia.EspecificacionesPertenencias = this.form.value.EspecificacionesPertenencias;
-      this.pertenencia.ImagenPertenencias = this.form.value.ImagenPertenencias;
+      this.pertenencia.anioPertenencias = this.form.value.AnioPertenencias;
+      this.pertenencia.especificacionesPertenencias = this.form.value.EspecificacionesPertenencias;
+      this.pertenencia.imagenPertenencias = this.form.value.ImagenPertenencias;
       this.pertenencia.idPertenenciasMarca.idPertenenciasMarca = this.form.value.idPertenenciasMarca;
       this.pertenencia.idPertenenciasModelo.idPertenenciasModelo = this.form.value.idPertenenciasModelo;
       if (this.edicion) {
@@ -95,9 +95,9 @@ export class InsertarPertenenciaComponent implements OnInit{
         this.form = new FormGroup({
           idPertenencias: new FormControl(data.idPertenencias),
           namePertenencias: new FormControl(data.namePertenencias),
-          AnioPertenencias: new FormControl(data.AnioPertenencias),
-          EspecificacionesPertenencias: new FormControl(data.EspecificacionesPertenencias),
-          ImagenPertenencias: new FormControl(data.ImagenPertenencias),
+          AnioPertenencias: new FormControl(data.anioPertenencias),
+          EspecificacionesPertenencias: new FormControl(data.especificacionesPertenencias),
+          ImagenPertenencias: new FormControl(data.imagenPertenencias),
           idPertenenciasMarca: new FormControl(data.idPertenenciasMarca.idPertenenciasMarca),
           idPertenenciasModelo: new FormControl(data.idPertenenciasModelo.idPertenenciasModelo),
         });

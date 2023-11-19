@@ -49,7 +49,7 @@ export class InsertarUbicacioncComponent implements OnInit {
       this.ubicacionC.departamento = this.form.value.departamento;
       this.ubicacionC.ciudad = this.form.value.ciudad;
       this.ubicacionC.distrito = this.form.value.distrito;
-      this.ubicacionC.direccion = this.form.value.direcccion;
+      this.ubicacionC.direccion = this.form.value.direccion;
       if (this.edicion) {
         this.uS.Update(this.ubicacionC).subscribe(() => {
           this.uS.List().subscribe((data) => {

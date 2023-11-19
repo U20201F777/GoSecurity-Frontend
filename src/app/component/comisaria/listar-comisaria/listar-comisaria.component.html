@@ -12,7 +12,11 @@
       <h2 style="text-align: center">Lista de Comisarias</h2>
 
       <div style="text-align: right">
-        <button mat-mini-fab style="background-color: green; color: white;" routerLink="/components/Comisaria/insertar">
+        <button
+          mat-mini-fab
+          style="background-color: green; color: white"
+          routerLink="/components/Comisaria/insertar"
+        >
           <mat-icon>plus_one</mat-icon>
         </button>
       </div>
@@ -22,7 +26,6 @@
       </mat-form-field>
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
         <ng-container matColumnDef="Id">
           <th mat-header-cell *matHeaderCellDef>Id</th>
           <td mat-cell *matCellDef="let element">
@@ -57,7 +60,7 @@
           <td mat-cell *matCellDef="let element">
             <button
               mat-raised-button
-              style="background-color: gold; color: white;"
+              style="background-color: gold; color: white"
               [routerLink]="['ediciones', element.idComisaria]"
             >
               <mat-icon>edit</mat-icon>
@@ -80,11 +83,12 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-
       </table>
 
-      <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons ></mat-paginator>
-
+      <mat-paginator
+        [pageSizeOptions]="[5, 10, 15]"
+        showFirstLastButtons
+      ></mat-paginator>
     </div>
   </body>
 </html>

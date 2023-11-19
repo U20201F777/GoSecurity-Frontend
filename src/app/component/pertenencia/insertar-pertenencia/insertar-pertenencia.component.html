@@ -78,36 +78,6 @@
         <br />
 
         <mat-form-field class="example-full-width">
-          <mat-label>Codigo</mat-label>
-          <input
-            matInput
-            placeholder="CodigoPertenencias"
-            formControlName="CodigoPertenencias"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('CodigoPertenencias')?.errors?.['required']"
-          >
-            La Codigo es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Serie</mat-label>
-          <input
-            matInput
-            placeholder="SeriePertenencias"
-            formControlName="SeriePertenencias"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('SeriePertenencias')?.errors?.['required']"
-          >
-            La Serie es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
-
-        <mat-form-field class="example-full-width">
           <mat-label> Marca </mat-label>
           <mat-select
             [(value)]="idMarcaCSeleccionado"

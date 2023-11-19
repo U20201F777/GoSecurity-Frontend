@@ -9,9 +9,9 @@ import { UbicacionP } from "./ubicacionP";
 export class Pertenencias{
   idPertenencias: number=0;
   namePertenencias: string="";
-  AnioPertenencias: string="";
-  EspecificacionesPertenencias: string="";
-  ImagenPertenencias: string="";
+  anioPertenencias: Date=new Date();
+  especificacionesPertenencias: string="";
+  imagenPertenencias: string="";
   idPertenenciasColor: PertenenciasColor=new PertenenciasColor();
   idPertenenciasTipo: PertenenciasTipo=new PertenenciasTipo();
   idPertenenciasMarca: marca= new marca();
