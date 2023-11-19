@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Comisaria } from '../model/comisaria';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DCPxDTO } from '../model/DCPXDTO';
 
 const base_url = environment.base
 
@@ -65,4 +66,13 @@ export class ComisariaService {
         .set('Content-Type', 'application/json'),
     });
   }
+  getCantidades(): Observable<DCPxDTO[]> {
+    let token = sessionStorage.getItem('token');
+    return this.http.get<DCPxDTO[]>(`${this.url}/cantidadCP`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
 }

@@ -10,9 +10,15 @@
   <button mat-button [matMenuTriggerFor]="menuPertenenciaModelo">Modelo</button>
   <button mat-button [matMenuTriggerFor]="menuPertenencia">Pertenencia</button>
   <button mat-button [matMenuTriggerFor]="menuReporte">Reportes</button>
+  
+
   <span class="example-spacer"></span>
   <button mat-button [matMenuTriggerFor]="menuSalir"><mat-icon>account_circle</mat-icon></button>
 </mat-toolbar>
+
+    <button mat-menu-item (click)="redirigir('https://main--resonant-naiad-4cc6df.netlify.app')">
+      <mat-icon>home</mat-icon>
+    </button>
 
 <mat-menu #menuAyuda="matMenu">
   <button mat-menu-item routerLink="components/Ayuda/nuevo">Registrar ayuda</button>
@@ -77,5 +83,6 @@
     <span>{{ role }}</span>
   </button>
 </mat-menu>
+
 
 <router-outlet></router-outlet>
