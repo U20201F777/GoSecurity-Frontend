@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 import { Ciudadano } from '../../../model/Ciudadano';
 import { Users } from 'src/app/model/Users';
 import { CiudadanoService } from 'src/app/service/ciudadano.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 import { Roles } from 'src/app/model/Roles';
 
@@ -22,26 +26,26 @@ export class RCiudadanoComponent {
   constructor(
     private cS: CiudadanoService,
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private formBuilder: FormBuilder
   ) {}
   ngOnInit(): void {
-    this.form = new FormGroup({
-      idCiudadano: new FormControl(),
-      numeroCiudadano: new FormControl(),
-      username: new FormControl(),
-      password: new FormControl(),
+    this.form = this.formBuilder.group({
+      idCiudadano: [''],
+      numeroCiudadano: ['', Validators.required],
+      username: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
-  aceptar(): void {
-    this.ciudadano.idCiudadano = this.form.value['idCiudadano'];
-    this.ciudadano.numeroCiudadano = this.form.value['numeroCiudadano'];
 
-    if (this.form.value['numeroCiudadano'].length > 0) {
+  aceptar(): void {
+    if (this.form.valid) {
+      this.ciudadano.idCiudadano = this.form.value.idCiudadano;
+      this.ciudadano.numeroCiudadano = this.form.value.numeroCiudadano;
       this.users.id = 0;
       this.users.enabled = true;
-      this.users.username = this.form.value['username'];
-      this.users.password = this.form.value['password'];
-
+      this.users.username = this.form.value.username;
+      this.users.password = this.form.value.password;
       let e = new Roles();
       e.id = 1;
       e.rol = 'CIUDADANO';
@@ -66,7 +70,7 @@ export class RCiudadanoComponent {
         });
       });
     } else {
-      this.mensaje = 'Ingrese el DNI del ciudadano!!!';
+      this.mensaje = 'Ingrese todos los datos del ciudadano!!!';
     }
   }
 }
