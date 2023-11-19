@@ -23,6 +23,7 @@ import { InsertarPertenenciaComponent } from './pertenencia/insertar-pertenencia
 import { ReporteComponent } from './reporte/reporte.component';
 import { Reporte01Component } from './reporte/reporte01/reporte01.component';
 import { GuardService } from '../service/guard.service';
+import { Reporte02Component } from './reporte/reporte02/reporte02.component';
 
 const routes: Routes = [
   {
@@ -111,7 +112,7 @@ const routes: Routes = [
     component: ReporteComponent,
     children: [
       { path: 'Reporte01', component: Reporte01Component },
-      { path: 'Reporte02', component: InsertarPertenenciaComponent },
+      { path: 'Reporte02', component: Reporte02Component },
       { path: 'Reporte03', component: InsertarPertenenciaComponent }
     ],
   }
