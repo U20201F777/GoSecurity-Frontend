@@ -22,6 +22,7 @@ import { PertenenciaComponent } from './pertenencia/pertenencia.component';
 import { InsertarPertenenciaComponent } from './pertenencia/insertar-pertenencia/insertar-pertenencia.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { Reporte01Component } from './reporte/reporte01/reporte01.component';
+import { GuardService } from '../service/guard.service';
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
     children: [
       {path: 'nuevo', component: AyudaInsertarComponent},
       {path: 'ediciones/:id', component: AyudaInsertarComponent}
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'ciudadano',
@@ -38,7 +39,7 @@ const routes: Routes = [
     children: [
       {path: 'nuevo', component: CiudadanoInsertarComponent},
       {path: 'ediciones/:id', component: CiudadanoInsertarComponent}
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'policia',
@@ -46,7 +47,7 @@ const routes: Routes = [
     children: [
       {path: 'nuevo', component: PoliciaInsertarComponent},
       {path: 'ediciones/:id', component: PoliciaInsertarComponent}
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'Denuncia',
@@ -54,7 +55,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarDenunciasComponent },
       { path: 'ediciones/:id ', component: InsertarDenunciasComponent }
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'Comisaria',
@@ -62,7 +63,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarComisariaComponent },
       { path: 'ediciones/:id ', component: InsertarComisariaComponent }
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'UbicacionC',
@@ -70,7 +71,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarUbicacioncComponent },
       { path: 'ediciones/:id', component: InsertarUbicacioncComponent }
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'LugarHecho',
@@ -78,7 +79,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarLugarhechoComponent },
       { path: 'ediciones/:id ', component: InsertarLugarhechoComponent }
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'PertenenciaMarca',
@@ -86,7 +87,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarMarcaComponent },
       { path: 'ediciones/:id ', component: InsertarMarcaComponent }
-    ],
+    ],canActivate:[GuardService]
   },
 
   {
@@ -95,7 +96,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarModeloComponent },
       { path: 'ediciones/:id ', component: InsertarModeloComponent }
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'Pertenencia',
@@ -103,7 +104,7 @@ const routes: Routes = [
     children: [
       { path: 'insertar', component: InsertarPertenenciaComponent },
       { path: 'ediciones/:id ', component: InsertarPertenenciaComponent }
-    ],
+    ],canActivate:[GuardService]
   },
   {
     path: 'Reportes',
