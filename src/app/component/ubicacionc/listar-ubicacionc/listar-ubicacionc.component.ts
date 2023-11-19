@@ -10,6 +10,7 @@ import { UbicacionCService } from 'src/app/service/ubicacion-c.service';
   styleUrls: ['./listar-ubicacionc.component.css']
 })
 export class ListarUbicacioncComponent implements OnInit {
+  role: string= "false";
   dataSource: MatTableDataSource<UbicacionC> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
@@ -41,5 +42,12 @@ export class ListarUbicacioncComponent implements OnInit {
   }
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
+  }
+  restriccion(){
+    if(this.role=='POLICIA' || this.role=='CIUDADANO' || this.role=='ADMIN'){
+      return true;
+    }else{
+      return false;
+    }
   }
 }

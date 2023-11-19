@@ -112,8 +112,7 @@ const routes: Routes = [
     component: ReporteComponent,
     children: [
       { path: 'Reporte01', component: Reporte01Component },
-      { path: 'Reporte02', component: Reporte02Component },
-      { path: 'Reporte03', component: InsertarPertenenciaComponent }
+      { path: 'Reporte02', component: Reporte02Component }
     ],
   }
 ];
