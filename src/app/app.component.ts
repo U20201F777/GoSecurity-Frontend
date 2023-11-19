@@ -16,7 +16,9 @@ export class AppComponent {
   cerrar() {
     sessionStorage.clear();
   }
-
+  redirigir(url: string): void {
+    window.location.href = url;
+  }
   verificar() {
     this.role=this.loginService.showRole();
     return this.loginService.verificar();
