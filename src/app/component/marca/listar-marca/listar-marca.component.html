@@ -13,7 +13,7 @@
       <div style="text-align: right">
         <button
           mat-mini-fab
-          color="primary"
+          style="background-color: green; color: white;"
           routerLink="/components/PertenenciaMarca/insertar"
         >
           <mat-icon>plus_one</mat-icon>
@@ -38,7 +38,7 @@
           <td mat-cell *matCellDef="let element">
             <button
               mat-raised-button
-              color="warn"
+              style="background-color: gold; color: white;"
               [routerLink]="['ediciones', element.idPertenenciasMarca]"
             >
             <mat-icon>edit</mat-icon>
@@ -50,7 +50,7 @@
           <td mat-cell *matCellDef="let element">
             <button
               mat-raised-button
-              color="accent"
+              color="warn"
               (click)="eliminar(element.idPertenenciasMarca)"
             >
             <mat-icon>delete</mat-icon>

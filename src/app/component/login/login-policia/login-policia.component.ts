@@ -22,7 +22,7 @@ export class LoginPoliciaComponent implements OnInit{
     request.password = this.password;
     this.LoginService.login(request).subscribe((data: any) => {
       sessionStorage.setItem("token", data.jwttoken);
-      this.router.navigate(['components/policia']);
+      this.router.navigate(['components/Ayuda']);
     }, error => {
       this.mensaje = "Credenciales incorrectas!!!"
       this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
