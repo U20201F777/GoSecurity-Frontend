@@ -14,7 +14,7 @@
         <h2 style="text-align: center">Listar Ubicacion Comisaria</h2>
 
         <div style="text-align: right">
-            <button mat-mini-fab style="background-color: green; color: white;" routerLink="/components/UbicacionC/insertar" *ngIf="role == 'ADMIN' || role === 'POLICIA'">
+            <button mat-mini-fab style="background-color: green; color: white;" routerLink="/components/UbicacionC/insertar">
                 <mat-icon>plus_one</mat-icon>
             </button>
         </div>
@@ -54,7 +54,7 @@
                 <th mat-header-cell *matHeaderCellDef>Acciones</th>
                 <td mat-cell *matCellDef="let element">
                     <button mat-raised-button style="background-color: gold; color: white;"
-                    [routerLink]="['ediciones', element.idUbicacionC ]" *ngIf="role == 'ADMIN' || role === 'POLICIA'">
+                    [routerLink]="['ediciones', element.idUbicacionC ]">
                     <mat-icon>edit</mat-icon>
                     </button>
                 </td>
@@ -63,7 +63,7 @@
             <ng-container matColumnDef="accion02">
                 <th mat-header-cell *matHeaderCellDef>Acciones</th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="warn" (click)="eliminar(element.idUbicacionC )" *ngIf="role == 'ADMIN' || role === 'POLICIA'">
+                    <button mat-raised-button color="warn" (click)="eliminar(element.idUbicacionC )">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </td>
