@@ -10,6 +10,7 @@ import { ComisariaService } from 'src/app/service/comisaria.service';
   styleUrls: ['./listar-comisaria.component.css']
 })
 export class ListarComisariaComponent implements OnInit {
+  role: string= "false";
 
   dataSource: MatTableDataSource<Comisaria> = new MatTableDataSource();
   displayedColumns: string[] = [
@@ -21,6 +22,7 @@ export class ListarComisariaComponent implements OnInit {
     'accion01',
     'accion02'
   ];
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   constructor(private cS: ComisariaService) { }
   ngOnInit(): void {
@@ -43,5 +45,11 @@ export class ListarComisariaComponent implements OnInit {
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
   }
-
+  restriccion(){
+    if(this.role=='POLICIA' || this.role=='CIUDADANO' || this.role=='ADMIN'){
+      return true;
+    }else{
+      return false;
+    }
+  }
 }

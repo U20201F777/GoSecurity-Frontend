@@ -1,24 +1,22 @@
 <mat-toolbar style="color: white; background-color: black;" *ngIf="verificar()">
-  <mat-icon>menu</mat-icon>
+  <button mat-button (click)="redirigir('https://main--resonant-naiad-4cc6df.netlify.app')">
+    <mat-icon>home</mat-icon>
+  </button>
   <button mat-button [matMenuTriggerFor]="menuAyuda">Ayuda</button>
   <button mat-button [matMenuTriggerFor]="menuCiudadano" *ngIf="role == 'ADMIN'">Ciudadano</button>
-  <button mat-button [matMenuTriggerFor]="menuPolicia" *ngIf="role == 'ADMIN'">Policia</button>
+  <button mat-button [matMenuTriggerFor]="menuPolicia" *ngIf="role == 'ADMIN' || role === 'POLICIA'">Policia</button>
   <button mat-button [matMenuTriggerFor]="menuDenuncia">Denuncia</button>
   <button mat-button [matMenuTriggerFor]="menuComisaria">Comisaria</button>
   <button mat-button [matMenuTriggerFor]="menuLugarHecho">Lugar de Hecho</button>
   <button mat-button [matMenuTriggerFor]="menuPertenenciaMarca">Marca</button>
   <button mat-button [matMenuTriggerFor]="menuPertenenciaModelo">Modelo</button>
   <button mat-button [matMenuTriggerFor]="menuPertenencia">Pertenencia</button>
-  <button mat-button [matMenuTriggerFor]="menuReporte">Reportes</button>
+  <button mat-button [matMenuTriggerFor]="menuReporte" *ngIf="role == 'ADMIN' || role === 'POLICIA'">Reportes</button>
 
 
   <span class="example-spacer"></span>
   <button mat-button [matMenuTriggerFor]="menuSalir"><mat-icon>account_circle</mat-icon></button>
 </mat-toolbar>
-
-    <button mat-menu-item (click)="redirigir('https://main--resonant-naiad-4cc6df.netlify.app')">
-      <mat-icon>home</mat-icon>
-    </button>
 
 <mat-menu #menuAyuda="matMenu">
   <button mat-menu-item routerLink="components/Ayuda/nuevo">Registrar ayuda</button>
@@ -42,9 +40,9 @@
 
 <mat-menu #menuComisaria="matMenu">
   <button mat-menu-item routerLink="components/Comisaria">Listar Comisaria</button>
-  <button mat-menu-item routerLink="components/Comisaria/insertar">Registrar Comisaria</button>
+  <button mat-menu-item routerLink="components/Comisaria/insertar" *ngIf="role == 'ADMIN' || role === 'POLICIA'">Registrar Comisaria</button>
   <button mat-menu-item routerLink="components/UbicacionC">Listar Ubicacion C</button>
-  <button mat-menu-item routerLink="components/UbicacionC/insertar">Registrar Ubicacion C</button>
+  <button mat-menu-item routerLink="components/UbicacionC/insertar" *ngIf="role == 'ADMIN' || role === 'POLICIA'">Registrar Ubicacion C</button>
 </mat-menu>
 
 <mat-menu #menuLugarHecho="matMenu">
@@ -70,7 +68,6 @@
 <mat-menu #menuReporte="matMenu">
   <button mat-menu-item routerLink="components/Reportes/Reporte01">Reporte 01</button>
   <button mat-menu-item routerLink="components/Reportes/Reporte02">Reporte 02</button>
-  <button mat-menu-item routerLink="components/Reporte03">Reporte 03</button>
 </mat-menu>
 
 <mat-menu #menuSalir="matMenu">
